@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 6,
+  "sourceAudio": "audio/it/06_piazza_garibaldi.mp3",
+  "duration": 184.346,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Non andiamo lontano. Anzi, per questa volta... restiamo proprio qui. Prima vi ho chiesto di guardare il Palazzo Comunale e il suo stemma. Adesso fate qualche passo indietro e guardate la piazza. Ve la ricordate la Zambra, il torrente che abbiamo incontrato sul ponte? E soprattutto, vi ricordate quello che vi avevo raccontato? Calci è stata per secoli il paese dei cento molini. Le ruote hanno smesso di girare, molti degli antichi opifici sono scomparsi o hanno cambiato funzione... ma vi avevo promesso che i calcesani quella storia non l’avevano dimenticata. E infatti, una volta all’anno, tradizionalmente nel mese di settembre, le macine tornano a muoversi. Più o meno. Benvenuti al Gioco del Mulino. La sfida nasce nel 1982 e mette di fronte gli otto rioni di Calci: Castelmaggiore-Tre Colli, Pontegrande, Castello, Pieve, Gabella, Corte, Nicosia e Montemagno-San Lorenzo. Sì, molti di quei nomi li avete già sentiti. Erano i borghi che abbiamo provato a individuare all’inizio del nostro viaggio. Qui, però, smettono per un giorno di essere semplicemente parti dello stesso paese. E diventano avversari. Ogni rione schiera tre mugnai. Il meccanismo è semplice da capire, un po’ meno da affrontare. Immaginate una gigantesca leva: alle antiche macine sono fissate lunghe stanghe e le due squadre spingono con tutta la loro forza in direzioni opposte. Una avanza. L’altra viene costretta a retrocedere. E chi viene spinto indietro? Beh... riceve uno spruzzo di farina. Così, giusto per non lasciare dubbi su chi abbia perso. Ai vincitori, invece, va la Fama Alata: una statuetta che riprende la figura alata della Fama, simbolo storico legato alla Magistratura di Calci. Ma questo gioco racconta anche un altro pezzo della nostra storia. Lo stretto rapporto tra Calci e Pisa. I calcesani partecipavano al Gioco del Ponte già secoli fa e ancora oggi Calci ha una propria Magistratura, schierata nella Parte di Tramontana. E proprio per richiamare quel legame, nel 1982 nacque qui il Gioco del Mulino. A Pisa si spinge sul Ponte di Mezzo. A Calci... si spingono le macine. E forse è questa la cosa che mi piace di più di questa piazza. Sul ponte abbiamo raccontato una Calci che non esiste più: quella delle ruote idrauliche, dei mugnai, dei frantoi. Qui quella stessa storia non viene soltanto ricordata. Viene rimessa in scena. Con il corteo, le bandiere, i rioni, la fatica... e un po’ di farina. La storia, qualche volta, non rimane chiusa nei libri. Scende in piazza. E io, pian piano, percorrendo queste strade insieme a voi, comincio a capire quanto sia diverso leggerla... e finalmente vederla. Adesso, però, ci manca un ultimo luogo. E per raggiungerlo non dovremo più guardare una chiesa, un ponte o uno stemma. Questa volta dovremo guardare molto più in alto. —",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.18,
+      "text": "Non andiamo lontano."
+    },
+    {
+      "start": 1.42,
+      "end": 4.7,
+      "text": "Anzi, per questa volta restiamo proprio qui."
+    },
+    {
+      "start": 5.08,
+      "end": 7.82,
+      "text": "Prima vi ho chiesto di guardare il Palazzo Comunale"
+    },
+    {
+      "start": 7.82,
+      "end": 8.76,
+      "text": "e il suo stemma."
+    },
+    {
+      "start": 9.04,
+      "end": 12.32,
+      "text": "Adesso fate qualche passo indietro e guardate la"
+    },
+    {
+      "start": 12.32,
+      "end": 12.72,
+      "text": "piazza."
+    },
+    {
+      "start": 13.14,
+      "end": 15.8,
+      "text": "Ve la ricordate la Zambra, il torrente che abbiamo"
+    },
+    {
+      "start": 15.8,
+      "end": 16.9,
+      "text": "incontrato sul ponte?"
+    },
+    {
+      "start": 17.1,
+      "end": 20.48,
+      "text": "E soprattutto, vi ricordate quello che vi avevo raccontato?"
+    },
+    {
+      "start": 20.78,
+      "end": 24.3,
+      "text": "Calci è stata per secoli il paese dei centomolini."
+    },
+    {
+      "start": 24.48,
+      "end": 26.62,
+      "text": "Le ruote hanno smesso di girare."
+    },
+    {
+      "start": 26.9,
+      "end": 29.92,
+      "text": "Molti degli antichi opifici sono scomparsi oppure"
+    },
+    {
+      "start": 29.92,
+      "end": 31.1,
+      "text": "hanno cambiato funzione."
+    },
+    {
+      "start": 31.24,
+      "end": 34.28,
+      "text": "Ma vi avevo promesso che i calcesani quella storia"
+    },
+    {
+      "start": 34.28,
+      "end": 35.76,
+      "text": "non l'avevano dimenticata."
+    },
+    {
+      "start": 35.9,
+      "end": 39.06,
+      "text": "E infatti, una volta all'anno, tradizionalmente"
+    },
+    {
+      "start": 39.06,
+      "end": 42.5,
+      "text": "nel mese di settembre, le macine tornano a muoversi."
+    },
+    {
+      "start": 42.88,
+      "end": 43.52,
+      "text": "Più o meno."
+    },
+    {
+      "start": 44.06,
+      "end": 46.06,
+      "text": "Benvenuti al Gioco del Mulino."
+    },
+    {
+      "start": 46.28,
+      "end": 50.7,
+      "text": "La sfida nasce nel 1982 e mette di fronte gli otto"
+    },
+    {
+      "start": 50.7,
+      "end": 51.6,
+      "text": "rioni di Calci."
+    },
+    {
+      "start": 51.6,
+      "end": 55.22,
+      "text": "Castel Maggiore Tre Colli, Ponte Grande, Castello,"
+    },
+    {
+      "start": 55.6,
+      "end": 60.44,
+      "text": "Pieve, Gabella, Corte, Nicosia e Montemagno San Lorenzo."
+    },
+    {
+      "start": 60.58,
+      "end": 63.44,
+      "text": "Sì, molti di quei nomi li avete già sentiti."
+    },
+    {
+      "start": 63.64,
+      "end": 65.98,
+      "text": "Erano i borghi che abbiamo provato a individuare"
+    },
+    {
+      "start": 65.98,
+      "end": 67.4,
+      "text": "all'inizio del nostro viaggio."
+    },
+    {
+      "start": 67.74,
+      "end": 71.06,
+      "text": "Qui, però, smettono per un giorno di essere semplicemente"
+    },
+    {
+      "start": 71.06,
+      "end": 74.28,
+      "text": "parti dello stesso paese e diventano avversari."
+    },
+    {
+      "start": 74.48,
+      "end": 76.74,
+      "text": "Ogni rione schiera tre mugnai."
+    },
+    {
+      "start": 77.02,
+      "end": 78.92,
+      "text": "Il meccanismo è semplice da capire."
+    },
+    {
+      "start": 79.08,
+      "end": 80.66,
+      "text": "Un po' meno da affrontare."
+    },
+    {
+      "start": 81.06,
+      "end": 82.94,
+      "text": "Immaginate una gigantesca leva."
+    },
+    {
+      "start": 83.24,
+      "end": 86.36,
+      "text": "Alle antiche macine sono fissate lunghe stanghe e"
+    },
+    {
+      "start": 86.36,
+      "end": 89.36,
+      "text": "le due squadre spingono con tutta la loro forza in"
+    },
+    {
+      "start": 89.36,
+      "end": 90.44,
+      "text": "direzioni opposte."
+    },
+    {
+      "start": 90.7,
+      "end": 91.74,
+      "text": "Una avanza."
+    },
+    {
+      "start": 91.88,
+      "end": 94.2,
+      "text": "L'altra viene costretta a retrocedere."
+    },
+    {
+      "start": 94.34,
+      "end": 95.8,
+      "text": "E chi viene spinto indietro?"
+    },
+    {
+      "start": 96.06,
+      "end": 98.14,
+      "text": "Beh, riceve uno spruzzo di farina."
+    },
+    {
+      "start": 98.38,
+      "end": 100.84,
+      "text": "Così, giusto per non lasciare dubbi su chi abbia"
+    },
+    {
+      "start": 100.84,
+      "end": 101.24,
+      "text": "perso."
+    },
+    {
+      "start": 101.5,
+      "end": 104.22,
+      "text": "Ai vincitori, invece, va la fama alata."
+    },
+    {
+      "start": 104.46,
+      "end": 106.94,
+      "text": "Una statuetta che riprende la figura alata della"
+    },
+    {
+      "start": 106.94,
+      "end": 110.06,
+      "text": "fama, simbolo storico legato alla magistratura di"
+    },
+    {
+      "start": 110.06,
+      "end": 110.46,
+      "text": "Calci."
+    },
+    {
+      "start": 110.6,
+      "end": 113.4,
+      "text": "Ma questo gioco racconta anche un altro pezzo della"
+    },
+    {
+      "start": 113.4,
+      "end": 114.24,
+      "text": "nostra storia."
+    },
+    {
+      "start": 114.46,
+      "end": 117.2,
+      "text": "Lo stretto rapporto tra Calci e Pisa."
+    },
+    {
+      "start": 117.38,
+      "end": 120.36,
+      "text": "I calcesani partecipavano al gioco del ponte già"
+    },
+    {
+      "start": 120.36,
+      "end": 121.0,
+      "text": "secoli fa."
+    },
+    {
+      "start": 121.14,
+      "end": 124.18,
+      "text": "E ancora oggi, Calci ha una propria magistratura,"
+    },
+    {
+      "start": 124.46,
+      "end": 126.22,
+      "text": "schierata nella parte di Tramontana."
+    },
+    {
+      "start": 126.38,
+      "end": 130.64,
+      "text": "E proprio per richiamare quel legame, nel 1982 nacque"
+    },
+    {
+      "start": 130.64,
+      "end": 132.14,
+      "text": "qui il Gioco del Mulino."
+    },
+    {
+      "start": 132.4,
+      "end": 134.66,
+      "text": "A Pisa si spinge sul ponte di mezzo."
+    },
+    {
+      "start": 134.98,
+      "end": 137.18,
+      "text": "A Calci si spingono le macine."
+    },
+    {
+      "start": 137.34,
+      "end": 140.22,
+      "text": "E forse è questa la cosa che mi piace di più di questa"
+    },
+    {
+      "start": 140.22,
+      "end": 140.64,
+      "text": "piazza."
+    },
+    {
+      "start": 140.98,
+      "end": 143.94,
+      "text": "Sul ponte abbiamo raccontato una Calci che non esiste"
+    },
+    {
+      "start": 143.94,
+      "end": 144.22,
+      "text": "più."
+    },
+    {
+      "start": 144.44,
+      "end": 147.82,
+      "text": "Quella delle ruote idrauliche, dei mugnai, dei frantoi."
+    },
+    {
+      "start": 148.12,
+      "end": 151.56,
+      "text": "Qui, quella stessa storia non viene soltanto ricordata."
+    },
+    {
+      "start": 151.72,
+      "end": 153.18,
+      "text": "Viene rimessa in scena."
+    },
+    {
+      "start": 153.3,
+      "end": 157.66,
+      "text": "Con il corteo, le bandiere, i rioni, la fatica e"
+    },
+    {
+      "start": 157.66,
+      "end": 158.44,
+      "text": "un po' di farina."
+    },
+    {
+      "start": 158.7,
+      "end": 162.06,
+      "text": "La storia, qualche volta, non rimane chiusa nei libri."
+    },
+    {
+      "start": 162.32,
+      "end": 163.26,
+      "text": "Scende in piazza."
+    },
+    {
+      "start": 163.42,
+      "end": 166.74,
+      "text": "E io, pian piano, percorrendo queste strade insieme"
+    },
+    {
+      "start": 166.74,
+      "end": 169.68,
+      "text": "a voi, comincio a capire quanto sia diverso leggerla."
+    },
+    {
+      "start": 169.86,
+      "end": 171.62,
+      "text": "E finalmente, vederla."
+    },
+    {
+      "start": 171.84,
+      "end": 174.4,
+      "text": "Adesso, però, ci manca un ultimo luogo."
+    },
+    {
+      "start": 174.54,
+      "end": 177.6,
+      "text": "E per raggiungerlo non dovremo più guardare una chiesa,"
+    },
+    {
+      "start": 177.74,
+      "end": 179.16,
+      "text": "un ponte o uno stemma."
+    },
+    {
+      "start": 179.28,
+      "end": 182.6,
+      "text": "Questa volta dovremo guardare molto più in alto."
+    }
+  ],
+  "text": "Non andiamo lontano. Anzi, per questa volta restiamo proprio qui. Prima vi ho chiesto di guardare il Palazzo Comunale e il suo stemma. Adesso fate qualche passo indietro e guardate la piazza. Ve la ricordate la Zambra, il torrente che abbiamo incontrato sul ponte? E soprattutto, vi ricordate quello che vi avevo raccontato? Calci è stata per secoli il paese dei centomolini. Le ruote hanno smesso di girare. Molti degli antichi opifici sono scomparsi oppure hanno cambiato funzione. Ma vi avevo promesso che i calcesani quella storia non l'avevano dimenticata. E infatti, una volta all'anno, tradizionalmente nel mese di settembre, le macine tornano a muoversi. Più o meno. Benvenuti al Gioco del Mulino. La sfida nasce nel 1982 e mette di fronte gli otto rioni di Calci. Castel Maggiore Tre Colli, Ponte Grande, Castello, Pieve, Gabella, Corte, Nicosia e Montemagno San Lorenzo. Sì, molti di quei nomi li avete già sentiti. Erano i borghi che abbiamo provato a individuare all'inizio del nostro viaggio. Qui, però, smettono per un giorno di essere semplicemente parti dello stesso paese e diventano avversari. Ogni rione schiera tre mugnai. Il meccanismo è semplice da capire. Un po' meno da affrontare. Immaginate una gigantesca leva. Alle antiche macine sono fissate lunghe stanghe e le due squadre spingono con tutta la loro forza in direzioni opposte. Una avanza. L'altra viene costretta a retrocedere. E chi viene spinto indietro? Beh, riceve uno spruzzo di farina. Così, giusto per non lasciare dubbi su chi abbia perso. Ai vincitori, invece, va la fama alata. Una statuetta che riprende la figura alata della fama, simbolo storico legato alla magistratura di Calci. Ma questo gioco racconta anche un altro pezzo della nostra storia. Lo stretto rapporto tra Calci e Pisa. I calcesani partecipavano al gioco del ponte già secoli fa. E ancora oggi, Calci ha una propria magistratura, schierata nella parte di Tramontana. E proprio per richiamare quel legame, nel 1982 nacque qui il Gioco del Mulino. A Pisa si spinge sul ponte di mezzo. A Calci si spingono le macine. E forse è questa la cosa che mi piace di più di questa piazza. Sul ponte abbiamo raccontato una Calci che non esiste più. Quella delle ruote idrauliche, dei mugnai, dei frantoi. Qui, quella stessa storia non viene soltanto ricordata. Viene rimessa in scena. Con il corteo, le bandiere, i rioni, la fatica e un po' di farina. La storia, qualche volta, non rimane chiusa nei libri. Scende in piazza. E io, pian piano, percorrendo queste strade insieme a voi, comincio a capire quanto sia diverso leggerla. E finalmente, vederla. Adesso, però, ci manca un ultimo luogo. E per raggiungerlo non dovremo più guardare una chiesa, un ponte o uno stemma. Questa volta dovremo guardare molto più in alto."
+}

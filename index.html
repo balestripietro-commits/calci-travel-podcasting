@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="it" data-tp-theme="calci">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Podcasting Comune di Calci</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0&family=Roboto+Flex:opsz,wght@8..144,400..800&display=swap"
+    />
+    <link rel="stylesheet" href="design-system.css?v=20261018-calci-rebuild" />
+    <link rel="stylesheet" href="theme-calci.css?v=20261018-calci-rebuild" />
+    <link rel="stylesheet" href="style.css?v=20261010-no-email-gate" />
+  </head>
+  <body class="tp-theme-calci">
+    <div class="announcement-strip" aria-hidden="true">
+      <div id="announcement-track" class="announcement-track"></div>
+    </div>
+    <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
+
+    <div
+      id="onboarding-overlay"
+      class="onboarding-overlay is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="onboarding-title"
+      aria-describedby="onboarding-hint"
+    >
+      <div class="onboarding-card translated-content">
+        <p class="onboarding-kicker">Travel podcasting</p>
+        <h2 id="onboarding-title">Scegli la lingua per iniziare il percorso</h2>
+        <p id="onboarding-hint" class="onboarding-hint">Potrai cambiarla in ogni momento.</p>
+        <div
+          id="onboarding-language-chips"
+          class="language-chips onboarding-language-chips"
+          aria-label="Seleziona lingua"
+        ></div>
+      </div>
+    </div>
+
+    <div id="guide-layer" class="guide-layer is-hidden" role="dialog" aria-modal="true" aria-labelledby="guide-step-text" aria-live="polite">
+      <div id="guide-card" class="guide-card">
+        <p id="guide-step-text"></p>
+          <div class="guide-actions">
+            <button type="button" id="guide-skip-button" class="guide-button guide-button-secondary" aria-label="Chiudi"><span translate="no" class="material-symbols-rounded" aria-hidden="true">close</span></button>
+            <button type="button" id="guide-prev-button" class="guide-button guide-button-secondary" aria-label="Indietro"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_back</span></button>
+            <button type="button" id="guide-next-button" class="guide-button guide-button-primary" aria-label="Avanti"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+          </div>
+      </div>
+      <div id="guide-exit-confirm" class="guide-exit-confirm" role="alertdialog" aria-modal="true" aria-labelledby="guide-exit-confirm-title" hidden>
+        <h2 id="guide-exit-confirm-title"></h2>
+        <div class="guide-exit-confirm-actions">
+          <button type="button" id="guide-exit-confirm-cancel" class="guide-button guide-button-secondary"></button>
+          <button type="button" id="guide-exit-confirm-accept" class="guide-button guide-button-primary"></button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="language-unavailable-modal"
+      class="language-unavailable-modal is-hidden"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="language-unavailable-title"
+      aria-describedby="language-unavailable-message"
+      hidden
+    >
+      <div class="language-unavailable-card">
+        <h2 id="language-unavailable-title">Lingua non disponibile</h2>
+        <p id="language-unavailable-message"></p>
+        <button type="button" id="language-unavailable-close" class="guide-button guide-button-primary language-unavailable-close">
+          <span translate="no" class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <img class="hero-logo" src="logo_calci.png" alt="Stemma di Calci" />
+          <div class="brand-copy">
+            <p class="brand-name" id="brand-name">Travel podcasting</p>
+            <p class="brand-tag" id="brand-tag">Comune di Calci</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" id="help-button" class="help-button tp-icon-button" aria-label="Aiuto">
+            <span translate="no" class="material-symbols-rounded" aria-hidden="true">help</span>
+          </button>
+          <div class="global-language-selector" aria-label="Selettore lingua del sito">
+            <button type="button" id="global-language-current" class="global-language-current tp-chip" aria-haspopup="listbox" aria-controls="global-language-chips" aria-expanded="false">
+              <span translate="no" class="global-language-current-icon material-symbols-rounded" aria-hidden="true">language</span>
+              <span id="global-language-current-label">Italiano</span>
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">expand_more</span>
+            </button>
+            <div id="global-language-chips" class="language-chips" role="listbox"></div>
+          </div>
+        </div>
+      </header>
+      <main id="main-content" tabindex="-1">
+        <section class="intro-panel" aria-labelledby="landing-title">
+          <div class="intro-hero-row">
+            <div class="intro-visual">
+              <div class="mascot-motion-shell mascot-motion-shell--hero" data-mascot-motion="hero">
+                <div class="mascot-breathing-shell">
+                  <img
+                    id="hero-mascot"
+                    class="intro-portrait"
+                    src="assets/mascotte-mouth/mascotte_B.webp?v=20260921-mascot-hd"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="intro-copy">
+              <p class="eyebrow" id="eyebrow-text">Comune di Calci</p>
+              <h1 id="landing-title">Lorem ipsum</h1>
+              <div class="intro-quote-block" id="intro-quote-block">
+                <p class="intro intro-lead intro-quote-title" id="intro-lead-text">Lorem ipsum</p>
+                <p class="intro intro-quote" id="intro-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="route-experience">
+          <section class="map-stage" aria-label="Mappa interattiva del percorso">
+            <div class="map-stage-frame">
+              <div class="map-floating-controls" role="group" aria-label="Controlli mappa">
+                <button
+                  type="button"
+                  id="map-recenter-button"
+                  class="map-action-button tp-icon-button tp-map-control"
+                  aria-label="Centra tutte le tappe"
+                  aria-pressed="false"
+                >
+                  <span translate="no" class="map-action-icon material-symbols-rounded" aria-hidden="true">my_location</span>
+                  <span class="map-control-tooltip" aria-hidden="true">Centra tutte le tappe</span>
+                </button>
+                <a
+                  id="map-directions-button"
+                  class="map-action-button map-directions-button tp-icon-button tp-map-control"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Apri indicazioni"
+                  hidden
+                >
+                  <span translate="no" class="map-action-icon directions-icon material-symbols-rounded" aria-hidden="true">location_on</span>
+                  <span class="map-control-tooltip" aria-hidden="true">Apri indicazioni</span>
+                </a>
+              </div>
+              <div class="map-explore-mascot">
+                <div class="mascot-motion-shell map-explore-mascot-motion" data-mascot-motion="map-explore">
+                  <div class="mascot-breathing-shell">
+                    <img
+                      id="map-explore-mascot-image"
+                      class="map-explore-mascot-image"
+                      src="assets/mascotte-mouth/mascotte_B.webp?v=20260921-mascot-hd"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                id="map-fullscreen-button"
+                class="map-fullscreen-button tp-icon-button tp-map-control"
+                aria-label="Apri la mappa a tutto schermo"
+              >
+                <span translate="no" class="map-fullscreen-icon material-symbols-rounded" aria-hidden="true">fullscreen</span>
+              </button>
+              <div id="map" class="map" role="region" aria-label="Mappa interattiva delle tappe"></div>
+              <p id="map-load-status" class="map-load-status" aria-live="polite"></p>
+              <div id="map-explore-stop" class="map-explore-stop" aria-live="polite" hidden>
+                <span id="map-explore-stop-number" class="map-explore-stop-number"></span>
+                <span id="map-explore-stop-title" class="map-explore-stop-title"></span>
+                <span id="map-explore-stop-audio" translate="no" class="map-explore-stop-audio material-symbols-rounded" aria-hidden="true"></span>
+                <button type="button" id="map-explore-open-player" class="map-explore-open-player tp-map-control" aria-label="Apri player">
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <aside id="stop-preview" class="stop-preview TPStopPreview" aria-live="polite" aria-atomic="true" hidden>
+            <div class="stop-preview-copy">
+              <div class="stop-preview-heading">
+                <span id="stop-preview-number" class="stop-preview-number"></span>
+                <div>
+                  <h2 id="stop-preview-title" class="stop-preview-title"></h2>
+                </div>
+              </div>
+            </div>
+            <img id="stop-preview-image" class="stop-preview-image" src="" alt="" />
+          </aside>
+
+          <section class="stops-panel" aria-labelledby="stops-title">
+            <div class="controls-toolbar">
+              <div class="controls-copy">
+                <h2 id="stops-title">Tappe del percorso</h2>
+                <p id="stops-subtitle" hidden></p>
+              </div>
+            </div>
+            <p id="stop-selection-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+            <ul id="stops-list" class="stops-list" aria-label="Elenco delle tappe"></ul>
+          </section>
+        </div>
+
+        <div class="outbound-panels">
+          <footer class="platforms-panel" aria-labelledby="platforms-eyebrow">
+          <p class="platforms-eyebrow platforms-eyebrow-strong" id="platforms-eyebrow">
+            Presto anche su:
+          </p>
+          <div class="platforms-logos" aria-label="Piattaforme in arrivo">
+            <button
+              type="button"
+              class="platform-logo logo-izi"
+              data-platform-name="izi.TRAVEL"
+            >
+              <span class="platform-logo-text"><span class="brand-izi">izi</span><span class="brand-travel">.TRAVEL</span></span>
+            </button>
+            <button
+              type="button"
+              class="platform-logo logo-loquis"
+              data-platform-name="Loquis"
+            >
+              <span class="platform-logo-text">Loquis</span>
+            </button>
+            <button
+              type="button"
+              class="platform-logo logo-spotify"
+              data-platform-name="Spotify"
+            >
+              <span class="platform-logo-text">Spotify</span>
+            </button>
+          </div>
+          <p id="platform-link-status" class="platform-link-status" role="status" aria-live="polite"></p>
+          </footer>
+
+        </div>
+      </main>
+      <p id="map-live-caption" class="map-live-caption" aria-hidden="true" hidden></p>
+    </div>
+
+    <div id="mini-player" class="mini-player TPMiniPlayer tp-mini-player is-hidden">
+      <div
+        id="mini-player-open"
+        class="mini-player-main"
+        role="button"
+        tabindex="0"
+        aria-label="Apri player a schermo intero"
+      >
+        <img
+          id="mini-player-artwork"
+          class="mini-player-artwork"
+          src="mascotte_calci.webp?v=20260921-mascot-hd"
+          alt="Artwork della traccia"
+        />
+        <span class="mini-player-text">
+          <strong id="mini-player-title"><span class="mini-player-title-track"></span></strong>
+          <span id="mini-player-subtitle"></span>
+        </span>
+      </div>
+
+      <div class="mini-player-center">
+        <div class="mini-player-controls" aria-label="Controlli player compatto">
+          <div class="mini-player-transport-group">
+            <button
+              type="button"
+              id="mini-player-previous-track"
+              class="mini-player-control mini-player-track-control tp-audio-control tp-audio-control--secondary"
+              aria-label="Traccia precedente"
+              title="Traccia precedente"
+            >
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_previous</span>
+            </button>
+            <button
+              type="button"
+              id="mini-player-prev"
+              class="mini-player-control tp-audio-control tp-audio-control--secondary"
+              aria-label="Indietro di 10 secondi"
+            >
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">replay_10</span>
+            </button>
+            <button type="button" id="mini-player-toggle" class="mini-player-toggle tp-audio-control tp-audio-control--primary" aria-label="Play">
+              <span translate="no" class="playback-icon material-symbols-rounded" aria-hidden="true">play_arrow</span>
+            </button>
+            <button
+              type="button"
+              id="mini-player-next"
+              class="mini-player-control tp-audio-control tp-audio-control--secondary"
+              aria-label="Avanti di 10 secondi"
+            >
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">forward_10</span>
+            </button>
+            <button
+              type="button"
+              id="mini-player-next-track"
+              class="mini-player-control mini-player-track-control tp-audio-control tp-audio-control--secondary"
+              aria-label="Traccia successiva"
+              title="Traccia successiva"
+            >
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_next</span>
+            </button>
+          </div>
+          <button type="button" id="mini-player-speed-button" class="mini-player-control mini-player-speed-button tp-audio-control tp-audio-control--secondary" aria-label="Velocità di riproduzione: x1" title="Velocità di riproduzione: x1">
+            <span id="mini-player-speed-label" class="mini-player-speed-label">x1</span>
+          </button>
+        </div>
+
+        <div class="mini-player-timeline">
+          <output
+            id="mini-player-seek-feedback"
+            class="seek-feedback-status sr-only"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          ></output>
+          <span id="mini-player-current-time" class="mini-player-time" aria-hidden="true">00:00</span>
+          <span class="mini-player-progress">
+            <span id="mini-player-progress-bar" class="mini-player-progress-bar"></span>
+          </span>
+          <input
+            id="mini-player-progress-input"
+            class="mini-player-progress-input"
+            type="range"
+            min="0"
+            max="100"
+            step="0.1"
+            value="0"
+            aria-label="Posizione della traccia"
+          />
+          <span id="mini-player-duration-total" class="mini-player-time" aria-hidden="true">--:--</span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="mini-player-expand"
+        class="mini-player-expand tp-audio-control"
+        aria-label="Apri player a schermo intero"
+        title="Apri player a schermo intero"
+      >
+        <span translate="no" class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+      </button>
+    </div>
+
+    <section id="player-overlay" class="player-overlay TPPlayerSheet tp-player-sheet is-hidden" aria-hidden="true">
+      <button
+        type="button"
+        id="player-backdrop"
+        class="player-backdrop"
+        aria-label="Chiudi player"
+      ></button>
+      <article class="player-sheet" role="dialog" aria-modal="true" aria-labelledby="detail-title" tabindex="-1">
+        <div class="player-topbar">
+          <div class="player-topbar-leading">
+            <button type="button" id="player-map-button" class="player-topbar-button player-map-button" aria-label="Mostra mappa e player" title="Mostra mappa e player">
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">map</span>
+            </button>
+            <button type="button" id="player-listen-help-button" class="player-topbar-button player-listen-help-button" aria-label="Guida Full player audio" title="Guida Full player audio" aria-haspopup="dialog"><span translate="no" class="material-symbols-rounded" aria-hidden="true">help</span></button>
+            <button type="button" id="player-recenter-button" class="player-topbar-button player-map-action" aria-label="Trova la mia posizione" title="Trova la mia posizione">
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">my_location</span>
+            </button>
+            <a id="player-map-directions-button" class="player-topbar-button player-map-action" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apri indicazioni su Google Maps" title="Apri indicazioni su Google Maps">
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">location_on</span>
+            </a>
+          </div>
+          <div class="player-topbar-trailing">
+            <button type="button" id="player-map-help-button" class="player-topbar-button player-map-help-button" aria-label="Guida Mappa e player" title="Guida Mappa e player" aria-haspopup="dialog"><span translate="no" class="material-symbols-rounded" aria-hidden="true">help</span></button>
+            <button type="button" id="player-close-button" class="player-close-button" aria-label="Chiudi player">
+              <span translate="no" class="material-symbols-rounded" aria-hidden="true">close</span>
+            </button>
+          </div>
+        </div>
+        <div id="player-artwork" class="player-artwork">
+          <div class="player-artwork-stack" aria-live="off">
+            <img
+              id="detail-artwork-image"
+              class="detail-artwork-image player-artwork-layer is-photo-layer"
+              src="mascotte_calci.webp?v=20260921-mascot-hd"
+              alt="Immagine della traccia"
+            />
+            <div
+              class="player-artwork-layer is-mascot-layer mascot-motion-shell"
+              data-mascot-motion="detail"
+            >
+              <div class="mascot-breathing-shell">
+                <img
+                  id="detail-mascot-image"
+                  class="detail-mascot-image"
+                  src="assets/mascotte-mouth/mascotte_B.webp?v=20260921-mascot-hd"
+                  alt="Padre Gherardo, guida dell’itinerario"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="artwork-flip-toggle"
+            class="artwork-flip-toggle"
+            aria-label="Mostra mascotte animata"
+            aria-pressed="false"
+          >
+            <span translate="no" class="material-symbols-rounded" aria-hidden="true">swap_horiz</span>
+          </button>
+        </div>
+        <div class="player-side">
+          <div class="player-meta">
+            <p id="detail-status" class="detail-status"></p>
+            <div class="player-title-row">
+              <p id="detail-number" class="player-kicker"></p>
+              <h2 id="detail-title"><span id="detail-title-text" class="player-title-text"></span></h2>
+            </div>
+            <p id="detail-duration" class="detail-duration"></p>
+          </div>
+          <div id="audio-wrapper" class="audio-wrapper"></div>
+          <p id="audio-feedback" class="audio-feedback" aria-live="polite"></p>
+          <div class="player-timeline">
+            <output
+              id="player-seek-feedback"
+              class="seek-feedback-status sr-only"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              hidden
+            ></output>
+            <span id="player-current-time" class="player-time" aria-hidden="true">00:00</span>
+            <input
+              id="player-progress-input"
+              class="player-progress-input"
+              type="range"
+              min="0"
+              max="100"
+              step="0.1"
+              value="0"
+              aria-label="Posizione della traccia"
+            />
+            <span id="player-duration-total" class="player-time" aria-hidden="true">00:00</span>
+          </div>
+          <div class="player-command-row">
+            <div class="player-language-row">
+              <div id="player-language-selector" class="player-language-selector" aria-label="Selettore lingua del player">
+                <button type="button" id="player-language-current" class="player-language-current tp-chip" aria-haspopup="listbox" aria-controls="player-language-chips" aria-expanded="false">
+                  <span id="player-language-current-label">Italiano</span>
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">expand_more</span>
+                </button>
+                <p class="player-language-label" id="player-language-label">Lingua disponibile per la Tappa 1</p>
+              <div id="player-language-chips" class="language-chips" role="listbox"></div>
+              </div>
+            </div>
+            <div class="player-controls" aria-label="Controlli player">
+              <div class="player-transport-group">
+                <button type="button" id="player-previous-track" class="player-control-button player-track-control tp-audio-control tp-audio-control--secondary" aria-label="Tappa precedente" title="Tappa precedente">
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_previous</span>
+                </button>
+                <button type="button" id="player-prev-button" class="player-control-button tp-audio-control tp-audio-control--secondary" aria-label="Indietro di 10 secondi">
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">replay_10</span>
+                </button>
+                <button type="button" id="player-play-button" class="player-control-button tp-audio-control tp-audio-control--primary is-primary" aria-label="Riproduci audio">
+                  <span translate="no" class="playback-icon material-symbols-rounded" aria-hidden="true">play_arrow</span>
+                </button>
+                <button type="button" id="player-next-button" class="player-control-button tp-audio-control tp-audio-control--secondary" aria-label="Avanti di 10 secondi">
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">forward_10</span>
+                </button>
+                <button type="button" id="player-next-track" class="player-control-button player-track-control tp-audio-control tp-audio-control--secondary" aria-label="Tappa successiva" title="Tappa successiva">
+                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_next</span>
+                </button>
+              </div>
+              <a
+                id="player-directions-button"
+                class="player-control-button player-directions-button tp-audio-control tp-audio-control--secondary"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Apri indicazioni"
+                title="Apri indicazioni"
+                hidden
+              >
+                  <span translate="no" class="directions-icon material-symbols-rounded" aria-hidden="true">location_on</span>
+              </a>
+              <button type="button" id="player-speed-button" class="player-control-button player-speed-button tp-audio-control tp-audio-control--secondary" aria-label="Velocità di riproduzione: x1" title="Velocità di riproduzione: x1">
+                <span id="player-speed-label" class="player-speed-label">x1</span>
+              </button>
+            </div>
+          </div>
+          <div class="player-stop-navigation" aria-label="Navigazione tra tappe">
+            <div id="player-previous-preview" class="player-stop-preview player-previous-preview" hidden>
+              <div class="player-next-preview-content">
+                <img id="player-previous-preview-image" class="player-next-preview-image" src="" alt="" />
+                <div class="player-next-preview-copy">
+                  <span class="player-next-preview-label" id="player-previous-preview-label">Tappa precedente</span>
+                  <strong id="player-previous-preview-title"></strong>
+                </div>
+              </div>
+              <button type="button" id="player-previous-stop-button" class="player-next-stop-button" aria-label="Apri tappa precedente" title="Apri tappa precedente">
+                <span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+              </button>
+            </div>
+            <div id="player-next-preview" class="player-stop-preview player-next-preview" hidden>
+              <div class="player-next-preview-content">
+                <img id="player-next-preview-image" class="player-next-preview-image" src="" alt="" />
+                <div class="player-next-preview-copy">
+                  <span class="player-next-preview-label" id="player-next-preview-label">Prossima tappa</span>
+                  <strong id="player-next-preview-title"></strong>
+                </div>
+              </div>
+              <button type="button" id="player-next-stop-button" class="player-next-stop-button" aria-label="Apri prossima tappa" title="Apri prossima tappa">
+                <span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <aside id="player-transcript-dock" class="player-transcript-dock" aria-label="Trascrizione">
+          <div id="player-mobile-live-transcript" class="player-mobile-live-transcript" role="region" aria-label="Trascrizione" hidden>
+            <div id="player-mobile-live-transcript-scroll" class="player-mobile-live-transcript-scroll" aria-live="polite"></div>
+          </div>
+          <details class="detail-copy detail-copy-trigger" id="detail-copy-box">
+            <summary id="detail-copy-title" aria-label="Trascrizione" aria-controls="detail-copy-panel" title="Trascrizione">
+              <span class="player-transcript-summary-main">
+                <span translate="no" class="detail-copy-summary-icon material-symbols-rounded" aria-hidden="true">article</span>
+                <span id="detail-copy-label" class="player-transcript-label">Trascrizione</span>
+              </span>
+              <span translate="no" class="player-transcript-chevron material-symbols-rounded" aria-hidden="true">expand_more</span>
+            </summary>
+            <div id="detail-copy-panel" class="detail-copy-content player-transcript-panel" role="region" aria-labelledby="detail-copy-title" hidden>
+              <p id="detail-description"></p>
+              <span id="transcript-scroll-indicator" class="transcript-scroll-indicator" aria-hidden="true" hidden>
+                <span id="transcript-scroll-thumb" class="transcript-scroll-thumb"></span>
+              </span>
+            </div>
+          </details>
+        </aside>
+      </article>
+    </section>
+
+    <div id="player-context-guide" class="player-context-guide is-hidden" role="dialog" aria-modal="true" aria-labelledby="player-context-guide-text" aria-describedby="player-context-guide-progress" aria-hidden="true">
+      <div class="player-context-guide-veil" aria-hidden="true"></div>
+      <div id="player-context-guide-card" class="player-context-guide-card" tabindex="-1">
+        <p id="player-context-guide-progress" class="player-context-guide-progress"></p>
+        <p id="player-context-guide-text" class="player-context-guide-text"></p>
+        <div class="player-context-guide-actions">
+          <button id="player-context-guide-close" class="guide-button guide-button-secondary" type="button" aria-label="Chiudi guida">×</button>
+          <button id="player-context-guide-prev" class="guide-button guide-button-secondary" type="button" aria-label="Indietro">←</button>
+          <button id="player-context-guide-next" class="guide-button guide-button-primary" type="button" aria-label="Avanti"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+        </div>
+      </div>
+      <div id="player-context-guide-exit-confirm" class="guide-exit-confirm player-context-guide-exit-confirm" role="alertdialog" aria-modal="true" aria-labelledby="player-context-guide-exit-confirm-title" hidden>
+        <h2 id="player-context-guide-exit-confirm-title"></h2>
+        <div class="guide-exit-confirm-actions">
+          <button type="button" id="player-context-guide-exit-confirm-continue" class="guide-button guide-button-secondary"></button>
+          <button type="button" id="player-context-guide-exit-confirm-stop" class="guide-button guide-button-primary"></button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js?v=20261010-no-email-gate"></script>
+  </body>
+</html>

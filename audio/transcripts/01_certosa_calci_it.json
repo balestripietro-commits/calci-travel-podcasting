@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 1,
+  "sourceAudio": "audio/it/01_certosa_calci.mp3",
+  "duration": 114.495,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall'abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto, tantissimo silenzio. Noi certosini con il silenzio abbiamo sempre avuto un ottimo rapporto. Con quello che c'è fuori da queste mura, un po' meno. Eppure Calci, in un certo senso, l'ho sempre conosciuta. Per anni ne ho letto la storia. Ho studiato i suoi borghi, le sue chiese, i torrenti che attraversano la valle, le persone che l'hanno abitata. E da quassù l'ho anche sentita. Le campane, l'acqua che scende dalla montagna, le voci che arrivano dal paese. E nei giorni più movimentati perfino qualche rumore che avrebbe fatto storcere il naso ai miei confratelli. Insomma, Calci l'ho letta, studiata, ascoltata. Mi mancava soltanto una cosa. Vederla davvero. Così oggi ho preso una decisione. Esco. Finalmente. E visto che ormai siete qui, tanto vale che veniate con me. Ma vi avverto: non aspettatevi che vi porti semplicemente davanti a sette monumenti e vi racconti quando sono stati costruiti. Le date, credetemi, le conosco già. Quello che voglio capire è se la Calci che ho incontrato per tanti anni nei libri è davvero quella che troveremo là fuori. Vorrei attraversarla insieme a voi. Seguitemi. Lasciamo la Certosa alle nostre spalle e cominciamo a scendere verso il paese. Da qui in poi lasciamoci guidare un po' dalla curiosità. Calci non è un paese che si racconta tutto in una volta: bisogna attraversarlo, fermarsi, osservare... e mettere insieme i pezzi. E per una volta, invece di cercarli sulle pagine di un libro, direi che possiamo farlo camminando.—",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.94,
+      "text": "Benvenuti alla Certosa di Calci."
+    },
+    {
+      "start": 2.18,
+      "end": 5.64,
+      "text": "Io sono Padre Gherardo e, come forse avrete intuito"
+    },
+    {
+      "start": 5.64,
+      "end": 7.82,
+      "text": "dall'abito, sono un monaco certosino."
+    },
+    {
+      "start": 8.06,
+      "end": 9.44,
+      "text": "Questa è casa mia."
+    },
+    {
+      "start": 9.74,
+      "end": 12.12,
+      "text": "Una casa piuttosto grande, a dire il vero."
+    },
+    {
+      "start": 12.46,
+      "end": 16.48,
+      "text": "Chiostri, celle, corridoi, giardini e soprattutto"
+    },
+    {
+      "start": 16.48,
+      "end": 19.38,
+      "text": "tanto, tantissimo silenzio."
+    },
+    {
+      "start": 19.86,
+      "end": 23.2,
+      "text": "Noi certosini, con il silenzio, abbiamo sempre avuto"
+    },
+    {
+      "start": 23.2,
+      "end": 24.3,
+      "text": "un ottimo rapporto."
+    },
+    {
+      "start": 24.44,
+      "end": 27.34,
+      "text": "Con quello che c'è fuori da queste mura, un po'"
+    },
+    {
+      "start": 27.5,
+      "end": 27.7,
+      "text": "meno."
+    },
+    {
+      "start": 28.14,
+      "end": 31.7,
+      "text": "Eppure Calci, in un certo senso, l'ho sempre conosciuta."
+    },
+    {
+      "start": 31.86,
+      "end": 33.54,
+      "text": "Per anni ne ho letto la storia."
+    },
+    {
+      "start": 33.72,
+      "end": 36.84,
+      "text": "Ho studiato i suoi borghi, le sue chiese, i torrenti"
+    },
+    {
+      "start": 36.84,
+      "end": 39.4,
+      "text": "che attraversano la valle, le persone che l'hanno"
+    },
+    {
+      "start": 39.4,
+      "end": 39.94,
+      "text": "abitata."
+    },
+    {
+      "start": 40.06,
+      "end": 42.3,
+      "text": "E da quassù l'ho anche sentita."
+    },
+    {
+      "start": 42.62,
+      "end": 45.92,
+      "text": "Le campane, l'acqua che scende dalla montagna, le"
+    },
+    {
+      "start": 45.92,
+      "end": 49.72,
+      "text": "voci che arrivano dal paese e, nei giorni più movimentati,"
+    },
+    {
+      "start": 49.92,
+      "end": 52.4,
+      "text": "perfino qualche rumore che avrebbe fatto storcere"
+    },
+    {
+      "start": 52.4,
+      "end": 53.78,
+      "text": "il naso ai miei confratelli."
+    },
+    {
+      "start": 53.78,
+      "end": 58.02,
+      "text": "Insomma, Calci l'ho letta, studiata, ascoltata."
+    },
+    {
+      "start": 58.32,
+      "end": 60.0,
+      "text": "Mi mancava soltanto una cosa."
+    },
+    {
+      "start": 60.28,
+      "end": 61.42,
+      "text": "Vederla davvero."
+    },
+    {
+      "start": 61.62,
+      "end": 64.22,
+      "text": "Così, oggi, ho preso una decisione."
+    },
+    {
+      "start": 64.46,
+      "end": 65.02,
+      "text": "Esco."
+    },
+    {
+      "start": 65.54,
+      "end": 66.16,
+      "text": "Finalmente."
+    },
+    {
+      "start": 66.42,
+      "end": 69.7,
+      "text": "E visto che ormai siete qui, tanto vale che veniate"
+    },
+    {
+      "start": 69.7,
+      "end": 70.04,
+      "text": "con me."
+    },
+    {
+      "start": 70.24,
+      "end": 71.26,
+      "text": "Ma vi avverto."
+    },
+    {
+      "start": 71.5,
+      "end": 74.22,
+      "text": "Non aspettatevi che vi porti semplicemente davanti"
+    },
+    {
+      "start": 74.22,
+      "end": 77.12,
+      "text": "a sette monumenti raccontandovi quando sono stati"
+    },
+    {
+      "start": 77.12,
+      "end": 77.74,
+      "text": "costruiti."
+    },
+    {
+      "start": 77.94,
+      "end": 80.92,
+      "text": "Le date, credetemi, le conosco già."
+    },
+    {
+      "start": 81.12,
+      "end": 84.08,
+      "text": "Quello che voglio capire è se la Calci che ho incontrato"
+    },
+    {
+      "start": 84.08,
+      "end": 87.26,
+      "text": "per tanti anni nei libri sia davvero quella che troveremo"
+    },
+    {
+      "start": 87.26,
+      "end": 87.82,
+      "text": "là fuori."
+    },
+    {
+      "start": 88.12,
+      "end": 90.02,
+      "text": "Vorrei attraversarla insieme a voi."
+    },
+    {
+      "start": 90.34,
+      "end": 90.94,
+      "text": "Seguitemi."
+    },
+    {
+      "start": 91.4,
+      "end": 94.28,
+      "text": "Lasciamo la Certosa alle nostre spalle e cominciamo"
+    },
+    {
+      "start": 94.28,
+      "end": 95.56,
+      "text": "a scendere verso il paese."
+    },
+    {
+      "start": 95.94,
+      "end": 98.92,
+      "text": "Da qui in poi, lasciamoci guidare un po' dalla curiosità."
+    },
+    {
+      "start": 99.22,
+      "end": 102.06,
+      "text": "Calci non è un paese che si racconta tutto in una"
+    },
+    {
+      "start": 102.06,
+      "end": 102.42,
+      "text": "volta."
+    },
+    {
+      "start": 102.68,
+      "end": 106.84,
+      "text": "Bisogna attraversarlo, fermarsi, osservare e mettere"
+    },
+    {
+      "start": 106.84,
+      "end": 107.78,
+      "text": "insieme i pezzi."
+    },
+    {
+      "start": 107.9,
+      "end": 111.14,
+      "text": "E, per una volta, invece di cercarli sulle pagine"
+    },
+    {
+      "start": 111.14,
+      "end": 113.92,
+      "text": "di un libro, direi che possiamo farlo camminando."
+    }
+  ],
+  "text": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall'abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini e soprattutto tanto, tantissimo silenzio. Noi certosini, con il silenzio, abbiamo sempre avuto un ottimo rapporto. Con quello che c'è fuori da queste mura, un po' meno. Eppure Calci, in un certo senso, l'ho sempre conosciuta. Per anni ne ho letto la storia. Ho studiato i suoi borghi, le sue chiese, i torrenti che attraversano la valle, le persone che l'hanno abitata. E da quassù l'ho anche sentita. Le campane, l'acqua che scende dalla montagna, le voci che arrivano dal paese e, nei giorni più movimentati, perfino qualche rumore che avrebbe fatto storcere il naso ai miei confratelli. Insomma, Calci l'ho letta, studiata, ascoltata. Mi mancava soltanto una cosa. Vederla davvero. Così, oggi, ho preso una decisione. Esco. Finalmente. E visto che ormai siete qui, tanto vale che veniate con me. Ma vi avverto. Non aspettatevi che vi porti semplicemente davanti a sette monumenti raccontandovi quando sono stati costruiti. Le date, credetemi, le conosco già. Quello che voglio capire è se la Calci che ho incontrato per tanti anni nei libri sia davvero quella che troveremo là fuori. Vorrei attraversarla insieme a voi. Seguitemi. Lasciamo la Certosa alle nostre spalle e cominciamo a scendere verso il paese. Da qui in poi, lasciamoci guidare un po' dalla curiosità. Calci non è un paese che si racconta tutto in una volta. Bisogna attraversarlo, fermarsi, osservare e mettere insieme i pezzi. E, per una volta, invece di cercarli sulle pagine di un libro, direi che possiamo farlo camminando."
+}

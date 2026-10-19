@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 5,
+  "sourceAudio": "audio/it/05_palazzo_comunale.mp3",
+  "duration": 181.368,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Eccoci di nuovo nel cuore di Calci. Vi ricordate quei tre piedi? Quelli che vi ho fatto cercare sul pulpito della Pieve. Bene. Adesso avvicinatevi al Palazzo Comunale e guardate con attenzione, sopra la finestra, lo stemma di Calci. Eccoli di nuovo. Tre piedi umani, tutti rigorosamente calzati. Quando Calci divenne Comune autonomo, nel 1867, serviva anche un simbolo che lo rappresentasse. E l’anno successivo il Consiglio comunale scelse proprio quei tre piedi che abbiamo incontrato alla Pieve. Una scelta piuttosto particolare. Talmente particolare che da Firenze suggerirono perfino di sostituirli con qualcosa di più convenzionale: un olivo, il torrente Zambra, un castello... Ma i calcesani tennero i loro tre piedi. E, devo ammetterlo, fecero bene. Perché adesso possiamo finalmente affrontare una questione che ci accompagna dall’inizio del nostro viaggio. Perché Calci si chiama Calci? Questa domanda l’ho incontrata più volte nei miei studi. Qui, permettetemi, dovrei essere nel mio campo. Sono pur sempre un monaco. E soprattutto... conosco il latino. Una delle teorie più diffuse fa derivare il nome da calceus: il calzare dei Romani. Secondo questa tradizione, qui sarebbero state prodotte calzature destinate persino ai legionari romani di Pisa. Calceus, calzare. Tre piedi sullo stemma. Sembrerebbe tutto risolto. E invece no. Perché un’altra interpretazione parte da un termine molto simile, calceum, e dall’antico nome con cui questa valle compare nei documenti: locus Calcis. In questo caso Calci indicherebbe il piede, il tallone del monte. E adesso guardate per un momento dove siamo. Una valle adagiata proprio ai piedi dei monti. Ammetterete che anche questa spiegazione non è affatto male. E non abbiamo ancora finito. Esiste persino un’altra teoria, che ci porterebbe fuori dall’Italia: quella di un antico insediamento di Calcidesi, popolazioni provenienti dalla città greca di Calcide. Calzari romani. Il piede del monte. I Greci. Tre possibilità. E sapete qual è la risposta giusta? ... Non lo so. Sì. L’ho detto. Padre Gherardo, certosino, conoscitore del latino e uomo di una certa esperienza... non lo sa. Ma forse è proprio questo il bello della storia. Il passato non sempre ci lascia una risposta ordinata, pronta ad aspettarci alla fine del percorso. A volte ci lascia solo dei frammenti da interpretare. E sta a noi metterli insieme, confrontarli... e accettare che qualche domanda possa rimanere aperta. Prima di andare, però, guardate ancora una volta lo stemma. Sotto quei tre piedi compare una frase: Viret semperque virebit. Ah, qui finalmente posso tornare utile. Significa: “Verdeggia, e sempre verdeggerà.” Ricordatevi queste parole. Per adesso non aggiungo altro. Ma prima della fine del nostro viaggio torneremo a guardarle con occhi molto diversi. —",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.0,
+      "text": "Eccoci di nuovo nel cuore di Calci."
+    },
+    {
+      "start": 2.34,
+      "end": 3.88,
+      "text": "Vi ricordate quei tre piedi?"
+    },
+    {
+      "start": 4.04,
+      "end": 6.22,
+      "text": "Quelli che vi ho fatto cercare sul pulpito della"
+    },
+    {
+      "start": 6.22,
+      "end": 6.56,
+      "text": "Pieve?"
+    },
+    {
+      "start": 6.88,
+      "end": 10.64,
+      "text": "Bene, adesso avvicinatevi al Palazzo Comunale e guardate"
+    },
+    {
+      "start": 10.64,
+      "end": 14.1,
+      "text": "con attenzione, sopra la finestra, lo stemma di Calci."
+    },
+    {
+      "start": 14.42,
+      "end": 18.12,
+      "text": "Eccoli di nuovo, tre piedi umani, tutti rigorosamente"
+    },
+    {
+      "start": 18.12,
+      "end": 18.72,
+      "text": "calzati."
+    },
+    {
+      "start": 19.04,
+      "end": 23.62,
+      "text": "Quando Calci divenne comune autonomo, nel 1867, serviva"
+    },
+    {
+      "start": 23.62,
+      "end": 26.16,
+      "text": "anche un simbolo che lo rappresentasse e l'anno"
+    },
+    {
+      "start": 26.16,
+      "end": 29.22,
+      "text": "successivo il consiglio comunale scelse proprio quei"
+    },
+    {
+      "start": 29.22,
+      "end": 31.26,
+      "text": "tre piedi che abbiamo incontrato alla Pieve."
+    },
+    {
+      "start": 31.5,
+      "end": 34.74,
+      "text": "Una scelta piuttosto particolare, talmente particolare"
+    },
+    {
+      "start": 34.74,
+      "end": 38.2,
+      "text": "che, da Firenze, suggerirono perfino di sostituirli"
+    },
+    {
+      "start": 38.2,
+      "end": 39.94,
+      "text": "con qualcosa di più convenzionale."
+    },
+    {
+      "start": 40.08,
+      "end": 43.1,
+      "text": "Un olivo, il torrente Zambra, un castello."
+    },
+    {
+      "start": 43.24,
+      "end": 45.9,
+      "text": "Ma i calcesani tennero i loro tre piedi."
+    },
+    {
+      "start": 46.06,
+      "end": 48.34,
+      "text": "E, devo ammetterlo, fecero bene."
+    },
+    {
+      "start": 48.46,
+      "end": 51.14,
+      "text": "Perché adesso possiamo finalmente affrontare una"
+    },
+    {
+      "start": 51.14,
+      "end": 53.68,
+      "text": "questione che ci accompagna dall'inizio del nostro"
+    },
+    {
+      "start": 53.68,
+      "end": 54.14,
+      "text": "viaggio."
+    },
+    {
+      "start": 54.38,
+      "end": 56.5,
+      "text": "Perché Calci si chiama Calci?"
+    },
+    {
+      "start": 56.62,
+      "end": 59.5,
+      "text": "Questa domanda l'ho incontrata più volte nei miei"
+    },
+    {
+      "start": 59.5,
+      "end": 59.8,
+      "text": "studi."
+    },
+    {
+      "start": 59.9,
+      "end": 62.76,
+      "text": "Qui, permettetemi, dovrei essere nel mio campo."
+    },
+    {
+      "start": 62.96,
+      "end": 64.24,
+      "text": "Sono pur sempre un monaco."
+    },
+    {
+      "start": 64.38,
+      "end": 66.56,
+      "text": "E soprattutto conosco il latino."
+    },
+    {
+      "start": 66.8,
+      "end": 69.64,
+      "text": "Una delle teorie più diffuse fa derivare il nome"
+    },
+    {
+      "start": 69.64,
+      "end": 72.48,
+      "text": "da Calceus, il calzare dei romani."
+    },
+    {
+      "start": 72.74,
+      "end": 75.84,
+      "text": "Secondo questa tradizione, qui sarebbero state prodotte"
+    },
+    {
+      "start": 75.84,
+      "end": 78.86,
+      "text": "calzature destinate persino ai legionari romani di"
+    },
+    {
+      "start": 78.86,
+      "end": 79.16,
+      "text": "Pisa."
+    },
+    {
+      "start": 79.68,
+      "end": 82.8,
+      "text": "Calceus, calzare, tre piedi sullo stemma."
+    },
+    {
+      "start": 83.1,
+      "end": 84.44,
+      "text": "Sembrerebbe tutto risolto."
+    },
+    {
+      "start": 84.44,
+      "end": 85.46,
+      "text": "E invece no."
+    },
+    {
+      "start": 85.66,
+      "end": 88.5,
+      "text": "Perché un'altra interpretazione parte da un termine"
+    },
+    {
+      "start": 88.5,
+      "end": 91.92,
+      "text": "molto simile, calceum, e dall'antico nome con cui"
+    },
+    {
+      "start": 91.92,
+      "end": 95.28,
+      "text": "questa valle compare nei documenti, locus calcis."
+    },
+    {
+      "start": 95.52,
+      "end": 99.5,
+      "text": "In questo caso, Calci indicherebbe il piede, il tallone"
+    },
+    {
+      "start": 99.5,
+      "end": 100.08,
+      "text": "del monte."
+    },
+    {
+      "start": 100.26,
+      "end": 103.2,
+      "text": "E adesso guardate per un momento dove siamo."
+    },
+    {
+      "start": 103.44,
+      "end": 106.36,
+      "text": "Una valle adagiata proprio ai piedi dei monti."
+    },
+    {
+      "start": 106.62,
+      "end": 109.42,
+      "text": "Ammetterete che anche questa spiegazione non è affatto"
+    },
+    {
+      "start": 109.42,
+      "end": 109.72,
+      "text": "male."
+    },
+    {
+      "start": 110.02,
+      "end": 111.94,
+      "text": "E non abbiamo ancora finito."
+    },
+    {
+      "start": 112.18,
+      "end": 115.02,
+      "text": "Esiste persino un'altra teoria che ci porterebbe"
+    },
+    {
+      "start": 115.02,
+      "end": 116.1,
+      "text": "fuori dall'Italia."
+    },
+    {
+      "start": 116.26,
+      "end": 119.62,
+      "text": "Quella di un antico insediamento di calcidesi, popolazioni"
+    },
+    {
+      "start": 119.62,
+      "end": 121.84,
+      "text": "provenienti dalla città greca di Calcide."
+    },
+    {
+      "start": 122.18,
+      "end": 125.64,
+      "text": "Calzari romani, il piede del monte, i greci."
+    },
+    {
+      "start": 126.02,
+      "end": 126.92,
+      "text": "Tre possibilità."
+    },
+    {
+      "start": 127.14,
+      "end": 129.08,
+      "text": "E sapete qual è la risposta giusta?"
+    },
+    {
+      "start": 129.38,
+      "end": 130.26,
+      "text": "Non lo so."
+    },
+    {
+      "start": 130.64,
+      "end": 131.86,
+      "text": "Sì, l'ho detto."
+    },
+    {
+      "start": 132.12,
+      "end": 135.34,
+      "text": "Padre Gherardo, certosino, conoscitore del latino"
+    },
+    {
+      "start": 135.34,
+      "end": 138.0,
+      "text": "e uomo di una certa esperienza, non lo sa."
+    },
+    {
+      "start": 138.14,
+      "end": 140.96,
+      "text": "Ma forse è proprio questo il bello della storia."
+    },
+    {
+      "start": 141.12,
+      "end": 144.26,
+      "text": "Il passato non sempre ci lascia una risposta ordinata,"
+    },
+    {
+      "start": 144.54,
+      "end": 146.64,
+      "text": "pronta ad aspettarci alla fine del percorso."
+    },
+    {
+      "start": 146.86,
+      "end": 150.22,
+      "text": "A volte ci lascia soltanto dei frammenti da interpretare."
+    },
+    {
+      "start": 150.34,
+      "end": 154.22,
+      "text": "E sta a noi metterli insieme, confrontarli e accettare"
+    },
+    {
+      "start": 154.22,
+      "end": 156.6,
+      "text": "che qualche domanda possa rimanere aperta."
+    },
+    {
+      "start": 156.82,
+      "end": 159.4,
+      "text": "Prima di andare, però, guardate ancora una volta"
+    },
+    {
+      "start": 159.4,
+      "end": 160.04,
+      "text": "lo stemma."
+    },
+    {
+      "start": 160.2,
+      "end": 162.58,
+      "text": "Sotto quei tre piedi compare una frase."
+    },
+    {
+      "start": 163.12,
+      "end": 164.92,
+      "text": "Viret semperque virebit."
+    },
+    {
+      "start": 165.22,
+      "end": 167.94,
+      "text": "Ah, qui finalmente posso tornare utile."
+    },
+    {
+      "start": 168.16,
+      "end": 171.42,
+      "text": "Significa verdeggia e sempre verdeggerà."
+    },
+    {
+      "start": 171.68,
+      "end": 173.1,
+      "text": "Ricordatevi queste parole."
+    },
+    {
+      "start": 173.36,
+      "end": 175.06,
+      "text": "Per adesso non aggiungo altro."
+    },
+    {
+      "start": 175.24,
+      "end": 178.2,
+      "text": "Ma prima della fine del nostro viaggio, torneremo"
+    },
+    {
+      "start": 178.2,
+      "end": 180.92,
+      "text": "a guardarle con occhi molto diversi."
+    }
+  ],
+  "text": "Eccoci di nuovo nel cuore di Calci. Vi ricordate quei tre piedi? Quelli che vi ho fatto cercare sul pulpito della Pieve? Bene, adesso avvicinatevi al Palazzo Comunale e guardate con attenzione, sopra la finestra, lo stemma di Calci. Eccoli di nuovo, tre piedi umani, tutti rigorosamente calzati. Quando Calci divenne comune autonomo, nel 1867, serviva anche un simbolo che lo rappresentasse e l'anno successivo il consiglio comunale scelse proprio quei tre piedi che abbiamo incontrato alla Pieve. Una scelta piuttosto particolare, talmente particolare che, da Firenze, suggerirono perfino di sostituirli con qualcosa di più convenzionale. Un olivo, il torrente Zambra, un castello. Ma i calcesani tennero i loro tre piedi. E, devo ammetterlo, fecero bene. Perché adesso possiamo finalmente affrontare una questione che ci accompagna dall'inizio del nostro viaggio. Perché Calci si chiama Calci? Questa domanda l'ho incontrata più volte nei miei studi. Qui, permettetemi, dovrei essere nel mio campo. Sono pur sempre un monaco. E soprattutto conosco il latino. Una delle teorie più diffuse fa derivare il nome da Calceus, il calzare dei romani. Secondo questa tradizione, qui sarebbero state prodotte calzature destinate persino ai legionari romani di Pisa. Calceus, calzare, tre piedi sullo stemma. Sembrerebbe tutto risolto. E invece no. Perché un'altra interpretazione parte da un termine molto simile, calceum, e dall'antico nome con cui questa valle compare nei documenti, locus calcis. In questo caso, Calci indicherebbe il piede, il tallone del monte. E adesso guardate per un momento dove siamo. Una valle adagiata proprio ai piedi dei monti. Ammetterete che anche questa spiegazione non è affatto male. E non abbiamo ancora finito. Esiste persino un'altra teoria che ci porterebbe fuori dall'Italia. Quella di un antico insediamento di calcidesi, popolazioni provenienti dalla città greca di Calcide. Calzari romani, il piede del monte, i greci. Tre possibilità. E sapete qual è la risposta giusta? Non lo so. Sì, l'ho detto. Padre Gherardo, certosino, conoscitore del latino e uomo di una certa esperienza, non lo sa. Ma forse è proprio questo il bello della storia. Il passato non sempre ci lascia una risposta ordinata, pronta ad aspettarci alla fine del percorso. A volte ci lascia soltanto dei frammenti da interpretare. E sta a noi metterli insieme, confrontarli e accettare che qualche domanda possa rimanere aperta. Prima di andare, però, guardate ancora una volta lo stemma. Sotto quei tre piedi compare una frase. Viret semperque virebit. Ah, qui finalmente posso tornare utile. Significa verdeggia e sempre verdeggerà. Ricordatevi queste parole. Per adesso non aggiungo altro. Ma prima della fine del nostro viaggio, torneremo a guardarle con occhi molto diversi."
+}

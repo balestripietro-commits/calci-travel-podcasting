@@ -1,0 +1,58 @@
+:root,
+:root[data-tp-theme="calci"],
+.tp-theme-calci {
+  --tp-color-primary: #0d4f7b;
+  --tp-color-on-primary: #ffffff;
+  --tp-color-primary-container: #dcecf5;
+  --tp-color-on-primary-container: #12364c;
+  --tp-color-secondary: #1478b8;
+  --tp-color-on-secondary: #ffffff;
+  --tp-color-secondary-container: #d8edf8;
+  --tp-color-tertiary: #ddb34b;
+  --tp-color-accent: var(--tp-color-tertiary);
+  --tp-color-surface: #f7f5ef;
+  --tp-color-surface-dim: #e6e1d7;
+  --tp-color-surface-bright: #fffefa;
+  --tp-color-surface-container-lowest: #ffffff;
+  --tp-color-surface-container-low: #fbfaf6;
+  --tp-color-surface-container: #f2efe7;
+  --tp-color-surface-container-high: #e8e3d9;
+  --tp-color-surface-container-highest: #ddd7cb;
+  --tp-color-on-surface: #173b50;
+  --tp-color-on-surface-variant: #526875;
+  --tp-color-outline: #b8c8d0;
+  --tp-color-outline-variant: #dce4e7;
+  --tp-color-success: #26734d;
+  --tp-color-warning: #b36a00;
+  --tp-color-error: #b3261e;
+
+  --tp-legacy-stop-purple: #7d4fe0;
+  --tp-legacy-stop-purple-strong: #7143d2;
+  --tp-legacy-stop-purple-glow: rgba(143, 99, 232, 0.28);
+  --tp-stop-identifier-calci: var(--tp-legacy-stop-purple);
+  --tp-stop-identifier-calci-glow: var(--tp-legacy-stop-purple-glow);
+  --tp-stop-identifier-travel-tertiary: var(--tp-legacy-stop-purple);
+}
+
+.tp-theme-calci .tp-brand-strip {
+  border-radius: var(--tp-radius-xxl);
+  padding: var(--tp-space-6);
+  color: var(--tp-color-primary);
+  background:
+    radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--tp-color-tertiary) 28%, transparent), transparent 32%),
+    linear-gradient(135deg, var(--tp-color-surface-bright), var(--tp-color-surface));
+  box-shadow: var(--tp-elevation-2);
+}
+
+.tp-theme-calci .tp-brand-accent {
+  color: var(--tp-color-secondary);
+}
+
+.tp-theme-calci .tp-highlight {
+  color: var(--tp-color-tertiary);
+}
+
+.tp-theme-calci .tp-legacy-stop-number {
+  background: var(--tp-legacy-stop-purple);
+  box-shadow: 0 0 0 6px var(--tp-legacy-stop-purple-glow), var(--tp-elevation-2);
+}

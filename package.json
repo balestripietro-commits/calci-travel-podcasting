@@ -1,0 +1,22 @@
+{
+  "name": "calci-travel-podcasting",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "build": "node build-static.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:dist": "npm run build && E2E_STATIC_ROOT=dist playwright test",
+    "test:e2e:smoke": "playwright test tests/e2e/production-smoke.spec.mjs",
+    "test:e2e:desktop": "playwright test --project=desktop-chrome",
+    "test:e2e:mobile": "playwright test --project=mobile-chrome",
+    "test:e2e:mobile-low": "playwright test --project=mobile-low-chrome",
+    "test:e2e:a11y": "playwright test tests/e2e/accessibility.spec.mjs",
+    "test:e2e:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "netlify-cli": "27.4.0"
+  }
+}

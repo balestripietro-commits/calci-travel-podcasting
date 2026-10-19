@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 7,
+  "sourceAudio": "audio/it/07_monte_serra.mp3",
+  "duration": 180.663,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Eccoci arrivati alla fine. Per quest’ultima tappa non ho monumenti da raccontarvi. Niente stemmi. Niente pulpiti. Niente macine. Questa volta vi chiedo soltanto una cosa. Alzate lo sguardo. Quello davanti a voi è il Monte Serra. Novecentodiciassette metri. La cima più alta dei Monti Pisani. Io, dalla Certosa, l’ho avuto davanti agli occhi per tutta la vita. Ma c’è una storia, molto più recente di tutte quelle che vi ho raccontato finora, che conosco bene. La sera del 24 settembre 2018, sul Monte Pisano scoppiò un incendio. Le fiamme si estesero rapidamente sui versanti sopra Calci, Vicopisano e Buti. Quando tutto finì, il fuoco aveva attraversato più di mille ettari di boschi e terreni agricoli. Una parte enorme di quella superficie si trovava proprio nel territorio di Calci. Per chi vive qui, però, quei numeri raccontano soltanto una piccola parte di quello che è successo. Perché questo monte non è semplicemente lo sfondo del paese. Lo abbiamo incontrato praticamente in ogni tappa del nostro viaggio. Le sue acque hanno alimentato la Zambra. I suoi boschi hanno fornito legname a Pisa. Sulle sue pendici sono cresciuti borghi, oliveti e sentieri. Per questo, vedere bruciare il monte significò vedere bruciare una parte del paesaggio e dell’identità di Calci. I segni di quella notte non sono scomparsi in un giorno. Il recupero è iniziato subito e, anno dopo anno, il paesaggio ha continuato a trasformarsi. E adesso torniamo indietro allo stemma visto poco fa. Davanti al Palazzo Comunale vi avevo chiesto di ricordare una frase. Ve la ricordate? Viret semperque virebit. “Verdeggia, e sempre verdeggerà.” È il motto di Calci. Non significa che questa valle non possa essere ferita. La storia ci ha dimostrato il contrario. Forse significa che una ferita non è necessariamente la fine della storia. Il verde ritorna. Il paesaggio cambia. Le persone ricordano. E il paese continua. Quando siamo partiti vi avevo detto che Calci la conoscevo già. L’avevo studiata. Oggi, però, per la prima volta l’ho attraversata. E devo ammettere che è stato un bene avervi con me. Leggere la storia di un luogo è una cosa. Camminarci dentro... è tutt’altra esperienza. Io, a questo punto, dovrei probabilmente tornare verso la mia amata Certosa. Voi, invece, non siete obbligati a seguirmi. Calci ha ancora Montemagno, Nicosia, i sentieri, gli oliveti e naturalmente questo monte. Se avete ancora voglia di camminare, chiedete informazioni all’Ufficio Turismo del Comune e scegliete da dove continuare. Io per oggi ho già fatto parecchia strada. Dopotutto... sono sempre un certosino. —",
+  "reviewNote": "Tappa 7 con audio finale accodato. Tempi della seconda parte traslati sulla durata WAV del master tappa 7; controllare il raccordo audio e la sincronizzazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.28,
+      "text": "Eccoci arrivati alla fine."
+    },
+    {
+      "start": 1.5,
+      "end": 4.7,
+      "text": "Per quest'ultima tappa non ho monumenti da raccontarvi."
+    },
+    {
+      "start": 5.0,
+      "end": 8.24,
+      "text": "Niente stemmi, niente pulpiti, niente macine."
+    },
+    {
+      "start": 8.56,
+      "end": 10.8,
+      "text": "Questa volta vi chiedo soltanto una cosa."
+    },
+    {
+      "start": 11.14,
+      "end": 12.24,
+      "text": "Alzate lo sguardo."
+    },
+    {
+      "start": 12.5,
+      "end": 17.04,
+      "text": "Quello davanti a voi è il Monte Serra, 917 metri,"
+    },
+    {
+      "start": 17.34,
+      "end": 19.28,
+      "text": "la cima più alta dei Monti Pisani."
+    },
+    {
+      "start": 19.5,
+      "end": 22.36,
+      "text": "Io, dalla Certosa, l'ho avuto davanti agli occhi"
+    },
+    {
+      "start": 22.36,
+      "end": 23.28,
+      "text": "per tutta la vita."
+    },
+    {
+      "start": 23.46,
+      "end": 26.58,
+      "text": "Ma c'è una storia, molto più recente di tutte quelle"
+    },
+    {
+      "start": 26.58,
+      "end": 29.02,
+      "text": "che vi ho raccontato finora, che conosco bene."
+    },
+    {
+      "start": 29.44,
+      "end": 33.9,
+      "text": "La sera del 24 settembre 2018, sul Monte Pisano scoppiò"
+    },
+    {
+      "start": 33.9,
+      "end": 34.64,
+      "text": "un incendio."
+    },
+    {
+      "start": 34.76,
+      "end": 37.78,
+      "text": "Le fiamme si estesero rapidamente sui versanti sopra"
+    },
+    {
+      "start": 37.78,
+      "end": 39.84,
+      "text": "Calci, Vicopisano e Buti."
+    },
+    {
+      "start": 40.08,
+      "end": 42.96,
+      "text": "Quando tutto finì, il fuoco aveva attraversato più"
+    },
+    {
+      "start": 42.96,
+      "end": 45.74,
+      "text": "di mille ettari di boschi e terreni agricoli."
+    },
+    {
+      "start": 45.98,
+      "end": 48.86,
+      "text": "Una parte enorme di quella superficie si trovava"
+    },
+    {
+      "start": 48.86,
+      "end": 50.76,
+      "text": "proprio nel territorio di Calci."
+    },
+    {
+      "start": 50.92,
+      "end": 54.42,
+      "text": "Per chi vive qui, però, quei numeri raccontano soltanto"
+    },
+    {
+      "start": 54.42,
+      "end": 56.78,
+      "text": "una piccola parte di quello che è successo."
+    },
+    {
+      "start": 56.86,
+      "end": 59.88,
+      "text": "Perché questo monte non è semplicemente lo sfondo"
+    },
+    {
+      "start": 59.88,
+      "end": 60.46,
+      "text": "del paese."
+    },
+    {
+      "start": 60.76,
+      "end": 63.3,
+      "text": "Lo abbiamo incontrato praticamente in ogni tappa"
+    },
+    {
+      "start": 63.3,
+      "end": 64.26,
+      "text": "del nostro viaggio."
+    },
+    {
+      "start": 64.5,
+      "end": 67.78,
+      "text": "Le sue acque hanno alimentato la Zambra, i suoi boschi"
+    },
+    {
+      "start": 67.78,
+      "end": 71.16,
+      "text": "hanno fornito legname a Pisa, sulle sue pendici sono"
+    },
+    {
+      "start": 71.16,
+      "end": 73.78,
+      "text": "cresciuti borghi, oliveti e sentieri."
+    },
+    {
+      "start": 74.02,
+      "end": 77.24,
+      "text": "Per questo, vedere bruciare il monte significò vedere"
+    },
+    {
+      "start": 77.24,
+      "end": 80.1,
+      "text": "bruciare una parte del paesaggio e dell'identità"
+    },
+    {
+      "start": 80.1,
+      "end": 80.68,
+      "text": "di Calci."
+    },
+    {
+      "start": 80.82,
+      "end": 83.76,
+      "text": "I segni di quella notte non sono scomparsi in un"
+    },
+    {
+      "start": 83.76,
+      "end": 84.08,
+      "text": "giorno."
+    },
+    {
+      "start": 84.28,
+      "end": 87.72,
+      "text": "Il recupero è iniziato subito e, anno dopo anno,"
+    },
+    {
+      "start": 87.98,
+      "end": 90.4,
+      "text": "il paesaggio ha continuato a trasformarsi."
+    },
+    {
+      "start": 90.58,
+      "end": 93.42,
+      "text": "E adesso torniamo indietro allo stemma visto poco"
+    },
+    {
+      "start": 93.42,
+      "end": 93.64,
+      "text": "fa."
+    },
+    {
+      "start": 93.94,
+      "end": 96.92,
+      "text": "Davanti al Palazzo Comunale vi avevo chiesto di ricordare"
+    },
+    {
+      "start": 96.92,
+      "end": 97.46,
+      "text": "una frase."
+    },
+    {
+      "start": 97.68,
+      "end": 98.54,
+      "text": "Ve la ricordate?"
+    },
+    {
+      "start": 98.96,
+      "end": 101.04,
+      "text": "Viret semperque virebit."
+    },
+    {
+      "start": 101.52,
+      "end": 103.7,
+      "text": "Verdeggia e sempre verdeggerà."
+    },
+    {
+      "start": 103.9,
+      "end": 105.1,
+      "text": "È il motto di Calci."
+    },
+    {
+      "start": 105.34,
+      "end": 108.22,
+      "text": "Non significa che questa valle non possa essere ferita."
+    },
+    {
+      "start": 108.44,
+      "end": 110.36,
+      "text": "La storia ci ha dimostrato il contrario."
+    },
+    {
+      "start": 110.72,
+      "end": 114.06,
+      "text": "Forse significa che una ferita non è necessariamente"
+    },
+    {
+      "start": 114.06,
+      "end": 115.34,
+      "text": "la fine della storia."
+    },
+    {
+      "start": 115.52,
+      "end": 119.0,
+      "text": "Il verde ritorna, il paesaggio cambia, le persone"
+    },
+    {
+      "start": 119.0,
+      "end": 121.44,
+      "text": "ricordano e il paese continua."
+    },
+    {
+      "start": 121.82,
+      "end": 124.52,
+      "text": "Quando siamo partiti vi avevo detto che Calci la"
+    },
+    {
+      "start": 124.52,
+      "end": 125.24,
+      "text": "conoscevo già."
+    },
+    {
+      "start": 125.54,
+      "end": 126.44,
+      "text": "L'avevo studiata."
+    },
+    {
+      "start": 126.72,
+      "end": 129.66,
+      "text": "Oggi però, per la prima volta, l'ho attraversata."
+    },
+    {
+      "start": 129.78,
+      "end": 132.28,
+      "text": "E devo ammettere che è stato un bene avervi con me."
+    },
+    {
+      "start": 132.6,
+      "end": 134.82,
+      "text": "Leggere la storia di un luogo è una cosa."
+    },
+    {
+      "start": 135.08,
+      "end": 138.02,
+      "text": "Camminarci dentro è tutt'altra esperienza."
+    },
+    {
+      "start": 138.22,
+      "end": 141.54,
+      "text": "Io a questo punto dovrei probabilmente tornare verso"
+    },
+    {
+      "start": 141.54,
+      "end": 142.74,
+      "text": "la mia amata Certosa."
+    },
+    {
+      "start": 142.88,
+      "end": 145.52,
+      "text": "Voi invece non siete obbligati a seguirmi."
+    },
+    {
+      "start": 145.64,
+      "end": 149.28,
+      "text": "Calci ha ancora Montemagno, Nicosia, i Sentieri,"
+    },
+    {
+      "start": 149.52,
+      "end": 152.06,
+      "text": "gli Oliveti e naturalmente questo monte."
+    },
+    {
+      "start": 152.28,
+      "end": 155.54,
+      "text": "Se avete ancora voglia di camminare, chiedete informazioni"
+    },
+    {
+      "start": 155.54,
+      "end": 158.16,
+      "text": "all'Ufficio Turismo del Comune e scegliete da dove"
+    },
+    {
+      "start": 158.16,
+      "end": 158.82,
+      "text": "continuare."
+    },
+    {
+      "start": 159.28,
+      "end": 161.52,
+      "text": "Io per oggi ho già fatto parecchia strada."
+    },
+    {
+      "start": 161.88,
+      "end": 164.42,
+      "text": "Dopotutto sono sempre un certosino."
+    },
+    {
+      "start": 164.952,
+      "end": 168.232,
+      "text": "Questa traccia conclude l'itinerario audio realizzato"
+    },
+    {
+      "start": 168.232,
+      "end": 169.332,
+      "text": "dal Comune di Calci."
+    },
+    {
+      "start": 169.512,
+      "end": 172.352,
+      "text": "Grazie per aver camminato insieme a Padre Gherardo."
+    },
+    {
+      "start": 172.532,
+      "end": 175.812,
+      "text": "Se volete continuare a scoprire il territorio, rivolgetevi"
+    },
+    {
+      "start": 175.812,
+      "end": 178.312,
+      "text": "all'Ufficio Turismo del Comune per conoscere gli"
+    },
+    {
+      "start": 178.312,
+      "end": 180.392,
+      "text": "altri percorsi e luoghi da visitare."
+    }
+  ],
+  "text": "Eccoci arrivati alla fine. Per quest'ultima tappa non ho monumenti da raccontarvi. Niente stemmi, niente pulpiti, niente macine. Questa volta vi chiedo soltanto una cosa. Alzate lo sguardo. Quello davanti a voi è il Monte Serra, 917 metri, la cima più alta dei Monti Pisani. Io, dalla Certosa, l'ho avuto davanti agli occhi per tutta la vita. Ma c'è una storia, molto più recente di tutte quelle che vi ho raccontato finora, che conosco bene. La sera del 24 settembre 2018, sul Monte Pisano scoppiò un incendio. Le fiamme si estesero rapidamente sui versanti sopra Calci, Vicopisano e Buti. Quando tutto finì, il fuoco aveva attraversato più di mille ettari di boschi e terreni agricoli. Una parte enorme di quella superficie si trovava proprio nel territorio di Calci. Per chi vive qui, però, quei numeri raccontano soltanto una piccola parte di quello che è successo. Perché questo monte non è semplicemente lo sfondo del paese. Lo abbiamo incontrato praticamente in ogni tappa del nostro viaggio. Le sue acque hanno alimentato la Zambra, i suoi boschi hanno fornito legname a Pisa, sulle sue pendici sono cresciuti borghi, oliveti e sentieri. Per questo, vedere bruciare il monte significò vedere bruciare una parte del paesaggio e dell'identità di Calci. I segni di quella notte non sono scomparsi in un giorno. Il recupero è iniziato subito e, anno dopo anno, il paesaggio ha continuato a trasformarsi. E adesso torniamo indietro allo stemma visto poco fa. Davanti al Palazzo Comunale vi avevo chiesto di ricordare una frase. Ve la ricordate? Viret semperque virebit. Verdeggia e sempre verdeggerà. È il motto di Calci. Non significa che questa valle non possa essere ferita. La storia ci ha dimostrato il contrario. Forse significa che una ferita non è necessariamente la fine della storia. Il verde ritorna, il paesaggio cambia, le persone ricordano e il paese continua. Quando siamo partiti vi avevo detto che Calci la conoscevo già. L'avevo studiata. Oggi però, per la prima volta, l'ho attraversata. E devo ammettere che è stato un bene avervi con me. Leggere la storia di un luogo è una cosa. Camminarci dentro è tutt'altra esperienza. Io a questo punto dovrei probabilmente tornare verso la mia amata Certosa. Voi invece non siete obbligati a seguirmi. Calci ha ancora Montemagno, Nicosia, i Sentieri, gli Oliveti e naturalmente questo monte. Se avete ancora voglia di camminare, chiedete informazioni all'Ufficio Turismo del Comune e scegliete da dove continuare. Io per oggi ho già fatto parecchia strada. Dopotutto sono sempre un certosino. Questa traccia conclude l'itinerario audio realizzato dal Comune di Calci. Grazie per aver camminato insieme a Padre Gherardo. Se volete continuare a scoprire il territorio, rivolgetevi all'Ufficio Turismo del Comune per conoscere gli altri percorsi e luoghi da visitare."
+}

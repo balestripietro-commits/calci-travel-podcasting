@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": null,
+  "sourceAudio": "audio/it/final_outro.mp3",
+  "duration": 15.647,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": null,
+  "reviewNote": "Traccia finale originale; nel sito è accodata alla tappa 7.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.28,
+      "text": "Questa traccia conclude l'itinerario audio realizzato"
+    },
+    {
+      "start": 3.28,
+      "end": 4.38,
+      "text": "dal Comune di Calci."
+    },
+    {
+      "start": 4.56,
+      "end": 7.4,
+      "text": "Grazie per aver camminato insieme a Padre Gherardo."
+    },
+    {
+      "start": 7.58,
+      "end": 10.86,
+      "text": "Se volete continuare a scoprire il territorio, rivolgetevi"
+    },
+    {
+      "start": 10.86,
+      "end": 13.36,
+      "text": "all'Ufficio Turismo del Comune per conoscere gli"
+    },
+    {
+      "start": 13.36,
+      "end": 15.44,
+      "text": "altri percorsi e luoghi da visitare."
+    }
+  ],
+  "text": "Questa traccia conclude l'itinerario audio realizzato dal Comune di Calci. Grazie per aver camminato insieme a Padre Gherardo. Se volete continuare a scoprire il territorio, rivolgetevi all'Ufficio Turismo del Comune per conoscere gli altri percorsi e luoghi da visitare."
+}

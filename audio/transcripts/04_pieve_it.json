@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 4,
+  "sourceAudio": "audio/it/04_pieve.mp3",
+  "duration": 144.222,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Devo ammettere che questo è uno dei luoghi che aspettavo di vedere più degli altri. Davanti a voi c'è la Pieve dei Santi Giovanni ed Ermolao. Questa, devo ammetterlo, la conosco benissimo. Ne ho letto la storia, studiato le forme, incontrato il suo nome in più di un documento. Ma vederla finalmente qui, davanti a me, è un'altra cosa. Anche perché possiede una caratteristica che, da certosino, sono costretto ad ammettere con una certa umiltà. È più antica della mia amata Certosa. Quando la Certosa ancora non esisteva, qui si pregava già da secoli. La Pieve venne costruita tra la fine dell'undicesimo e l'inizio del dodicesimo secolo e, per capire davvero quanto fosse importante, bisogna partire proprio da quella parola. Pieve. Non era semplicemente una chiesa. Era il punto di riferimento religioso di tutto il territorio circostante. Qui si amministrava il battesimo, qui convergevano gli abitanti dei diversi borghi della valle e da qui dipendevano numerose chiese più piccole. Insomma, quei tanti nuclei di cui abbiamo parlato poco fa avevano già, molti secoli fa, un luogo capace di tenerli insieme. Ed era proprio questo. Ora, guardate la facciata. La pietra, le arcate, le proporzioni. Se avete già visitato Pisa, forse qualcosa vi sembrerà familiare. Non è un caso. Questa Pieve appartiene alla grande stagione del romanico pisano e ci ricorda quanto fosse stretto il rapporto tra Calci e la Repubblica di Pisa. Un rapporto che non era soltanto politico. Pensate che dai boschi di questi monti proveniva anche il legname destinato ai cantieri navali pisani. Quindi alcune delle navi che partivano da Pisa verso il Mediterraneo, in un certo senso, cominciavano il loro viaggio proprio quassù. Non male per una valle che oggi sembra così tranquilla. Ma prima di andare avanti, voglio lasciarvi un piccolo indizio. Se trovate la Pieve aperta, entrate e cercate il pulpito. Su uno dei suoi bassorilievi troverete un particolare curioso. Tre piedi calzati. Se invece la trovate chiusa, niente paura. Ve li racconto io. Tre piedi. Tre calzature. Per ora non aggiungo altro. Teneteli semplicemente a mente, perché tra poco torneranno utili. Alla prossima tappa proveremo a rispondere a una domanda apparentemente semplicissima. Perché Calci si chiama Calci? E vi anticipo soltanto una cosa. La risposta è molto meno semplice della domanda.",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.02,
+      "text": "Devo ammettere che questo è uno dei luoghi che aspettavo"
+    },
+    {
+      "start": 3.02,
+      "end": 4.44,
+      "text": "di vedere più degli altri."
+    },
+    {
+      "start": 4.9,
+      "end": 7.48,
+      "text": "Davanti a voi c'è la Pieve dei Santi Giovanni ed"
+    },
+    {
+      "start": 7.48,
+      "end": 8.02,
+      "text": "Ermolao."
+    },
+    {
+      "start": 8.26,
+      "end": 11.12,
+      "text": "Questa, devo ammetterlo, la conosco benissimo."
+    },
+    {
+      "start": 11.32,
+      "end": 14.42,
+      "text": "Ne ho letto la storia, studiato le forme, incontrato"
+    },
+    {
+      "start": 14.42,
+      "end": 16.2,
+      "text": "il suo nome in più di un documento."
+    },
+    {
+      "start": 16.4,
+      "end": 19.52,
+      "text": "Ma vederla finalmente qui, davanti a me, è un'altra"
+    },
+    {
+      "start": 19.52,
+      "end": 19.94,
+      "text": "cosa."
+    },
+    {
+      "start": 20.12,
+      "end": 23.06,
+      "text": "Anche perché possiede una caratteristica che, da"
+    },
+    {
+      "start": 23.06,
+      "end": 25.9,
+      "text": "certosino, sono costretto ad ammettere con una certa"
+    },
+    {
+      "start": 25.9,
+      "end": 26.42,
+      "text": "umiltà."
+    },
+    {
+      "start": 26.56,
+      "end": 29.06,
+      "text": "È più antica della mia amata Certosa."
+    },
+    {
+      "start": 29.06,
+      "end": 32.68,
+      "text": "Quando la Certosa ancora non esisteva, qui si pregava"
+    },
+    {
+      "start": 32.68,
+      "end": 33.52,
+      "text": "già da secoli."
+    },
+    {
+      "start": 33.78,
+      "end": 36.6,
+      "text": "La Pieve venne costruita tra la fine dell'undicesimo"
+    },
+    {
+      "start": 36.6,
+      "end": 40.18,
+      "text": "e l'inizio del dodicesimo secolo e, per capire davvero"
+    },
+    {
+      "start": 40.18,
+      "end": 42.9,
+      "text": "quanto fosse importante, bisogna partire proprio"
+    },
+    {
+      "start": 42.9,
+      "end": 43.76,
+      "text": "da quella parola."
+    },
+    {
+      "start": 43.96,
+      "end": 44.52,
+      "text": "Pieve."
+    },
+    {
+      "start": 44.74,
+      "end": 46.6,
+      "text": "Non era semplicemente una chiesa."
+    },
+    {
+      "start": 46.82,
+      "end": 49.7,
+      "text": "Era il punto di riferimento religioso di tutto il"
+    },
+    {
+      "start": 49.7,
+      "end": 51.06,
+      "text": "territorio circostante."
+    },
+    {
+      "start": 51.24,
+      "end": 54.24,
+      "text": "Qui si amministrava il battesimo, qui convergevano"
+    },
+    {
+      "start": 54.24,
+      "end": 56.74,
+      "text": "gli abitanti dei diversi borghi della valle e da"
+    },
+    {
+      "start": 56.74,
+      "end": 59.26,
+      "text": "qui dipendevano numerose chiese più piccole."
+    },
+    {
+      "start": 59.48,
+      "end": 62.28,
+      "text": "Insomma, quei tanti nuclei di cui abbiamo parlato"
+    },
+    {
+      "start": 62.28,
+      "end": 66.02,
+      "text": "poco fa avevano già, molti secoli fa, un luogo capace"
+    },
+    {
+      "start": 66.02,
+      "end": 67.12,
+      "text": "di tenerli insieme."
+    },
+    {
+      "start": 67.24,
+      "end": 68.6,
+      "text": "Ed era proprio questo."
+    },
+    {
+      "start": 68.94,
+      "end": 70.54,
+      "text": "Ora, guardate la facciata."
+    },
+    {
+      "start": 70.86,
+      "end": 73.52,
+      "text": "La pietra, le arcate, le proporzioni."
+    },
+    {
+      "start": 73.8,
+      "end": 77.08,
+      "text": "Se avete già visitato Pisa, forse qualcosa vi sembrerà"
+    },
+    {
+      "start": 77.08,
+      "end": 77.7,
+      "text": "familiare."
+    },
+    {
+      "start": 77.96,
+      "end": 78.82,
+      "text": "Non è un caso."
+    },
+    {
+      "start": 78.82,
+      "end": 81.74,
+      "text": "Questa Pieve appartiene alla grande stagione del"
+    },
+    {
+      "start": 81.74,
+      "end": 84.66,
+      "text": "romanico pisano e ci ricorda quanto fosse stretto"
+    },
+    {
+      "start": 84.66,
+      "end": 87.24,
+      "text": "il rapporto tra Calci e la Repubblica di Pisa."
+    },
+    {
+      "start": 87.4,
+      "end": 89.7,
+      "text": "Un rapporto che non era soltanto politico."
+    },
+    {
+      "start": 89.94,
+      "end": 92.52,
+      "text": "Pensate che dai boschi di questi monti proveniva"
+    },
+    {
+      "start": 92.52,
+      "end": 95.34,
+      "text": "anche il legname destinato ai cantieri navali pisani."
+    },
+    {
+      "start": 95.54,
+      "end": 98.28,
+      "text": "Quindi alcune delle navi che partivano da Pisa verso"
+    },
+    {
+      "start": 98.28,
+      "end": 101.24,
+      "text": "il Mediterraneo, in un certo senso, cominciavano"
+    },
+    {
+      "start": 101.24,
+      "end": 102.76,
+      "text": "il loro viaggio proprio quassù."
+    },
+    {
+      "start": 103.04,
+      "end": 105.96,
+      "text": "Non male per una valle che oggi sembra così tranquilla."
+    },
+    {
+      "start": 105.96,
+      "end": 109.02,
+      "text": "Ma prima di andare avanti, voglio lasciarvi un piccolo"
+    },
+    {
+      "start": 109.02,
+      "end": 109.54,
+      "text": "indizio."
+    },
+    {
+      "start": 109.68,
+      "end": 113.06,
+      "text": "Se trovate la Pieve aperta, entrate e cercate il"
+    },
+    {
+      "start": 113.06,
+      "end": 113.54,
+      "text": "pulpito."
+    },
+    {
+      "start": 113.76,
+      "end": 116.76,
+      "text": "Su uno dei suoi bassorilievi troverete un particolare"
+    },
+    {
+      "start": 116.76,
+      "end": 117.38,
+      "text": "curioso."
+    },
+    {
+      "start": 117.56,
+      "end": 118.96,
+      "text": "Tre piedi calzati."
+    },
+    {
+      "start": 119.22,
+      "end": 121.58,
+      "text": "Se invece la trovate chiusa, niente paura."
+    },
+    {
+      "start": 121.82,
+      "end": 122.8,
+      "text": "Ve li racconto io."
+    },
+    {
+      "start": 123.12,
+      "end": 123.92,
+      "text": "Tre piedi."
+    },
+    {
+      "start": 124.18,
+      "end": 125.12,
+      "text": "Tre calzature."
+    },
+    {
+      "start": 125.42,
+      "end": 126.9,
+      "text": "Per ora non aggiungo altro."
+    },
+    {
+      "start": 127.08,
+      "end": 130.5,
+      "text": "Teneteli semplicemente a mente, perché tra poco torneranno"
+    },
+    {
+      "start": 130.5,
+      "end": 130.88,
+      "text": "utili."
+    },
+    {
+      "start": 131.1,
+      "end": 133.7,
+      "text": "Alla prossima tappa proveremo a rispondere a una"
+    },
+    {
+      "start": 133.7,
+      "end": 135.7,
+      "text": "domanda apparentemente semplicissima."
+    },
+    {
+      "start": 135.7,
+      "end": 138.12,
+      "text": "Perché Calci si chiama Calci?"
+    },
+    {
+      "start": 138.26,
+      "end": 140.18,
+      "text": "E vi anticipo soltanto una cosa."
+    },
+    {
+      "start": 140.38,
+      "end": 143.5,
+      "text": "La risposta è molto meno semplice della domanda."
+    }
+  ],
+  "text": "Devo ammettere che questo è uno dei luoghi che aspettavo di vedere più degli altri. Davanti a voi c'è la Pieve dei Santi Giovanni ed Ermolao. Questa, devo ammetterlo, la conosco benissimo. Ne ho letto la storia, studiato le forme, incontrato il suo nome in più di un documento. Ma vederla finalmente qui, davanti a me, è un'altra cosa. Anche perché possiede una caratteristica che, da certosino, sono costretto ad ammettere con una certa umiltà. È più antica della mia amata Certosa. Quando la Certosa ancora non esisteva, qui si pregava già da secoli. La Pieve venne costruita tra la fine dell'undicesimo e l'inizio del dodicesimo secolo e, per capire davvero quanto fosse importante, bisogna partire proprio da quella parola. Pieve. Non era semplicemente una chiesa. Era il punto di riferimento religioso di tutto il territorio circostante. Qui si amministrava il battesimo, qui convergevano gli abitanti dei diversi borghi della valle e da qui dipendevano numerose chiese più piccole. Insomma, quei tanti nuclei di cui abbiamo parlato poco fa avevano già, molti secoli fa, un luogo capace di tenerli insieme. Ed era proprio questo. Ora, guardate la facciata. La pietra, le arcate, le proporzioni. Se avete già visitato Pisa, forse qualcosa vi sembrerà familiare. Non è un caso. Questa Pieve appartiene alla grande stagione del romanico pisano e ci ricorda quanto fosse stretto il rapporto tra Calci e la Repubblica di Pisa. Un rapporto che non era soltanto politico. Pensate che dai boschi di questi monti proveniva anche il legname destinato ai cantieri navali pisani. Quindi alcune delle navi che partivano da Pisa verso il Mediterraneo, in un certo senso, cominciavano il loro viaggio proprio quassù. Non male per una valle che oggi sembra così tranquilla. Ma prima di andare avanti, voglio lasciarvi un piccolo indizio. Se trovate la Pieve aperta, entrate e cercate il pulpito. Su uno dei suoi bassorilievi troverete un particolare curioso. Tre piedi calzati. Se invece la trovate chiusa, niente paura. Ve li racconto io. Tre piedi. Tre calzature. Per ora non aggiungo altro. Teneteli semplicemente a mente, perché tra poco torneranno utili. Alla prossima tappa proveremo a rispondere a una domanda apparentemente semplicissima. Perché Calci si chiama Calci? E vi anticipo soltanto una cosa. La risposta è molto meno semplice della domanda."
+}

@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 3,
+  "sourceAudio": "audio/it/03_ponte_zambra.mp3",
+  "duration": 169.482,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Eccoci sul ponte. Vi avevo chiesto di guardare sotto di voi. Fatelo. Quella che vedete scorrere è la Zambra. Anzi, per essere precisi, dovrei dire una delle Zambre: questa valle è attraversata da più corsi d’acqua che per secoli hanno condizionato la posizione dei borghi e la vita di chi li abitava. Oggi magari vi sembra soltanto un torrente. Ma se fossimo stati qui qualche secolo fa, probabilmente lo avreste guardato con occhi molto diversi. Perché quest’acqua... lavorava. E lavorava parecchio. Fin dal Medioevo i calcesani impararono a intercettarla e a guidarla attraverso canali in muratura. Uno di questi sistemi era chiamato Aldio: l’acqua veniva portata fino alle grandi ruote idrauliche, le metteva in movimento e poi proseguiva il suo cammino verso valle. E una ruota che gira significa energia. Energia per macinare il grano. Energia per lavorare le olive. Energia per far funzionare mulini, frantoi e altri opifici. Insomma, molto prima delle prese elettriche, dei motori e delle nostre comodità moderne, qui bastavano una discesa, una ruota... e dell’acqua che sapesse dove andare. E i calcesani, evidentemente, sapevano benissimo dove mandarla. Pensate che la prima notizia di un molino a Calci risale addirittura al 1057. Ma il dato che preferisco viene da molti secoli dopo. Alla metà dell’Ottocento, in questa valle erano presenti 124 molini e 34 frantoi. Centocinquantotto attività legate, direttamente o indirettamente, a una valle che aveva imparato a sfruttare ogni salto e ogni corso d’acqua. Centocinquantotto. Guardatevi intorno. Non sembra, vero? E infatti a questo punto qualcuno potrebbe chiedersi: dove sono finiti tutti? Con il tempo arrivarono sistemi di produzione più moderni, la concorrenza dei molini industriali e infine l’energia elettrica, che raggiunse Calci nel 1914. Poco alla volta le vecchie ruote smisero di girare; molti opifici furono trasformati, altri scomparvero e alcuni edifici divennero semplicemente case. Ed è forse questa la cosa più curiosa. Oggi potete attraversare Calci senza vedere cento mulini. Ma il paese che state attraversando è cresciuto anche grazie a loro. Le ruote quasi non si sentono più. L’acqua, invece, è ancora qui. Scorre sotto i vostri piedi esattamente come prima. E se continuate a seguirmi, scoprirete che i calcesani quella storia di acqua, mugnai e macine... non l’hanno dimenticata affatto. Ma per quello, dovrete avere ancora un po’ di pazienza. Ora continuiamo. La prossima tappa ci porta davanti a un edificio che ha una caratteristica capace di mettere alla prova perfino l’orgoglio di un certosino: è più antico della mia amata Certosa. —",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.08,
+      "text": "Finalmente siete arrivati sul ponte."
+    },
+    {
+      "start": 2.38,
+      "end": 4.48,
+      "text": "Vi avevo chiesto di guardare sotto di voi."
+    },
+    {
+      "start": 4.78,
+      "end": 5.28,
+      "text": "Fatelo."
+    },
+    {
+      "start": 5.54,
+      "end": 7.84,
+      "text": "Quella che vedete scorrere è la Zambra."
+    },
+    {
+      "start": 8.06,
+      "end": 11.72,
+      "text": "Anzi, per essere precisi, dovrei dire una delle zambre."
+    },
+    {
+      "start": 12.0,
+      "end": 14.78,
+      "text": "Questa valle è attraversata da più corsi d'acqua"
+    },
+    {
+      "start": 14.78,
+      "end": 17.42,
+      "text": "che per secoli hanno condizionato la posizione dei"
+    },
+    {
+      "start": 17.42,
+      "end": 19.28,
+      "text": "borghi e la vita di chi li abitava."
+    },
+    {
+      "start": 19.52,
+      "end": 22.58,
+      "text": "Oggi magari vi sembra soltanto un torrente, ma se"
+    },
+    {
+      "start": 22.58,
+      "end": 25.42,
+      "text": "fossimo stati qui qualche secolo fa, probabilmente"
+    },
+    {
+      "start": 25.42,
+      "end": 27.9,
+      "text": "lo avreste guardato con occhi molto diversi."
+    },
+    {
+      "start": 27.9,
+      "end": 30.34,
+      "text": "Perché quest'acqua lavorava."
+    },
+    {
+      "start": 30.48,
+      "end": 31.9,
+      "text": "E lavorava parecchio."
+    },
+    {
+      "start": 32.1,
+      "end": 35.56,
+      "text": "Fin dal Medioevo i calcesani impararono a intercettarla"
+    },
+    {
+      "start": 35.56,
+      "end": 37.88,
+      "text": "e a guidarla attraverso canali in muratura."
+    },
+    {
+      "start": 38.12,
+      "end": 40.68,
+      "text": "Uno di questi sistemi era chiamato aldio."
+    },
+    {
+      "start": 40.82,
+      "end": 44.22,
+      "text": "L'acqua veniva portata fino alle grandi ruote idrauliche,"
+    },
+    {
+      "start": 44.42,
+      "end": 47.44,
+      "text": "le metteva in movimento e poi proseguiva il suo cammino"
+    },
+    {
+      "start": 47.44,
+      "end": 48.08,
+      "text": "verso valle."
+    },
+    {
+      "start": 48.24,
+      "end": 50.88,
+      "text": "E una ruota che gira significa energia."
+    },
+    {
+      "start": 51.2,
+      "end": 53.16,
+      "text": "Energia per macinare il grano."
+    },
+    {
+      "start": 53.34,
+      "end": 55.12,
+      "text": "Energia per lavorare le olive."
+    },
+    {
+      "start": 55.44,
+      "end": 58.76,
+      "text": "Energia per far funzionare mulini, frantoi e altri"
+    },
+    {
+      "start": 58.76,
+      "end": 59.36,
+      "text": "opifici."
+    },
+    {
+      "start": 59.58,
+      "end": 62.48,
+      "text": "Insomma, molto prima delle prese elettriche, dei"
+    },
+    {
+      "start": 62.48,
+      "end": 65.68,
+      "text": "motori e delle nostre comodità moderne, qui bastavano"
+    },
+    {
+      "start": 65.68,
+      "end": 68.86,
+      "text": "una discesa, una ruota e dell'acqua che sapesse"
+    },
+    {
+      "start": 68.86,
+      "end": 69.46,
+      "text": "dove andare."
+    },
+    {
+      "start": 69.68,
+      "end": 73.28,
+      "text": "E i calcesani, evidentemente, sapevano benissimo"
+    },
+    {
+      "start": 73.28,
+      "end": 74.1,
+      "text": "dove mandarla."
+    },
+    {
+      "start": 74.28,
+      "end": 76.94,
+      "text": "Pensate che la prima notizia di un mulino a Calci"
+    },
+    {
+      "start": 76.94,
+      "end": 79.24,
+      "text": "risale addirittura al 1057."
+    },
+    {
+      "start": 79.74,
+      "end": 82.86,
+      "text": "Ma il dato che preferisco viene da molti secoli dopo."
+    },
+    {
+      "start": 83.2,
+      "end": 85.92,
+      "text": "Alla metà dell'Ottocento, in questa valle, erano"
+    },
+    {
+      "start": 85.92,
+      "end": 89.58,
+      "text": "presenti 124 molini e 34 frantoi."
+    },
+    {
+      "start": 90.36,
+      "end": 93.96,
+      "text": "158 attività legate, direttamente o indirettamente,"
+    },
+    {
+      "start": 94.12,
+      "end": 97.22,
+      "text": "a una valle che aveva imparato a sfruttare ogni salto"
+    },
+    {
+      "start": 97.22,
+      "end": 98.52,
+      "text": "e ogni corso d'acqua."
+    },
+    {
+      "start": 99.62,
+      "end": 100.22,
+      "text": "158."
+    },
+    {
+      "start": 100.7,
+      "end": 101.74,
+      "text": "Guardatevi intorno."
+    },
+    {
+      "start": 102.0,
+      "end": 102.96,
+      "text": "Non sembra, vero?"
+    },
+    {
+      "start": 103.1,
+      "end": 105.92,
+      "text": "E infatti a questo punto qualcuno potrebbe chiedersi"
+    },
+    {
+      "start": 105.92,
+      "end": 107.36,
+      "text": "dove sono finiti tutti."
+    },
+    {
+      "start": 107.68,
+      "end": 110.5,
+      "text": "Con il tempo arrivarono sistemi di produzione più"
+    },
+    {
+      "start": 110.5,
+      "end": 113.46,
+      "text": "moderni, la concorrenza dei mulini industriali e"
+    },
+    {
+      "start": 113.46,
+      "end": 116.3,
+      "text": "infine l'energia elettrica, che raggiunse Calci"
+    },
+    {
+      "start": 116.3,
+      "end": 117.62,
+      "text": "nel 1914."
+    },
+    {
+      "start": 118.36,
+      "end": 121.3,
+      "text": "Poco alla volta le vecchie ruote smisero di girare."
+    },
+    {
+      "start": 121.58,
+      "end": 124.88,
+      "text": "Molti opifici furono trasformati, altri scomparvero"
+    },
+    {
+      "start": 124.88,
+      "end": 127.8,
+      "text": "e alcuni edifici divennero semplicemente case."
+    },
+    {
+      "start": 128.02,
+      "end": 130.2,
+      "text": "Ed è forse questa la cosa più curiosa."
+    },
+    {
+      "start": 130.4,
+      "end": 134.16,
+      "text": "Oggi potete attraversare Calci senza vedere 100 mulini,"
+    },
+    {
+      "start": 134.26,
+      "end": 137.38,
+      "text": "ma il paese che state attraversando è cresciuto anche"
+    },
+    {
+      "start": 137.38,
+      "end": 138.18,
+      "text": "grazie a loro."
+    },
+    {
+      "start": 138.36,
+      "end": 140.26,
+      "text": "Le ruote quasi non si sentono più."
+    },
+    {
+      "start": 140.54,
+      "end": 142.42,
+      "text": "L'acqua invece è ancora qui."
+    },
+    {
+      "start": 142.74,
+      "end": 145.74,
+      "text": "Scorre sotto i vostri piedi esattamente come prima."
+    },
+    {
+      "start": 145.9,
+      "end": 149.2,
+      "text": "E se continuate a seguirmi scoprirete che i calcesani"
+    },
+    {
+      "start": 149.2,
+      "end": 152.86,
+      "text": "quella storia di acqua, mugnai e macine non l'hanno"
+    },
+    {
+      "start": 152.86,
+      "end": 154.0,
+      "text": "dimenticata affatto."
+    },
+    {
+      "start": 154.14,
+      "end": 157.2,
+      "text": "Ma per quello dovrete avere ancora un po' di pazienza."
+    },
+    {
+      "start": 157.42,
+      "end": 158.36,
+      "text": "Ora continuiamo."
+    },
+    {
+      "start": 158.52,
+      "end": 161.22,
+      "text": "La prossima tappa ci porta davanti a un edificio"
+    },
+    {
+      "start": 161.22,
+      "end": 163.52,
+      "text": "che ha una caratteristica capace di mettere alla"
+    },
+    {
+      "start": 163.52,
+      "end": 165.9,
+      "text": "prova perfino l'orgoglio di un certosino."
+    },
+    {
+      "start": 166.04,
+      "end": 168.74,
+      "text": "È più antico della mia amata Certosa."
+    }
+  ],
+  "text": "Finalmente siete arrivati sul ponte. Vi avevo chiesto di guardare sotto di voi. Fatelo. Quella che vedete scorrere è la Zambra. Anzi, per essere precisi, dovrei dire una delle zambre. Questa valle è attraversata da più corsi d'acqua che per secoli hanno condizionato la posizione dei borghi e la vita di chi li abitava. Oggi magari vi sembra soltanto un torrente, ma se fossimo stati qui qualche secolo fa, probabilmente lo avreste guardato con occhi molto diversi. Perché quest'acqua lavorava. E lavorava parecchio. Fin dal Medioevo i calcesani impararono a intercettarla e a guidarla attraverso canali in muratura. Uno di questi sistemi era chiamato aldio. L'acqua veniva portata fino alle grandi ruote idrauliche, le metteva in movimento e poi proseguiva il suo cammino verso valle. E una ruota che gira significa energia. Energia per macinare il grano. Energia per lavorare le olive. Energia per far funzionare mulini, frantoi e altri opifici. Insomma, molto prima delle prese elettriche, dei motori e delle nostre comodità moderne, qui bastavano una discesa, una ruota e dell'acqua che sapesse dove andare. E i calcesani, evidentemente, sapevano benissimo dove mandarla. Pensate che la prima notizia di un mulino a Calci risale addirittura al 1057. Ma il dato che preferisco viene da molti secoli dopo. Alla metà dell'Ottocento, in questa valle, erano presenti 124 molini e 34 frantoi. 158 attività legate, direttamente o indirettamente, a una valle che aveva imparato a sfruttare ogni salto e ogni corso d'acqua. 158. Guardatevi intorno. Non sembra, vero? E infatti a questo punto qualcuno potrebbe chiedersi dove sono finiti tutti. Con il tempo arrivarono sistemi di produzione più moderni, la concorrenza dei mulini industriali e infine l'energia elettrica, che raggiunse Calci nel 1914. Poco alla volta le vecchie ruote smisero di girare. Molti opifici furono trasformati, altri scomparvero e alcuni edifici divennero semplicemente case. Ed è forse questa la cosa più curiosa. Oggi potete attraversare Calci senza vedere 100 mulini, ma il paese che state attraversando è cresciuto anche grazie a loro. Le ruote quasi non si sentono più. L'acqua invece è ancora qui. Scorre sotto i vostri piedi esattamente come prima. E se continuate a seguirmi scoprirete che i calcesani quella storia di acqua, mugnai e macine non l'hanno dimenticata affatto. Ma per quello dovrete avere ancora un po' di pazienza. Ora continuiamo. La prossima tappa ci porta davanti a un edificio che ha una caratteristica capace di mettere alla prova perfino l'orgoglio di un certosino. È più antico della mia amata Certosa."
+}

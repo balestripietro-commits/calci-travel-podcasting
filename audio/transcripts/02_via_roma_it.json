@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": 2,
+  "sourceAudio": "audio/it/02_via_roma.mp3",
+  "duration": 163.527,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": "Eccoci qua. Fermiamoci un attimo. Devo ammetterlo: sulle mappe Calci mi è sempre sembrata molto più semplice. Una strada che scende lungo la valle, qualche campanile, le case, gli olivi tutt’intorno. Poi si esce, si comincia a camminare… e ci si accorge che le cose sono un po’ più complicate. Guardate la strada che avete davanti. Questa è Via Roma e, per conoscere Calci, è un buon punto da cui cominciare. È una strada che attraversa il paese e ne collega alcuni dei luoghi più importanti: alle nostre spalle abbiamo lasciato la Certosa e, proseguendo, raggiungeremo tra poco la Pieve. Ed è proprio verso la Pieve che vorrei farvi guardare. Oggi è qui che riconosciamo il centro di Calci. Ma non immaginatevi un paese nato attorno a una piazza e poi cresciuto, anno dopo anno, verso l’esterno. È successo quasi il contrario. Per secoli, questa valle è stata abitata da tanti piccoli nuclei distinti, con nomi e storie proprie. Con il tempo le case sono aumentate, le distanze si sono accorciate e molti di quei borghi hanno finito quasi per toccarsi. Adesso voltatevi verso la Certosa. Alla vostra destra, più in basso nella valle, si trovano gli antichi borghi de La Corte e San Piero. Proseguendo con lo sguardo sempre sulla destra rispetto alla Certosa incontriamo Rezzano e Nicosia. Nicosia, tra l’altro, ha un nome che arriva da molto più lontano di quanto possiate immaginare. Nel Duecento, a Nicosia, fu fondato un convento per volontà di Ugo da Fagiano, che era stato vescovo di Nicosia, a Cipro. E quel nome, arrivato da un’isola del Mediterraneo, è rimasto legato per secoli a questo piccolo angolo della Val Graziosa. Spostando invece lo sguardo sulla sinistra della Certosa, più in là nella valle, troviamo Montemagno, altro borgo con una storia molto antica e per lungo tempo amministrativamente separato da Calci: entrò definitivamente a far parte del Comune soltanto nel 1884. E poi ci sono Pontegrande, Castelmaggiore, Tre Colli, oltre ad altri piccoli nuclei e località disseminati lungo la valle e sulle sue pendici. Insomma, se siete arrivati qui cercando un unico, preciso “centro di Calci”, forse adesso cominciate a capire perché non è così semplice trovarlo. Calci è cresciuta mettendo insieme luoghi diversi. E Via Roma, attraversandola da una parte all’altra, sembra quasi il filo che prova ancora oggi a cucirli insieme. Ma c’è un’altra cosa che ha contribuito, per secoli, a dare forma a questa valle e alla vita di chi la abitava. Per scoprirla dobbiamo continuare a camminare. Alla prossima tappa ci fermeremo sopra un ponte. E questa volta vi chiederò di guardare non davanti a voi... ma sotto di voi. —",
+  "reviewNote": "Trascrizione automatica da controllare contro l’audio; correggere parole, punteggiatura e tempi prima della pubblicazione.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.62,
+      "text": "Eccoci qua."
+    },
+    {
+      "start": 1.14,
+      "end": 2.12,
+      "text": "Fermiamoci un attimo."
+    },
+    {
+      "start": 2.46,
+      "end": 3.5,
+      "text": "Devo ammetterlo."
+    },
+    {
+      "start": 3.7,
+      "end": 6.6,
+      "text": "Sulle mappe Calci mi è sempre sembrata molto più"
+    },
+    {
+      "start": 6.6,
+      "end": 7.18,
+      "text": "semplice."
+    },
+    {
+      "start": 7.38,
+      "end": 10.54,
+      "text": "Una strada che scende lungo la valle, qualche campanile,"
+    },
+    {
+      "start": 10.78,
+      "end": 12.78,
+      "text": "le case, gli olivi tutti intorno."
+    },
+    {
+      "start": 12.94,
+      "end": 16.52,
+      "text": "Poi si esce, si comincia a camminare e ci si accorge"
+    },
+    {
+      "start": 16.52,
+      "end": 18.62,
+      "text": "che le cose sono un po' più complicate."
+    },
+    {
+      "start": 18.96,
+      "end": 20.82,
+      "text": "Guardate la strada che avete davanti."
+    },
+    {
+      "start": 21.0,
+      "end": 24.58,
+      "text": "Questa è Via Roma e, per conoscere Calci, è un buon"
+    },
+    {
+      "start": 24.58,
+      "end": 25.82,
+      "text": "punto da cui cominciare."
+    },
+    {
+      "start": 25.98,
+      "end": 28.64,
+      "text": "È una strada che attraversa il paese e ne collega"
+    },
+    {
+      "start": 28.64,
+      "end": 30.46,
+      "text": "alcuni dei luoghi più importanti."
+    },
+    {
+      "start": 30.7,
+      "end": 33.54,
+      "text": "Alle nostre spalle abbiamo lasciato la Certosa e,"
+    },
+    {
+      "start": 33.6,
+      "end": 36.18,
+      "text": "proseguendo, raggiungeremo tra poco la Pieve."
+    },
+    {
+      "start": 36.34,
+      "end": 39.34,
+      "text": "Ed è proprio verso la Pieve che vorrei farvi guardare."
+    },
+    {
+      "start": 39.6,
+      "end": 42.32,
+      "text": "Oggi è qui che riconosciamo il centro di Calci."
+    },
+    {
+      "start": 42.46,
+      "end": 45.82,
+      "text": "Ma non immaginatevi un paese nato attorno a una piazza"
+    },
+    {
+      "start": 45.82,
+      "end": 49.02,
+      "text": "e poi cresciuto anno dopo anno verso l'esterno."
+    },
+    {
+      "start": 49.08,
+      "end": 50.96,
+      "text": "È successo quasi il contrario."
+    },
+    {
+      "start": 51.26,
+      "end": 54.04,
+      "text": "Per secoli questa valle è stata abitata da tanti"
+    },
+    {
+      "start": 54.04,
+      "end": 57.28,
+      "text": "piccoli nuclei distinti, con nomi e storie proprie."
+    },
+    {
+      "start": 57.44,
+      "end": 60.4,
+      "text": "Con il tempo le case sono aumentate, le distanze"
+    },
+    {
+      "start": 60.4,
+      "end": 63.46,
+      "text": "si sono accorciate e molti di quei borghi hanno finito"
+    },
+    {
+      "start": 63.46,
+      "end": 64.66,
+      "text": "quasi per toccarsi."
+    },
+    {
+      "start": 64.94,
+      "end": 67.22,
+      "text": "Adesso voltatevi verso la Certosa."
+    },
+    {
+      "start": 67.52,
+      "end": 70.24,
+      "text": "Alla vostra destra, più in basso nella valle, si"
+    },
+    {
+      "start": 70.24,
+      "end": 72.92,
+      "text": "trovano gli antichi borghi della Corte e San Piero."
+    },
+    {
+      "start": 73.24,
+      "end": 76.06,
+      "text": "Proseguendo con lo sguardo sempre sulla destra rispetto"
+    },
+    {
+      "start": 76.06,
+      "end": 78.98,
+      "text": "alla Certosa, incontriamo Rezzano e Nicosia."
+    },
+    {
+      "start": 79.36,
+      "end": 82.26,
+      "text": "Nicosia, tra l'altro, ha un nome che arriva da molto"
+    },
+    {
+      "start": 82.26,
+      "end": 84.44,
+      "text": "più lontano di quanto possiate immaginare."
+    },
+    {
+      "start": 84.58,
+      "end": 88.5,
+      "text": "Nel 200, a Nicosia, fu fondato un convento per volontà"
+    },
+    {
+      "start": 88.5,
+      "end": 91.28,
+      "text": "di Ugo da Fagiano, che era stato vescovo di Nicosia,"
+    },
+    {
+      "start": 91.38,
+      "end": 91.94,
+      "text": "a Cipro."
+    },
+    {
+      "start": 92.08,
+      "end": 95.12,
+      "text": "E quel nome, arrivato da un'isola del Mediterraneo,"
+    },
+    {
+      "start": 95.24,
+      "end": 98.28,
+      "text": "è rimasto legato per secoli a questo piccolo angolo"
+    },
+    {
+      "start": 98.28,
+      "end": 99.28,
+      "text": "della Val Graziosa."
+    },
+    {
+      "start": 99.58,
+      "end": 102.0,
+      "text": "Spostando invece lo sguardo sulla sinistra della"
+    },
+    {
+      "start": 102.0,
+      "end": 105.32,
+      "text": "Certosa, più in là nella valle, troviamo Montemagno,"
+    },
+    {
+      "start": 105.58,
+      "end": 108.68,
+      "text": "altro borgo con una storia molto antica e per lungo"
+    },
+    {
+      "start": 108.68,
+      "end": 111.1,
+      "text": "tempo amministrativamente separato da Calci."
+    },
+    {
+      "start": 111.38,
+      "end": 114.48,
+      "text": "Entrò definitivamente a far parte del comune soltanto"
+    },
+    {
+      "start": 114.48,
+      "end": 116.02,
+      "text": "nel 1884."
+    },
+    {
+      "start": 116.46,
+      "end": 120.22,
+      "text": "E poi ci sono Ponte Grande, Castelmaggiore, Tre Colli,"
+    },
+    {
+      "start": 120.5,
+      "end": 123.3,
+      "text": "oltre ad altri piccoli nuclei e località disseminati"
+    },
+    {
+      "start": 123.3,
+      "end": 125.2,
+      "text": "lungo la valle e sulle sue pendici."
+    },
+    {
+      "start": 125.46,
+      "end": 128.52,
+      "text": "Insomma, se siete arrivati qui cercando un unico,"
+    },
+    {
+      "start": 128.72,
+      "end": 131.98,
+      "text": "preciso centro di Calci, forse adesso cominciate"
+    },
+    {
+      "start": 131.98,
+      "end": 134.54,
+      "text": "a capire perché non è così semplice trovarlo."
+    },
+    {
+      "start": 134.78,
+      "end": 137.82,
+      "text": "Calci è cresciuta mettendo insieme luoghi diversi."
+    },
+    {
+      "start": 137.92,
+      "end": 140.84,
+      "text": "E via Roma, attraversandola da una parte all'altra,"
+    },
+    {
+      "start": 141.14,
+      "end": 144.02,
+      "text": "sembra quasi il filo che prova ancora oggi a cucirli"
+    },
+    {
+      "start": 144.02,
+      "end": 144.48,
+      "text": "insieme."
+    },
+    {
+      "start": 144.62,
+      "end": 147.76,
+      "text": "Ma c'è un'altra cosa che ha contribuito, per secoli,"
+    },
+    {
+      "start": 147.92,
+      "end": 150.5,
+      "text": "a dare forma a questa valle e alla vita di chi la"
+    },
+    {
+      "start": 150.5,
+      "end": 151.0,
+      "text": "abitava."
+    },
+    {
+      "start": 151.18,
+      "end": 153.82,
+      "text": "Per scoprirla dobbiamo continuare a camminare."
+    },
+    {
+      "start": 154.02,
+      "end": 157.24,
+      "text": "Alla prossima tappa ci fermeremo sopra un ponte e"
+    },
+    {
+      "start": 157.24,
+      "end": 160.08,
+      "text": "questa volta vi chiederò di guardare non davanti"
+    },
+    {
+      "start": 160.08,
+      "end": 162.14,
+      "text": "a voi, ma sotto di voi."
+    }
+  ],
+  "text": "Eccoci qua. Fermiamoci un attimo. Devo ammetterlo. Sulle mappe Calci mi è sempre sembrata molto più semplice. Una strada che scende lungo la valle, qualche campanile, le case, gli olivi tutti intorno. Poi si esce, si comincia a camminare e ci si accorge che le cose sono un po' più complicate. Guardate la strada che avete davanti. Questa è Via Roma e, per conoscere Calci, è un buon punto da cui cominciare. È una strada che attraversa il paese e ne collega alcuni dei luoghi più importanti. Alle nostre spalle abbiamo lasciato la Certosa e, proseguendo, raggiungeremo tra poco la Pieve. Ed è proprio verso la Pieve che vorrei farvi guardare. Oggi è qui che riconosciamo il centro di Calci. Ma non immaginatevi un paese nato attorno a una piazza e poi cresciuto anno dopo anno verso l'esterno. È successo quasi il contrario. Per secoli questa valle è stata abitata da tanti piccoli nuclei distinti, con nomi e storie proprie. Con il tempo le case sono aumentate, le distanze si sono accorciate e molti di quei borghi hanno finito quasi per toccarsi. Adesso voltatevi verso la Certosa. Alla vostra destra, più in basso nella valle, si trovano gli antichi borghi della Corte e San Piero. Proseguendo con lo sguardo sempre sulla destra rispetto alla Certosa, incontriamo Rezzano e Nicosia. Nicosia, tra l'altro, ha un nome che arriva da molto più lontano di quanto possiate immaginare. Nel 200, a Nicosia, fu fondato un convento per volontà di Ugo da Fagiano, che era stato vescovo di Nicosia, a Cipro. E quel nome, arrivato da un'isola del Mediterraneo, è rimasto legato per secoli a questo piccolo angolo della Val Graziosa. Spostando invece lo sguardo sulla sinistra della Certosa, più in là nella valle, troviamo Montemagno, altro borgo con una storia molto antica e per lungo tempo amministrativamente separato da Calci. Entrò definitivamente a far parte del comune soltanto nel 1884. E poi ci sono Ponte Grande, Castelmaggiore, Tre Colli, oltre ad altri piccoli nuclei e località disseminati lungo la valle e sulle sue pendici. Insomma, se siete arrivati qui cercando un unico, preciso centro di Calci, forse adesso cominciate a capire perché non è così semplice trovarlo. Calci è cresciuta mettendo insieme luoghi diversi. E via Roma, attraversandola da una parte all'altra, sembra quasi il filo che prova ancora oggi a cucirli insieme. Ma c'è un'altra cosa che ha contribuito, per secoli, a dare forma a questa valle e alla vita di chi la abitava. Per scoprirla dobbiamo continuare a camminare. Alla prossima tappa ci fermeremo sopra un ponte e questa volta vi chiederò di guardare non davanti a voi, ma sotto di voi."
+}

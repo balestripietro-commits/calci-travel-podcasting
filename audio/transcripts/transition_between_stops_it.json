@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "automatic-draft",
+  "language": "it-IT",
+  "stop": null,
+  "sourceAudio": "audio/it/transition_between_stops.mp3",
+  "duration": 7.889,
+  "alignment": {
+    "engine": "Whisper large-v3-turbo",
+    "wordTimestamps": true,
+    "reviewRequired": true
+  },
+  "canonicalScript": null,
+  "reviewNote": "Audio intermezzo tra tappe; trascrizione automatica da controllare.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.42,
+      "text": "Questa traccia fa parte dell'itinerario audio realizzato"
+    },
+    {
+      "start": 3.42,
+      "end": 4.48,
+      "text": "dal Comune di Calci."
+    },
+    {
+      "start": 4.7,
+      "end": 7.6,
+      "text": "Quando siete pronti, raggiungete la prossima tappa."
+    }
+  ],
+  "text": "Questa traccia fa parte dell'itinerario audio realizzato dal Comune di Calci. Quando siete pronti, raggiungete la prossima tappa."
+}
