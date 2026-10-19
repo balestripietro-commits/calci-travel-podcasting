@@ -2,9 +2,9 @@
 
 ## Stato e perimetro
 
-- Stato: prototipo locale in italiano, pronto per revisione con il Comune.
+- Stato: prototipo in italiano disponibile in locale e su repo GitHub privata; pronto per revisione con il Comune. Iacopo è stato invitato come collaboratore; l’accettazione è in attesa.
 - Obiettivo: ripartire dal sito completo di Vicopisano, mantenendone impianto e interazioni; sostituire identità, tappe, copy, audio e colori di Calci.
-- Pubblico previsto: confronto con Pietro e amministrazione comunale; nessuna pubblicazione o deploy eseguito.
+- Pubblico previsto: confronto con Pietro e amministrazione comunale; nessuna pubblicazione o deploy Netlify eseguito.
 - Lingua: italiano attivo; le altre lingue restano visibili ma non selezionabili.
 - Testi: reali sulle sette tappe; lorem ipsum in presentazione e sezioni editoriali generiche.
 - Voce narrativa: Padre Gherardo, dai materiali di progetto. Mascotte Brunelleschi temporanea per ora, in attesa dei nuovi frame.
@@ -14,7 +14,9 @@
 - Master locale: `/Users/pietrobalestri/LocalDev/Travel podcasting/github-sites/Calci`.
 - Sito di riferimento: `/Users/pietrobalestri/LocalDev/Travel podcasting/github-sites/Vicopisano`.
 - Cartella di origine del DOCX e dei media: `/Users/pietrobalestri/Library/CloudStorage/GoogleDrive-balestripietro@gmail.com/My Drive/Imprendiamo/Travel podcasting/Delivering/Calci/`.
-- Repo GitHub dedicata, URL pubblico e Netlify: non creati/configurati; da decidere in seguito.
+- Repo GitHub: [balestripietro-commits/calci-travel-podcasting](https://github.com/balestripietro-commits/calci-travel-podcasting), privata, branch `main`, creata il 2026-10-19. Il commit iniziale è `4bbde7c`.
+- Collaborazione: Pietro ha aggiunto Iacopo Piccaluga e lo ha avvisato di accettare l’invito; stato riportato da Pietro il 2026-10-19, accettazione non ancora confermata. Non pianificare contributi GitHub di Iacopo fino alla conferma dell’accesso.
+- Netlify e URL di pubblicazione: non configurati.
 - Cartella destinazione del sito: il master locale Calci indicato sopra.
 
 ## Decisioni aggiornate al 18/10/2026

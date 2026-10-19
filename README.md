@@ -1,6 +1,6 @@
 # Travel Podcasting — Calci
 
-Anteprima locale in italiano del sito di Calci, basata sulla struttura e sulle interazioni del sito di Vicopisano.
+Anteprima locale in italiano del sito di Calci, basata sulla struttura e sulle interazioni del sito di Vicopisano. Repo GitHub privata: [calci-travel-podcasting](https://github.com/balestripietro-commits/calci-travel-podcasting). Iacopo è stato aggiunto da Pietro come collaboratore il 2026-10-19; invito in attesa di accettazione. Netlify non è configurato.
 
 ## Stato
 

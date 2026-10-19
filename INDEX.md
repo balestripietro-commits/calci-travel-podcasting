@@ -1,5 +1,10 @@
 # Indice — Travel Podcasting Calci
 
+## Repository e collaborazione
+- Repo GitHub privata: [calci-travel-podcasting](https://github.com/balestripietro-commits/calci-travel-podcasting), branch `main`.
+- Iacopo aggiunto da Pietro come collaboratore il 2026-10-19; invito in attesa di accettazione.
+- Netlify non configurato; il sito non è pubblicato.
+
 ## Sito
 - `index.html` — interfaccia italiana.
 - `app.js` — sette tappe, mappa, player, lingue e sincronizzazione.
