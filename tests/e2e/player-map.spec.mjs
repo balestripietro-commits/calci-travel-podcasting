@@ -1525,7 +1525,7 @@ test("shared speed control styling survives player modes and responsive widths",
   await page.keyboard.press("Tab");
   await fullSpeed.focus();
   await expect.poll(() => fullSpeed.evaluate((element) => element.matches(":focus-visible"))).toBe(true);
-  await expect(fullSpeed).toHaveCSS("outline-color", "rgb(44, 109, 163)");
+  await expect(fullSpeed).toHaveCSS("outline-color", "rgb(20, 120, 184)");
   if (testInfo.project.name !== "desktop-chrome") {
     await page.locator("#player-map-button").click();
     await expect(page.locator("#player-overlay")).not.toHaveClass(/is-mobile-map-player/);
