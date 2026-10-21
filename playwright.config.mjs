@@ -1,7 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const port = Number(process.env.E2E_PORT || 4173);
-const remoteBaseURL = process.env.E2E_BASE_URL?.replace(/\/$/, "");
+const remoteBaseURL = process.env.E2E_BASE_URL
+  ? `${process.env.E2E_BASE_URL.replace(/\/+$/, "")}/`
+  : undefined;
 const baseURL = remoteBaseURL || `http://127.0.0.1:${port}`;
 const staticRoot = process.env.E2E_STATIC_ROOT || ".";
 const lowMobileSpec = /low-mobile\.spec\.mjs/;
