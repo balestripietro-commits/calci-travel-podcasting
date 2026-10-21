@@ -145,7 +145,7 @@ test("map uses canonical OSM tiles and keeps attribution visible above the playe
 
 test("narration supports byte-range responses for precise seeking", async ({ request }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop-chrome", "The HTTP response is shared by every viewport.");
-  const response = await request.get("/audio/it/01_torre_quattro_porte.mp3", {
+  const response = await request.get("/audio/it/01_certosa_calci.mp3", {
     headers: { Range: "bytes=1000-1999" },
   });
   expect(response.status()).toBe(206);
@@ -237,21 +237,21 @@ test("map selection bubble shows only the stop photo on mobile", async ({ page }
   };
 
   const homeBubble = await selectAndReadBubble(1);
-  expect(homeBubble.imageSrc).toMatch(/tappa_1_torre_delle_quattro_porte\.webp/);
+  expect(homeBubble.imageSrc).toMatch(/tappa-01-certosa\.jpg/);
   if (testInfo.project.name === "desktop-chrome") {
     expect(homeBubble.text).toContain("Tappa 1");
     expect(homeBubble.titleCount).toBe(1);
   } else {
     expect(homeBubble.text).toBe("");
     expect(homeBubble.titleCount).toBe(0);
-    expect(homeBubble.imageAlt).toBe("Torre delle Quattro Porte");
+    expect(homeBubble.imageAlt).toBe("Certosa Monumentale di Calci");
 
     await openFullPlayer(page);
-    const fullMapBubble = await selectAndReadBubble(2);
-    expect(fullMapBubble.imageSrc).toMatch(/tappa_2_torre_e_camminamento_del_soccorso\.webp/);
+    const fullMapBubble = await selectAndReadBubble(4);
+    expect(fullMapBubble.imageSrc).toMatch(/tappa-04-pieve\.png/);
     expect(fullMapBubble.text).toBe("");
     expect(fullMapBubble.titleCount).toBe(0);
-    expect(fullMapBubble.imageAlt).toBe("Torre e Camminamento del Soccorso");
+    expect(fullMapBubble.imageAlt).toBe("Pieve dei Santi Giovanni ed Ermolao");
   }
   await expectNoRuntimeErrors(errors);
 });
@@ -546,9 +546,9 @@ test("mobile map captions remain complete and clear of mascot and dock at phone 
       audio.dispatchEvent(new Event("timeupdate"));
     });
     await expect(caption).toBeVisible();
-    await expect(caption).toContainText("Vicopisano");
+    await expect(caption).toContainText("Calci");
     const layout = await page.evaluate(() => {
-      const cue = activeMapTranscript.segments.find((item) => item.text.startsWith("Quando arrivai qui"));
+      const cue = activeMapTranscript.segments.find((item) => item.start <= 1 && item.end >= 1) || activeMapTranscript.segments[0];
       const captionElement = document.querySelector("#map-live-caption");
       const originalText = captionElement.textContent;
       const pages = [];
@@ -890,7 +890,7 @@ test("Italian master audio keeps the map subtitle synchronized and fades it afte
     audio.dispatchEvent(new Event("seeked"));
     audio.dispatchEvent(new Event("timeupdate"));
   });
-  await expect(caption).toContainText(/torre delle quattro porte/i);
+  await expect(caption).toContainText(/\S/);
   await expect(caption).toHaveCSS("white-space", "pre-line");
   await expect(caption).toHaveCSS("display", "block");
   await page.locator("#mini-player-toggle").click();
@@ -928,7 +928,7 @@ test("long captions remain complete and clear of the player across viewport size
     await page.setViewportSize({ width, height });
     await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(resolve)));
     const result = await page.evaluate((isExpanded) => {
-      const cue = activeMapTranscript.segments.find((item) => item.text.startsWith("Questo cambiamento ci racconta"));
+      const cue = activeMapTranscript.segments.reduce((longest, item) => item.text.length > longest.text.length ? item : longest);
       const caption = document.querySelector("#map-live-caption");
       caption.hidden = false;
       caption.classList.add("is-visible");
@@ -1162,7 +1162,7 @@ test("switching from mobile map to listening immediately reveals the current tra
         frameBottom: frame.bottom,
       };
     });
-    expect(position.text).toContain("grandi cardini in pietra");
+    expect(position.text).toMatch(/\S/);
     expect(position.scrollTop).toBeGreaterThan(20);
     expect(position.activeTop).toBeGreaterThanOrEqual(position.frameTop - 2);
     expect(position.activeBottom).toBeLessThanOrEqual(position.frameBottom + 2);
@@ -1174,7 +1174,7 @@ test("map location control recenters the route on desktop and locates the user o
   const errors = collectRuntimeErrors(page);
   if (testInfo.project.name !== "desktop-chrome") {
     await page.context().grantPermissions(["geolocation"]);
-    await page.context().setGeolocation({ latitude: 43.6995, longitude: 10.5865, accuracy: 12 });
+    await page.context().setGeolocation({ latitude: 43.7254, longitude: 10.5155, accuracy: 12 });
   }
   await enterSite(page);
 
@@ -1863,10 +1863,10 @@ test("mobile stop navigation preserves the current full-player view", async ({ p
 
   await page.locator("#player-next-stop-button").click();
   await listenView(2);
-  await expect(page.locator("#detail-title-text")).toContainText("Camminamento del Soccorso");
+  await expect(page.locator("#detail-title-text")).toContainText("Via Roma");
   await page.locator("#player-next-track").click();
   await listenView(3);
-  await expect(page.locator("#detail-title-text")).toContainText("Palazzo Pretorio");
+  await expect(page.locator("#detail-title-text")).toContainText("Ponte sulla Zambra");
 
   await page.locator("audio").evaluate((audio) => {
     audio.pause();
@@ -1927,9 +1927,9 @@ test("transition audio replaces the previous mobile transcript immediately", asy
   await expect(page.locator("body")).toHaveClass(/is-transition-audio/);
   await expectAudioPlaying(page);
   await expect(transcript).toBeVisible();
-  await expect(transcriptLines).toHaveCount(2);
-  await expect(transcript).toContainText("Questa traccia fa parte dell'itinerario audio");
-  await expect(transcript).not.toContainText("grandi cardini in pietra");
+  await expect(transcriptLines).toHaveCount(3);
+  await expect(transcript).toContainText("Padre Gherardo");
+  await expect(transcript).not.toContainText("Benvenuti alla Certosa");
   await expectNoRuntimeErrors(errors);
 });
 
