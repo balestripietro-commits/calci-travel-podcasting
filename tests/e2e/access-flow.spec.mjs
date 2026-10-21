@@ -22,8 +22,8 @@ test("first access asks for language and later access remembers it", async ({ pa
   await expect(page.locator("#guide-layer")).toBeHidden();
 
   const savedState = await page.evaluate(() => ({
-    onboardingCompleted: localStorage.getItem("vicopisano-onboarding-completed"),
-    language: localStorage.getItem("vicopisano-language"),
+    onboardingCompleted: localStorage.getItem("calci-onboarding-completed"),
+    language: localStorage.getItem("calci-language"),
     savedValues: Object.values(localStorage),
   }));
   expect(savedState.onboardingCompleted).toBe("true");
