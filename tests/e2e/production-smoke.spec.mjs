@@ -10,7 +10,7 @@ test("deployed site exposes the core experience without runtime errors", async (
 
   await enterSite(page, { language: "it", stop: 1 });
 
-  await expect(page).toHaveTitle("Travel Podcasting Comune di Vicopisano");
+  await expect(page).toHaveTitle("Travel Podcasting Comune di Calci");
   await expect(page.locator("#map")).toBeVisible();
   await expect(page.locator(".map-marker").first()).toBeVisible();
   await expect(page.locator("#mini-player")).toBeVisible();
