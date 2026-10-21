@@ -867,7 +867,7 @@ test("selected narration advances after playback starts", async ({ page }) => {
 test("mascot lip sync preloads cues and applies the visual lead", async ({ page }) => {
   const errors = collectRuntimeErrors(page);
   let fixtureLoaded = false;
-  await page.route("**/audio/cues/01_torre_quattro_porte.json", async (route) => {
+  await page.route("**/audio/cues/01_certosa_calci.json", async (route) => {
     fixtureLoaded = true;
     await route.fulfill({ json: { mouthCues: [
       { start: 0, end: 0.35, value: "B" },
