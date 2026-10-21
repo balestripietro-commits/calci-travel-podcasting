@@ -24,7 +24,7 @@ test("map uses canonical OSM tiles and keeps attribution visible above the playe
     });
   });
 
-  await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+  await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
   // This test checks the map credit, not the onboarding hit targets. Use the
   // app's own handlers without waiting for lengthy animations on CI devices.
   await page.locator("#onboarding-language-chips .onboarding-language-option").first().evaluate((button) => button.click());
