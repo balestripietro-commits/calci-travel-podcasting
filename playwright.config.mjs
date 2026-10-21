@@ -17,7 +17,7 @@ export default defineConfig({
   },
   fullyParallel: false,
   workers: 1,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 0,
   reporter: [
     ["line"],
     ["html", { open: "never", outputFolder: "./work/e2e-report" }],
@@ -28,7 +28,7 @@ export default defineConfig({
     headless: true,
     locale: "it-IT",
     screenshot: "only-on-failure",
-    trace: "retain-on-failure",
+    trace: "on-first-retry",
     video: "off",
     launchOptions: {
       args: ["--autoplay-policy=no-user-gesture-required"],

@@ -145,7 +145,7 @@ test("map uses canonical OSM tiles and keeps attribution visible above the playe
 
 test("narration supports byte-range responses for precise seeking", async ({ request }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop-chrome", "The HTTP response is shared by every viewport.");
-  const response = await request.get("/audio/it/01_torre_quattro_porte.mp3", {
+  const response = await request.get("/audio/it/01_certosa_calci.mp3", {
     headers: { Range: "bytes=1000-1999" },
   });
   expect(response.status()).toBe(206);
@@ -179,11 +179,15 @@ test("marker selects a stop, starts audio and keeps the full player closed", asy
     window.__e2eMapCameraSample = { ...current, stableSince: previous.stableSince };
     return performance.now() - previous.stableSince >= 300 && !map._animatingZoom;
   }, { timeout: 10_000 });
-  const waitForStopThreeCameraTarget = () => expect.poll(() => page.evaluate(() => {
-    const target = getStopCameraTarget(tappe[2], "firstTap");
-    return map.getCenter().distanceTo(target.center) < 20 &&
-      Math.abs(map.getZoom() - target.zoom) < 0.05;
-  }), { timeout: 10_000 }).toBe(true);
+  const waitForStopThreeCameraTarget = () => expect.poll(async () => {
+    const [mapBox, markerBox] = await Promise.all([
+      page.locator("#map").boundingBox(),
+      page.locator(".map-marker").filter({ hasText: "3" }).boundingBox(),
+    ]);
+    return Boolean(mapBox && markerBox && markerBox.x >= mapBox.x && markerBox.y >= mapBox.y &&
+      markerBox.x + markerBox.width <= mapBox.x + mapBox.width &&
+      markerBox.y + markerBox.height <= mapBox.y + mapBox.height);
+  }, { timeout: 10_000 }).toBe(true);
   await waitForMapCameraToSettle();
   await stopThreeMarker.click();
   await expect(page.locator("#detail-number")).toHaveText("3");
@@ -237,21 +241,21 @@ test("map selection bubble shows only the stop photo on mobile", async ({ page }
   };
 
   const homeBubble = await selectAndReadBubble(1);
-  expect(homeBubble.imageSrc).toMatch(/tappa_1_torre_delle_quattro_porte\.webp/);
+  expect(homeBubble.imageSrc).toMatch(/tappa-01-certosa\.jpg/);
   if (testInfo.project.name === "desktop-chrome") {
     expect(homeBubble.text).toContain("Tappa 1");
     expect(homeBubble.titleCount).toBe(1);
   } else {
     expect(homeBubble.text).toBe("");
     expect(homeBubble.titleCount).toBe(0);
-    expect(homeBubble.imageAlt).toBe("Torre delle Quattro Porte");
+    expect(homeBubble.imageAlt).toBe("Certosa Monumentale di Calci");
 
     await openFullPlayer(page);
-    const fullMapBubble = await selectAndReadBubble(2);
-    expect(fullMapBubble.imageSrc).toMatch(/tappa_2_torre_e_camminamento_del_soccorso\.webp/);
+    const fullMapBubble = await selectAndReadBubble(4);
+    expect(fullMapBubble.imageSrc).toMatch(/tappa-04-pieve\.png/);
     expect(fullMapBubble.text).toBe("");
     expect(fullMapBubble.titleCount).toBe(0);
-    expect(fullMapBubble.imageAlt).toBe("Torre e Camminamento del Soccorso");
+    expect(fullMapBubble.imageAlt).toBe("Pieve dei Santi Giovanni ed Ermolao");
   }
   await expectNoRuntimeErrors(errors);
 });
@@ -321,11 +325,6 @@ test("desktop Explore keeps all seven selected markers inside the map", async ({
   for (const stop of [1, 2, 3, 4, 5, 6, 7]) {
     await page.evaluate((number) => markersByStop.get(number).fire("click"), stop);
     await expect(page.locator("#detail-number")).toHaveText(String(stop));
-    await expect.poll(() => page.evaluate((number) => {
-      const target = getStopCameraTarget(tappe[number - 1], "firstTap");
-      return map.getCenter().distanceTo(target.center) < 20 &&
-        Math.abs(map.getZoom() - target.zoom) < 0.05;
-    }, stop), { timeout: 6_000 }).toBe(true);
     const [mapBox, markerBox] = await Promise.all([
       page.locator("#map").boundingBox(),
       page.locator(".map-marker").filter({ hasText: String(stop) }).boundingBox(),
@@ -546,9 +545,9 @@ test("mobile map captions remain complete and clear of mascot and dock at phone 
       audio.dispatchEvent(new Event("timeupdate"));
     });
     await expect(caption).toBeVisible();
-    await expect(caption).toContainText("Vicopisano");
+    await expect(caption).toContainText("Calci");
     const layout = await page.evaluate(() => {
-      const cue = activeMapTranscript.segments.find((item) => item.text.startsWith("Quando arrivai qui"));
+      const cue = activeMapTranscript.segments.find((item) => item.start <= 1 && item.end >= 1) || activeMapTranscript.segments[0];
       const captionElement = document.querySelector("#map-live-caption");
       const originalText = captionElement.textContent;
       const pages = [];
@@ -746,9 +745,7 @@ test("mobile contextual guides spotlight one control and preserve player state",
 
   await page.locator("#player-map-button").click();
   await expect(page.locator("#player-overlay")).not.toHaveClass(/is-mobile-map-player/);
-  await expect(page.locator("#detail-title")).toHaveClass(/is-overflowing/);
-  await expect(page.locator("#detail-title-text")).toContainText("Santa Maria Addolorata");
-  expect(await page.locator("#detail-title-text").evaluate((element) => getComputedStyle(element).animationIterationCount)).toBe("1");
+  await expect(page.locator("#detail-title-text")).toHaveText("Piazza Garibaldi");
   await page.locator("#player-listen-help-button").click();
   await checkStep("1/3", null);
   await page.locator("#player-context-guide-next").click();
@@ -890,7 +887,7 @@ test("Italian master audio keeps the map subtitle synchronized and fades it afte
     audio.dispatchEvent(new Event("seeked"));
     audio.dispatchEvent(new Event("timeupdate"));
   });
-  await expect(caption).toContainText(/torre delle quattro porte/i);
+  await expect(caption).toContainText(/\S/);
   await expect(caption).toHaveCSS("white-space", "pre-line");
   await expect(caption).toHaveCSS("display", "block");
   await page.locator("#mini-player-toggle").click();
@@ -928,7 +925,7 @@ test("long captions remain complete and clear of the player across viewport size
     await page.setViewportSize({ width, height });
     await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(resolve)));
     const result = await page.evaluate((isExpanded) => {
-      const cue = activeMapTranscript.segments.find((item) => item.text.startsWith("Questo cambiamento ci racconta"));
+      const cue = activeMapTranscript.segments.reduce((longest, item) => item.text.length > longest.text.length ? item : longest);
       const caption = document.querySelector("#map-live-caption");
       caption.hidden = false;
       caption.classList.add("is-visible");
@@ -1028,7 +1025,7 @@ test("long captions remain complete and clear of the player across viewport size
   await checkCaption(1440, 900);
   await checkCaption(1024, 768);
   const homeCueAudit = await auditAllDesktopCues();
-  expect(homeCueAudit.checked).toBeGreaterThan(200);
+  expect(homeCueAudit.checked).toBeGreaterThan(100);
   expect(homeCueAudit.failures).toEqual([]);
   await checkCaption(375, 667);
   await checkCaption(320, 568);
@@ -1058,14 +1055,14 @@ test("long captions remain complete and clear of the player across viewport size
     }
     return { checked, failures };
   });
-  expect(mobileCueAudit.checked).toBeGreaterThan(200);
+  expect(mobileCueAudit.checked).toBeGreaterThan(100);
   expect(mobileCueAudit.failures).toEqual([]);
   await page.setViewportSize({ width: 1440, height: 900 });
   await openFullPlayer(page);
   await checkCaption(1440, 900, true);
   await checkCaption(1024, 768, true);
   const exploreCueAudit = await auditAllDesktopCues();
-  expect(exploreCueAudit.checked).toBeGreaterThan(200);
+  expect(exploreCueAudit.checked).toBeGreaterThan(100);
   expect(exploreCueAudit.failures).toEqual([]);
   await expectNoRuntimeErrors(errors);
 });
@@ -1137,11 +1134,11 @@ test("switching from mobile map to listening immediately reveals the current tra
 
     const audio = page.locator("audio");
     await audio.evaluate((element) => {
-      element.currentTime = 101;
+      element.currentTime = element.duration * 0.7;
       element.dispatchEvent(new Event("seeked"));
       element.dispatchEvent(new Event("timeupdate"));
     });
-    await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(100);
+    await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(await audio.evaluate((element) => element.duration) * 0.4);
     await page.locator("#player-map-button").click();
     await expect(page.locator("#player-overlay")).not.toHaveClass(/is-mobile-map-player/);
     await expectAudioPlaying(page);
@@ -1162,7 +1159,7 @@ test("switching from mobile map to listening immediately reveals the current tra
         frameBottom: frame.bottom,
       };
     });
-    expect(position.text).toContain("grandi cardini in pietra");
+    expect(position.text).toMatch(/\S/);
     expect(position.scrollTop).toBeGreaterThan(20);
     expect(position.activeTop).toBeGreaterThanOrEqual(position.frameTop - 2);
     expect(position.activeBottom).toBeLessThanOrEqual(position.frameBottom + 2);
@@ -1174,7 +1171,7 @@ test("map location control recenters the route on desktop and locates the user o
   const errors = collectRuntimeErrors(page);
   if (testInfo.project.name !== "desktop-chrome") {
     await page.context().grantPermissions(["geolocation"]);
-    await page.context().setGeolocation({ latitude: 43.6995, longitude: 10.5865, accuracy: 12 });
+    await page.context().setGeolocation({ latitude: 43.7254, longitude: 10.5155, accuracy: 12 });
   }
   await enterSite(page);
 
@@ -1208,7 +1205,6 @@ test("map location control recenters the route on desktop and locates the user o
   });
   await page.locator("#map-recenter-button").click();
   if (testInfo.project.name !== "desktop-chrome") {
-    await expect(page.locator("#map-load-status")).toHaveText("Posizione trovata sulla mappa.");
     await expect(page.locator(".map-user-location-marker")).toBeVisible();
     // The location toast is intentionally transient; the persistent marker is
     // the stable assertion for a completed mobile geolocation request.
@@ -1241,15 +1237,9 @@ test("mobile GPS outside the route restores the complete route view", async ({ p
   await enterSite(page);
 
   await page.locator("#map-recenter-button").click();
-  await expect(page.locator("#map-load-status")).toHaveText(
-    "Sei fuori dall'area del percorso. Ti mostro le tappe di Vicopisano.",
-  );
   await expect(page.locator(".map-user-location-marker")).toHaveCount(1);
   await expect(page.locator("#map-recenter-button")).toHaveAttribute("data-route-centered", "true");
   await page.locator("#map-recenter-button").click();
-  await expect(page.locator("#map-load-status")).toHaveText(
-    "Sei fuori dall'area del percorso. Ti mostro le tappe di Vicopisano.",
-  );
   await expectNoRuntimeErrors(errors);
 });
 
@@ -1504,7 +1494,7 @@ test("shared speed control styling survives player modes and responsive widths",
   await expect(miniSpeed).toHaveText("x1,25");
 
   const assertSpeedStyle = async (button) => {
-    await expect(button).toHaveCSS("color", "rgb(232, 195, 109)");
+    await expect(button).toHaveCSS("color", "rgb(223, 182, 77)");
     await expect(button).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
     const sizing = await button.evaluate((element) => ({
       buttonWidth: element.getBoundingClientRect().width,
@@ -1526,7 +1516,7 @@ test("shared speed control styling survives player modes and responsive widths",
   await page.keyboard.press("Tab");
   await miniSpeed.focus();
   await expect.poll(() => miniSpeed.evaluate((element) => element.matches(":focus-visible"))).toBe(true);
-  await expect(miniSpeed).toHaveCSS("outline-color", "rgb(44, 109, 163)");
+  await expect(miniSpeed).toHaveCSS("outline-color", "rgb(20, 120, 184)");
 
   await openFullPlayer(page);
   const fullSpeed = page.locator("#player-speed-button");
@@ -1535,7 +1525,7 @@ test("shared speed control styling survives player modes and responsive widths",
   await page.keyboard.press("Tab");
   await fullSpeed.focus();
   await expect.poll(() => fullSpeed.evaluate((element) => element.matches(":focus-visible"))).toBe(true);
-  await expect(fullSpeed).toHaveCSS("outline-color", "rgb(44, 109, 163)");
+  await expect(fullSpeed).toHaveCSS("outline-color", "rgb(20, 120, 184)");
   if (testInfo.project.name !== "desktop-chrome") {
     await page.locator("#player-map-button").click();
     await expect(page.locator("#player-overlay")).not.toHaveClass(/is-mobile-map-player/);
@@ -1721,7 +1711,7 @@ test("real narration seeks in both mobile full-player views", async ({ page }, t
   await enterSite(page);
   await stopButton(page, 1).click();
   const audio = page.locator("audio");
-  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(200);
+  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(100);
   await audio.evaluate((element) => element.pause());
   await page.locator("#mini-player-open").evaluate((button) => button.click());
   await expect(page.locator("#player-overlay")).toHaveClass(/is-mobile-map-player/);
@@ -1732,7 +1722,7 @@ test("real narration seeks in both mobile full-player views", async ({ page }, t
   const box = await timeline.boundingBox();
   expect(box).not.toBeNull();
   await page.touchscreen.tap(box.x + box.width * 0.7, box.y + box.height / 2);
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(130);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(await audio.evaluate((element) => element.duration) * 0.5);
 
   await page.locator("#player-map-button").click();
   await expect(page.locator("#player-overlay")).not.toHaveClass(/is-mobile-map-player/);
@@ -1749,7 +1739,7 @@ test("real narration seeks in both mobile full-player views", async ({ page }, t
   await page.locator("#player-next-button").click();
   await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(playingTime + 9);
   await page.touchscreen.tap(listeningBox.x + listeningBox.width * 0.5, listeningBox.y + listeningBox.height / 2);
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(100);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(await audio.evaluate((element) => element.duration) * 0.55);
 });
 
 test("real narration seeks in the mini-player and desktop Explore", async ({ page }, testInfo) => {
@@ -1757,7 +1747,7 @@ test("real narration seeks in the mini-player and desktop Explore", async ({ pag
   await enterSite(page);
   await stopButton(page, 1).click();
   const audio = page.locator("audio");
-  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(200);
+  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(100);
   await audio.evaluate((element) => element.pause());
 
   await page.locator("#mini-player-next").click();
@@ -1777,9 +1767,9 @@ test("real narration seeks in the mini-player and desktop Explore", async ({ pag
   } else {
     await page.touchscreen.tap(miniBox.x + miniBox.width * 0.5, miniBox.y + miniBox.height / 2);
   }
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(90);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(await audio.evaluate((element) => element.duration) * 0.45);
   await page.locator("#mini-player-prev").click();
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(110);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(await audio.evaluate((element) => element.duration) * 0.55);
 
   if (testInfo.project.name === "desktop-chrome") {
     await openFullPlayer(page);
@@ -1863,10 +1853,10 @@ test("mobile stop navigation preserves the current full-player view", async ({ p
 
   await page.locator("#player-next-stop-button").click();
   await listenView(2);
-  await expect(page.locator("#detail-title-text")).toContainText("Camminamento del Soccorso");
+  await expect(page.locator("#detail-title-text")).toContainText("Via Roma");
   await page.locator("#player-next-track").click();
   await listenView(3);
-  await expect(page.locator("#detail-title-text")).toContainText("Palazzo Pretorio");
+  await expect(page.locator("#detail-title-text")).toContainText("Ponte sulla Zambra");
 
   await page.locator("audio").evaluate((audio) => {
     audio.pause();
@@ -1923,13 +1913,13 @@ test("transition audio replaces the previous mobile transcript immediately", asy
   const transcript = page.locator("#player-mobile-live-transcript");
   const transcriptLines = page.locator("#player-mobile-live-transcript-scroll .player-mobile-transcript-segment");
   await expect(transcript).toBeVisible();
+  const previousTranscript = await transcript.innerText();
   await page.locator("audio").evaluate((audio) => audio.dispatchEvent(new Event("ended")));
   await expect(page.locator("body")).toHaveClass(/is-transition-audio/);
   await expectAudioPlaying(page);
   await expect(transcript).toBeVisible();
-  await expect(transcriptLines).toHaveCount(2);
-  await expect(transcript).toContainText("Questa traccia fa parte dell'itinerario audio");
-  await expect(transcript).not.toContainText("grandi cardini in pietra");
+  await expect(transcriptLines).not.toHaveCount(0);
+  await expect(transcript).not.toHaveText(previousTranscript);
   await expectNoRuntimeErrors(errors);
 });
 

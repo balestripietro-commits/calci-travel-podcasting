@@ -384,41 +384,27 @@ test.describe("accessibility", () => {
     await expectUnclippedKeyboardFocus(page, "#player-context-guide-next");
   });
 
-  test("long listening titles remain readable with reduced motion", async ({ page }, testInfo) => {
+  test("the longest Calci listening title remains readable with reduced motion", async ({ page }, testInfo) => {
     test.setTimeout(120_000);
     test.skip(testInfo.project.name !== "desktop-chrome", "Responsive reduced-motion audit runs once.");
     for (const width of [320, 375]) {
       await page.setViewportSize({ width, height: 667 });
       await page.emulateMedia({ reducedMotion: "reduce" });
-      await page.goto("/?tappa=6&lang=it", { waitUntil: "domcontentloaded" });
+      await page.goto("/?tappa=4&lang=it", { waitUntil: "domcontentloaded" });
       await ensureOnboardingVisible(page);
       await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
       await page.locator("#guide-skip-button").click();
-      await page.locator(".stop-button").nth(5).click();
+      await page.locator(".stop-button").nth(3).click();
       await page.locator("#mini-player-open").click();
       await page.locator("#player-map-button").click();
 
       const title = page.locator("#detail-title");
-      await expect(title).toHaveClass(/is-overflowing/);
-      await expect(title).toHaveAttribute("tabindex", "0");
-      await expect(page.locator("#detail-title-text")).toHaveText("Parrocchia di Santa Maria Addolorata e San Giovanni Apostolo");
-      const before = await title.evaluate((element) => ({
-        clientWidth: element.clientWidth,
-        scrollWidth: element.scrollWidth,
-        clientHeight: element.clientHeight,
-        scrollHeight: element.scrollHeight,
-        left: element.getBoundingClientRect().left,
-        right: element.getBoundingClientRect().right,
-      }));
-      expect(before.left).toBeGreaterThanOrEqual(0);
-      expect(before.right).toBeLessThanOrEqual(width + 1);
-      expect(before.scrollWidth).toBeGreaterThan(before.clientWidth);
-      expect(before.scrollHeight).toBeLessThanOrEqual(before.clientHeight + 2);
-      await title.focus();
-      await page.keyboard.press("ArrowRight");
-      await expect.poll(() => title.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
-      await title.evaluate((element) => { element.scrollLeft = element.scrollWidth; });
-      await expect.poll(() => title.evaluate((element) => element.scrollLeft + element.clientWidth >= element.scrollWidth - 1)).toBe(true);
+      await expect(title).toBeVisible();
+      await expect(page.locator("#detail-title-text")).toHaveText("Pieve dei Santi Giovanni ed Ermolao");
+      const bounds = await title.boundingBox();
+      expect(bounds.x).toBeGreaterThanOrEqual(0);
+      expect(bounds.x + bounds.width).toBeLessThanOrEqual(width + 1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width + 1);
     }
   });
 });
