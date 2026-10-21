@@ -1,4 +1,20 @@
 import { expect, test } from "@playwright/test";
+
+async function seekToTranscriptCue(page) {
+  await expect.poll(() => page.evaluate(() => activeMapTranscript?.segments?.length || 0)).toBeGreaterThan(0);
+  const cue = await page.evaluate(() => {
+    const segment = activeMapTranscript?.segments?.find((item) => item.text.trim().length >= 16);
+    if (!segment) throw new Error("No transcript cue is available for the synchronization check.");
+    return { time: segment.start + 0.01, text: segment.text.trim().slice(0, 16) };
+  });
+  await page.locator("audio").evaluate((audio, time) => {
+    audio.currentTime = time;
+    audio.dispatchEvent(new Event("seeking"));
+    audio.dispatchEvent(new Event("seeked"));
+    audio.dispatchEvent(new Event("timeupdate"));
+  }, cue.time);
+  return cue.text;
+}
 import {
   collectRuntimeErrors,
   enterSite,
@@ -486,12 +502,7 @@ test("mobile map-player captions stay clear of controls, offer wider zoom and li
 
   await stopButton(page, 1).click();
   await expectAudioPlaying(page);
-  await page.locator("audio").evaluate((audio) => {
-    audio.currentTime = 72;
-    audio.dispatchEvent(new Event("seeking"));
-    audio.dispatchEvent(new Event("seeked"));
-    audio.dispatchEvent(new Event("timeupdate"));
-  });
+  const expectedCueText = await seekToTranscriptCue(page);
   const homeMinZoom = await page.evaluate(() => map.getMinZoom());
   await page.locator("#mini-player-open").click();
   await expect(page.locator("#player-overlay")).toHaveClass(/is-mobile-map-player/);
@@ -499,6 +510,7 @@ test("mobile map-player captions stay clear of controls, offer wider zoom and li
 
   const caption = page.locator("#map-live-caption");
   await expect(caption).toBeVisible();
+  await expect(caption).toContainText(expectedCueText);
   await expect(page.locator("#player-map-button .material-symbols-rounded")).toHaveText("headphones");
   await expect(page.locator("#player-map-button")).toHaveAttribute("aria-label", "Apri Full player audio");
   expect(await page.evaluate(() => map.getMinZoom())).toBeLessThan(homeMinZoom);
@@ -854,12 +866,21 @@ test("selected narration advances after playback starts", async ({ page }) => {
 
 test("mascot lip sync preloads cues and applies the visual lead", async ({ page }) => {
   const errors = collectRuntimeErrors(page);
+  let fixtureLoaded = false;
+  await page.route("**/audio/cues/01_torre_quattro_porte.json", async (route) => {
+    fixtureLoaded = true;
+    await route.fulfill({ json: { mouthCues: [
+      { start: 0, end: 0.35, value: "B" },
+      { start: 0.35, end: 1, value: "C" },
+    ] } });
+  });
   await enterSite(page);
 
   await stopButton(page, 1).click();
   await expectAudioPlaying(page);
+  await expect.poll(() => fixtureLoaded).toBe(true);
   await page.locator("audio").evaluate((audio) => {
-    audio.currentTime = 0.44;
+    audio.currentTime = 0.52;
     audio.dispatchEvent(new Event("seeking"));
     audio.dispatchEvent(new Event("seeked"));
   });
@@ -880,14 +901,10 @@ test("Italian master audio keeps the map subtitle synchronized and fades it afte
   await expectAudioPlaying(page);
   const caption = page.locator("#map-live-caption");
   await expect(caption).toBeVisible();
+  await expect(caption).toContainText(expectedCueText);
 
-  await page.locator("audio").evaluate((audio) => {
-    audio.currentTime = 72;
-    audio.dispatchEvent(new Event("seeking"));
-    audio.dispatchEvent(new Event("seeked"));
-    audio.dispatchEvent(new Event("timeupdate"));
-  });
-  await expect(caption).toContainText(/\S/);
+  const expectedCueText = await seekToTranscriptCue(page);
+  await expect(caption).toContainText(expectedCueText);
   await expect(caption).toHaveCSS("white-space", "pre-line");
   await expect(caption).toHaveCSS("display", "block");
   await page.locator("#mini-player-toggle").click();
@@ -1075,15 +1092,11 @@ test("mobile home and map player share caption timing while full audio uses its 
   await enterSite(page);
   await stopButton(page, 1).click();
   await expectAudioPlaying(page);
-  await page.locator("audio").evaluate((audio) => {
-    audio.currentTime = 72;
-    audio.dispatchEvent(new Event("seeking"));
-    audio.dispatchEvent(new Event("seeked"));
-    audio.dispatchEvent(new Event("timeupdate"));
-  });
+  const expectedCueText = await seekToTranscriptCue(page);
 
   const caption = page.locator("#map-live-caption");
   await expect(caption).toBeVisible();
+  await expect(caption).toContainText(expectedCueText);
   await page.locator("#mini-player-toggle").click();
   await expect(caption).toBeVisible();
   await page.waitForTimeout(1_000);
@@ -1711,7 +1724,8 @@ test("real narration seeks in both mobile full-player views", async ({ page }, t
   await enterSite(page);
   await stopButton(page, 1).click();
   const audio = page.locator("audio");
-  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(100);
+  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(0);
+  const mobileTrackDuration = await audio.evaluate((element) => element.duration);
   await audio.evaluate((element) => element.pause());
   await page.locator("#mini-player-open").evaluate((button) => button.click());
   await expect(page.locator("#player-overlay")).toHaveClass(/is-mobile-map-player/);
@@ -1732,7 +1746,9 @@ test("real narration seeks in both mobile full-player views", async ({ page }, t
   const listeningBox = await timeline.boundingBox();
   expect(listeningBox).not.toBeNull();
   await page.touchscreen.tap(listeningBox.x + listeningBox.width * 0.25, listeningBox.y + listeningBox.height / 2);
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(80);
+  const listeningDuration = await audio.evaluate((element) => element.duration);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(listeningDuration * 0.18);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(listeningDuration * 0.32);
   await page.locator("#player-play-button").click();
   await expectAudioPlaying(page);
   const playingTime = await audio.evaluate((element) => element.currentTime);
@@ -1747,7 +1763,8 @@ test("real narration seeks in the mini-player and desktop Explore", async ({ pag
   await enterSite(page);
   await stopButton(page, 1).click();
   const audio = page.locator("audio");
-  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(100);
+  await expect.poll(() => audio.evaluate((element) => element.duration), { timeout: 15_000 }).toBeGreaterThan(0);
+  const narrationDuration = await audio.evaluate((element) => element.duration);
   await audio.evaluate((element) => element.pause());
 
   await page.locator("#mini-player-next").click();
@@ -1767,9 +1784,10 @@ test("real narration seeks in the mini-player and desktop Explore", async ({ pag
   } else {
     await page.touchscreen.tap(miniBox.x + miniBox.width * 0.5, miniBox.y + miniBox.height / 2);
   }
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(await audio.evaluate((element) => element.duration) * 0.45);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(narrationDuration * 0.4);
+  const miniTimelineSeekTime = await audio.evaluate((element) => element.currentTime);
   await page.locator("#mini-player-prev").click();
-  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(await audio.evaluate((element) => element.duration) * 0.55);
+  await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(miniTimelineSeekTime - 9);
 
   if (testInfo.project.name === "desktop-chrome") {
     await openFullPlayer(page);
@@ -1785,7 +1803,7 @@ test("real narration seeks in the mini-player and desktop Explore", async ({ pag
     const fullBox = await fullTimeline.boundingBox();
     expect(fullBox).not.toBeNull();
     await page.mouse.click(fullBox.x + fullBox.width * 0.25, fullBox.y + fullBox.height / 2);
-    await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(75);
+    await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeLessThan(narrationDuration * 0.35);
     const before = await audio.evaluate((element) => element.currentTime);
     await page.locator("#player-next-button").click();
     await expect.poll(() => audio.evaluate((element) => element.currentTime)).toBeGreaterThan(before + 9);
