@@ -3,7 +3,7 @@ import { collectRuntimeErrors, enterSite, expectInsideViewport, expectNoRuntimeE
 
 test("initial transcript stays hidden through onboarding and tutorial until audio plays", async ({ page }) => {
   test.setTimeout(90_000);
-  await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+  await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#onboarding-overlay")).toBeVisible();
   await page.evaluate(() => {
     const caption = document.querySelector("#map-live-caption");
