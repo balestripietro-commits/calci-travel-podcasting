@@ -7,7 +7,7 @@ test("first access asks for language and later access remembers it", async ({ pa
     if (request.method() === "POST") localPostRequests += 1;
   });
 
-  await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+  await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#email-gate-overlay")).toHaveCount(0);
   await expect(page.locator('form[name="email-demo-gate"]')).toHaveCount(0);
   await expect(page.locator("#onboarding-overlay")).toBeVisible();
