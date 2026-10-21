@@ -901,7 +901,6 @@ test("Italian master audio keeps the map subtitle synchronized and fades it afte
   await expectAudioPlaying(page);
   const caption = page.locator("#map-live-caption");
   await expect(caption).toBeVisible();
-  await expect(caption).toContainText(expectedCueText);
 
   const expectedCueText = await seekToTranscriptCue(page);
   await expect(caption).toContainText(expectedCueText);
