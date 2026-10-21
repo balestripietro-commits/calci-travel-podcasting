@@ -45,3 +45,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Install Chromium for deployed smoke test
+        run: npx playwright install --with-deps chromium
+
+      - name: Smoke test deployed Pages site
+        env:
+          E2E_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+          CI: "true"
+          PLAYWRIGHT_BROWSER_CHANNEL: chromium
+        run: npx playwright test tests/e2e/production-smoke.spec.mjs --project=mobile-low-chrome
+
+      - name: Upload smoke diagnostics
+        if: failure()
+        continue-on-error: true
+        uses: actions/upload-artifact@v6
+        with:
+          name: pages-smoke-diagnostics-${{ github.run_attempt }}
+          path: work/e2e-results/**/trace.zip
+          if-no-files-found: ignore
+          retention-days: 3
