@@ -390,18 +390,18 @@ test.describe("accessibility", () => {
     for (const width of [320, 375]) {
       await page.setViewportSize({ width, height: 667 });
       await page.emulateMedia({ reducedMotion: "reduce" });
-      await page.goto("/?tappa=6&lang=it", { waitUntil: "domcontentloaded" });
+      await page.goto("/?tappa=4&lang=it", { waitUntil: "domcontentloaded" });
       await ensureOnboardingVisible(page);
       await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
       await page.locator("#guide-skip-button").click();
-      await page.locator(".stop-button").nth(5).click();
+      await page.locator(".stop-button").nth(3).click();
       await page.locator("#mini-player-open").click();
       await page.locator("#player-map-button").click();
 
       const title = page.locator("#detail-title");
       await expect(title).toHaveClass(/is-overflowing/);
       await expect(title).toHaveAttribute("tabindex", "0");
-      await expect(page.locator("#detail-title-text")).toHaveText("Parrocchia di Santa Maria Addolorata e San Giovanni Apostolo");
+      await expect(page.locator("#detail-title-text")).toHaveText("Pieve dei Santi Giovanni ed Ermolao");
       const before = await title.evaluate((element) => ({
         clientWidth: element.clientWidth,
         scrollWidth: element.scrollWidth,
