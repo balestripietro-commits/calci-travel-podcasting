@@ -28,3 +28,5 @@
 - Contenuti reali sulle tappe; lorem ipsum in presentazione e sezioni editoriali.
 - Blu Calci, superfici crema, oro per i controlli e viola Travel Podcasting per i numeri.
 - Coordinate/tracciato non confermati restano indicati come proposti o indicativi.
+
+- Sportello email opzionale (primo passo dell'onboarding, prima della scelta lingua): montato il 23/10/2026 ma spento (`EMAIL_GATE_ENABLED = false` in `app.js`). Riattivazione, destinazione (Foglio Google tramite `apps-script/raccolta-email.gs`) e prerequisiti (consenso e informativa del Comune) sono nel playbook dei siti comunali. Test: `tests/e2e/email-step.spec.mjs`.

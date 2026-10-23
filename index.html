@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="design-system.css?v=20261018-calci-rebuild" />
     <link rel="stylesheet" href="theme-calci.css?v=20261018-calci-rebuild" />
-    <link rel="stylesheet" href="style.css?v=20261010-no-email-gate" />
+    <link rel="stylesheet" href="style.css?v=20261023-email-spento" />
   </head>
   <body class="tp-theme-calci">
     <div class="announcement-strip" aria-hidden="true">
@@ -41,6 +41,20 @@
           class="language-chips onboarding-language-chips"
           aria-label="Seleziona lingua"
         ></div>
+        <form id="onboarding-email-form" class="onboarding-email-form" hidden novalidate>
+          <label id="onboarding-email-label" class="onboarding-email-label" for="onboarding-email-input">La tua email</label>
+          <input id="onboarding-email-input" class="onboarding-email-input" type="email" name="email" inputmode="email" autocomplete="email" placeholder="nome@esempio.it" required />
+          <input type="text" name="website" class="onboarding-email-trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label class="onboarding-email-consent">
+            <input id="onboarding-email-consent" type="checkbox" name="consent" required />
+            <span id="onboarding-email-consent-text">Acconsento a ricevere novità su Travel podcasting e sul percorso. Posso cancellarmi in ogni momento.</span>
+          </label>
+          <p id="onboarding-email-error" class="onboarding-email-error" role="alert" hidden></p>
+          <div class="onboarding-email-actions">
+            <button type="button" id="onboarding-email-skip" class="guide-button guide-button-secondary onboarding-email-button">Salta</button>
+            <button type="submit" id="onboarding-email-submit" class="guide-button guide-button-primary onboarding-email-button">Continua</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -572,6 +586,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="app.js?v=20261010-no-email-gate"></script>
+    <script src="app.js?v=20261023-email-spento"></script>
   </body>
 </html>
