@@ -676,6 +676,7 @@ const STOP_ARTWORKS = {
   1: "assets/stops/tappa-01-certosa.jpg",
   4: "assets/stops/tappa-04-pieve.png",
   5: "assets/stops/tappa-05-palazzo-comunale.png",
+  6: "assets/stops/tappa-06-gioco-del-mulino.png",
 };
 
 const stopTitles = {
