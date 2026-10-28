@@ -18,7 +18,6 @@
   --tp-shadow-tint: rgba(13, 79, 123, 0.18);
   --tp-shadow-tint-soft: rgba(13, 79, 123, 0.12);
   --tp-transcript-surface: #1f6696;
-  --tp-transcript-active: var(--tp-color-accent);
   --tp-logo-frame: #ffffff;
   --tp-player-surface-deep: #0a3d61;
   --tp-player-surface-sheet-deep: #082f4d;

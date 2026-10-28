@@ -8152,7 +8152,6 @@ body.player-open {
     color: rgba(255, 255, 255, 0.98);
     font-weight: 750;
     transform: translateX(2px);
-    box-shadow: inset 3px 0 0 var(--tp-transcript-active);
   }
 
   /* Mobile transcript comparison modes, selected per stop for review. */
