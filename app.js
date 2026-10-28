@@ -13,11 +13,11 @@ const tappe = [
         "bandiera": "🇮🇹",
         "fileAudio": "audio/it/01_certosa_calci.mp3",
         "audioDisponibile": true,
-        "trascrizione": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall'abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto, tantissimo silenzio. Noi certosini con il silenzio abbiamo sempre avuto un ottimo rapporto. Con quello che c'è fuori da queste mura, un po' meno. Eppure Calci, in un certo senso, l'ho sempre conosciuta. Per anni ne ho letto la storia. Ho studiato i suoi borghi, le sue chiese, i torrenti che attraversano la valle, le persone che l'hanno abitata. E da quassù l'ho anche sentita. Le campane, l'acqua che scende dalla montagna, le voci che arrivano dal paese. E nei giorni più movimentati perfino qualche rumore che avrebbe fatto storcere il naso ai miei confratelli. Insomma, Calci l'ho letta, studiata, ascoltata. Mi mancava soltanto una cosa. Vederla davvero. Così oggi ho preso una decisione. Esco. Finalmente. E visto che ormai siete qui, tanto vale che veniate con me. Ma vi avverto: non aspettatevi che vi porti semplicemente davanti a sette monumenti e vi racconti quando sono stati costruiti. Le date, credetemi, le conosco già. Quello che voglio capire è se la Calci che ho incontrato per tanti anni nei libri è davvero quella che troveremo là fuori. Vorrei attraversarla insieme a voi. Seguitemi. Lasciamo la Certosa alle nostre spalle e cominciamo a scendere verso il paese. Da qui in poi lasciamoci guidare un po' dalla curiosità. Calci non è un paese che si racconta tutto in una volta: bisogna attraversarlo, fermarsi, osservare... e mettere insieme i pezzi. E per una volta, invece di cercarli sulle pagine di un libro, direi che possiamo farlo camminando.—"
+        "trascrizione": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall’abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto, tantissimo silenzio. Noi certosini con il silenzio abbiamo sempre avuto un ottimo rapporto. Con quello che c’è fuori da queste mura, un po' meno. Eppure Calci, in un certo senso, l’ho sempre conosciuta. Per anni ne ho letto la storia. Ho studiato i suoi borghi, le sue chiese, i torrenti che attraversano la valle, le persone che l’hanno abitata. E da quassù l’ho anche sentita. Le campane, l’acqua che scende dalla montagna, le voci che arrivano dal paese. E nei giorni più movimentati perfino qualche rumore che avrebbe fatto storcere il naso ai miei confratelli. Insomma, Calci l’ho letta, studiata, ascoltata. Mi mancava soltanto una cosa. Vederla davvero. Così oggi ho preso una decisione. Esco. Finalmente. E visto che ormai siete qui, tanto vale che veniate con me. Ma vi avverto: non aspettatevi che vi porti semplicemente davanti a sette monumenti e vi racconti quando sono stati costruiti. Le date, credetemi, le conosco già. Quello che voglio capire è se la Calci che ho incontrato per tanti anni nei libri è davvero quella che troveremo là fuori. Vorrei attraversarla insieme a voi. Seguitemi. Lasciamo la Certosa alle nostre spalle e cominciamo a scendere verso il paese. Da qui in poi lasciamoci guidare un po' dalla curiosità. Calci non è un paese che si racconta tutto in una volta: bisogna attraversarlo, fermarsi, osservare... e mettere insieme i pezzi. E per una volta, invece di cercarli sulle pagine di un libro, direi che possiamo farlo camminando.—"
       }
     ],
     "durata": "",
-    "descrizione": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall'abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto,…"
+    "descrizione": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall’abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto,…"
   },
   {
     "numero": 2,
@@ -213,7 +213,7 @@ const mapCameraPresets = {
 
 const stopDescriptions = {
   "1": {
-    "IT": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall'abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto,…"
+    "IT": "Benvenuti alla Certosa di Calci. Io sono Padre Gherardo e, come forse avrete intuito dall’abito, sono un monaco certosino. Questa è casa mia. Una casa piuttosto grande, a dire il vero. Chiostri, celle, corridoi, giardini... e soprattutto tanto,…"
   },
   "2": {
     "IT": "Eccoci qua. Fermiamoci un attimo. Devo ammetterlo: sulle mappe Calci mi è sempre sembrata molto più semplice. Una strada che scende lungo la valle, qualche campanile, le case, gli olivi tutt’intorno. Poi si esce, si comincia a camminare… e ci si…"
@@ -506,7 +506,7 @@ const TRANSITION_TRANSCRIPT = {
     {
       "start": 0.0,
       "end": 3.42,
-      "text": "Questa traccia fa parte dell'itinerario audio realizzato"
+      "text": "Questa traccia fa parte dell’itinerario audio realizzato"
     },
     {
       "start": 3.42,
@@ -720,7 +720,7 @@ const uiStrings = {
     locateMe: "Trova la mia posizione",
     locatingMe: "Sto cercando la tua posizione...",
     locationFound: "Posizione trovata sulla mappa.",
-    locationOutsideRoute: "Sei fuori dall'area del percorso. Ti mostro le tappe di Calci.",
+    locationOutsideRoute: "Sei fuori dall’area del percorso. Ti mostro le tappe di Calci.",
     geolocationUnsupported: "Geolocalizzazione non supportata da questo browser.",
     geolocationDenied: "Permesso posizione negato.",
     geolocationUnavailable: "Posizione non disponibile.",
@@ -854,7 +854,7 @@ const uiStrings = {
     brandName: "Travel podcasting",
     brandTag: "Comune di Calci",
     mainTitle: "Lorem ipsum",
-    mapStageNote: "Touch the markers or use the stops below to open the route's audio player.",
+    mapStageNote: "Touch the markers or use the stops below to open the route’s audio player.",
     highlightTitle: "Lorem ipsum",
     highlightText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     languageNames: {
@@ -1291,7 +1291,7 @@ const statusMessages = {
     mapLocalServerRequired: "Per vedere la mappa, apri il sito da http://localhost:8000 dopo aver avviato npm run dev; non aprire index.html come file.",
     audioLoading: "Caricamento audio...",
     audioBuffering: "Buffering audio...",
-    audioLoadError: "L'audio non è disponibile in questo momento. Riprova tra poco.",
+    audioLoadError: "L’audio non è disponibile in questo momento. Riprova tra poco.",
   },
   EN: {
     offlineStatus: "You are offline or the connection is unstable.",
@@ -1313,7 +1313,7 @@ const statusMessages = {
     offlineStatus: "Vous êtes hors ligne ou la connexion est instable.",
     mapLoadError: "La carte ne se charge pas correctement. Réessayez dans un instant.",
     mapLocalServerRequired: "Pour voir la carte, lancez npm run dev et ouvrez http://localhost:8000, pas le fichier index.html.",
-    audioLoading: "Chargement de l'audio...",
+    audioLoading: "Chargement de l’audio...",
     audioBuffering: "Mise en mémoire tampon...",
     audioLoadError: "L’audio n’est pas disponible pour le moment. Réessayez dans un instant.",
   },
@@ -1347,7 +1347,7 @@ const onboardingUiStrings = {
   IT: {
     onboardingTitle: "Scegli la lingua per iniziare il percorso",
     onboardingHint: "Potrai cambiarla in ogni momento.",
-    languageUnavailable: "Questa lingua non è ancora disponibile. Per ora puoi usare solo l'italiano.",
+    languageUnavailable: "Questa lingua non è ancora disponibile. Per ora puoi usare solo l’italiano.",
     languageUnavailableTitle: "Lingua non disponibile",
     languageUnavailableClose: "Chiudi",
     helpButton: "Aiuto",
@@ -1366,7 +1366,7 @@ const onboardingUiStrings = {
     guideExplore: "Da questo pulsante potrai aprire la mappa estesa, con i controlli audio e le tappe a fianco.",
     guideExploreView: "Questa sarà la vista estesa: la mappa occuperà tutto lo spazio e il player resterà nel pannello a destra.",
     guideCloseExplore: "Da qui potrai chiudere la vista estesa e tornare alla home.",
-    guideFullPlayer: "Questa è la vista Mappa + player: potrai seguire il percorso, ascoltare l'audio e leggere la didascalia sincronizzata.",
+    guideFullPlayer: "Questa è la vista Mappa + player: potrai seguire il percorso, ascoltare l’audio e leggere la didascalia sincronizzata.",
     guidePlayerMapToggle: "Con questo tasto potrai aprire Full player audio, senza chiudere il percorso.",
     guideListeningView: "Questa è la vista Full player audio: qui troverai foto, comandi e trascrizione completa sincronizzata.",
     guideReturnToMap: "Con questo tasto potrai tornare a Mappa + player, mantenendo la stessa tappa.",
@@ -2598,8 +2598,8 @@ let contextGuideInertStates = [];
 
 const playerContextGuideCopy = {
   IT: {
-    map: ["Trascina la mappa con un dito e usa due dita per ingrandire o ridurre. I numeri aprono le tappe; in basso leggerai la didascalia dell'audio.", "Questo tasto trova la tua posizione sulla mappa, se autorizzi il browser.", "Questo tasto apre le indicazioni a piedi in Google Maps.", "Questo tasto passa a Full player audio.", "La X chiude il full player e torna alla pagina. Chiudere questa guida non la premerà."],
-    listen: ["Questa è la vista Full player audio: qui ascolti la tappa e leggi la trascrizione completa. Se il titolo è lungo, scorre una volta per mostrarsi per intero.", "Questo tasto torna a Mappa + player, senza interrompere l'ascolto.", "La X chiude il full player e torna alla pagina. Chiudere questa guida non la premerà."],
+    map: ["Trascina la mappa con un dito e usa due dita per ingrandire o ridurre. I numeri aprono le tappe; in basso leggerai la didascalia dell’audio.", "Questo tasto trova la tua posizione sulla mappa, se autorizzi il browser.", "Questo tasto apre le indicazioni a piedi in Google Maps.", "Questo tasto passa a Full player audio.", "La X chiude il full player e torna alla pagina. Chiudere questa guida non la premerà."],
+    listen: ["Questa è la vista Full player audio: qui ascolti la tappa e leggi la trascrizione completa. Se il titolo è lungo, scorre una volta per mostrarsi per intero.", "Questo tasto torna a Mappa + player, senza interrompere l’ascolto.", "La X chiude il full player e torna alla pagina. Chiudere questa guida non la premerà."],
     mapHelp: "Guida Mappa e player", listenHelp: "Guida Full player audio", close: "Chiudi guida", previous: "Indietro", next: "Avanti", finish: "Termina guida",
   },
   EN: {
@@ -2613,8 +2613,8 @@ const playerContextGuideCopy = {
     mapHelp: "Anleitung für Karte und Player", listenHelp: "Anleitung für den Audio-Player im Vollbild", close: "Anleitung schließen", previous: "Zurück", next: "Weiter", finish: "Anleitung beenden",
   },
   FR: {
-    map: ["Faites glisser la carte avec un doigt et pincez avec deux doigts pour zoomer. Les numéros ouvrent les étapes ; les sous-titres audio apparaissent en bas.", "Ce bouton affiche votre position sur la carte si vous autorisez la localisation.", "Ce bouton ouvre l'itinéraire à pied dans Google Maps.", "Ce bouton ouvre le lecteur audio plein écran.", "La croix ferme le lecteur plein écran et revient à la page. Fermer ce guide ne l'activera pas."],
-    listen: ["Voici le lecteur audio plein écran : écoutez l'étape et lisez la transcription complète. Un titre long défile une fois pour être lu en entier.", "Ce bouton revient à la carte avec lecteur sans interrompre l'écoute.", "La croix ferme le lecteur plein écran et revient à la page. Fermer ce guide ne l'activera pas."],
+    map: ["Faites glisser la carte avec un doigt et pincez avec deux doigts pour zoomer. Les numéros ouvrent les étapes ; les sous-titres audio apparaissent en bas.", "Ce bouton affiche votre position sur la carte si vous autorisez la localisation.", "Ce bouton ouvre l’itinéraire à pied dans Google Maps.", "Ce bouton ouvre le lecteur audio plein écran.", "La croix ferme le lecteur plein écran et revient à la page. Fermer ce guide ne l’activera pas."],
+    listen: ["Voici le lecteur audio plein écran : écoutez l’étape et lisez la transcription complète. Un titre long défile une fois pour être lu en entier.", "Ce bouton revient à la carte avec lecteur sans interrompre l’écoute.", "La croix ferme le lecteur plein écran et revient à la page. Fermer ce guide ne l’activera pas."],
     mapHelp: "Guide carte et lecteur", listenHelp: "Guide du lecteur audio plein écran", close: "Fermer le guide", previous: "Retour", next: "Suivant", finish: "Terminer le guide",
   },
   ES: {
@@ -3127,7 +3127,7 @@ function getDirectionsLabel() {
     IT: "Apri indicazioni",
     EN: "Open directions",
     DE: "Route öffnen",
-    FR: "Ouvrir l'itinéraire",
+    FR: "Ouvrir l’itinéraire",
     ES: "Abrir indicaciones",
     PT: "Abrir direções",
     RU: "Открыть маршрут",
@@ -5456,8 +5456,8 @@ const emailAddressPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const emailUiStrings = {
   title: "Resta aggiornato sul percorso",
   hint: "Lascia la tua email per ricevere novità su Travel podcasting. Puoi anche saltare.",
-  invalid: "Inserisci un'email valida e accetta il consenso.",
-  failed: "Non siamo riusciti a salvare l'email. Riprova o salta.",
+  invalid: "Inserisci un’email valida e accetta il consenso.",
+  failed: "Non siamo riusciti a salvare l’email. Riprova o salta.",
   sending: "Invio…",
   submit: "Continua",
 };
