@@ -589,7 +589,7 @@ button:active,
 }
 
 .intro-copy::before {
-  content: "«";
+  content: none;
   position: absolute;
   left: 0;
   top: -0.02em;
@@ -600,7 +600,7 @@ button:active,
 }
 
 .intro-quote::after {
-  content: "»";
+  content: none;
   display: inline-block;
   margin-left: 0.08em;
   position: relative;
@@ -616,7 +616,7 @@ button:active,
   display: grid;
   gap: 8px;
   margin-bottom: 10px;
-  max-width: 30em;
+  max-width: 40em;
   padding-right: 1.2em;
 }
 
