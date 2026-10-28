@@ -589,7 +589,7 @@ button:active,
 }
 
 .intro-copy::before {
-  content: "“";
+  content: "«";
   position: absolute;
   left: 0;
   top: -0.02em;
@@ -600,7 +600,7 @@ button:active,
 }
 
 .intro-quote::after {
-  content: "”";
+  content: "»";
   display: inline-block;
   margin-left: 0.08em;
   position: relative;
