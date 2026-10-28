@@ -703,9 +703,9 @@ const stopTitles = {
 const uiStrings = {
   IT: {
     prototype: "",
-    introLead: "Un percorso audio tra la Certosa, la Pieve e il centro del paese.",
+    introLead: "Sono Padre Gherardo.",
     intro:
-      "Dalla Certosa alle vie di Calci, ti accompagnerò tra pievi, stemmi e racconti, tappa dopo tappa.",
+      "Dalla Certosa alle vie di Calci, ti accompagnerò tra pievi, stemmi e racconti, tappa dopo tappa. Un percorso audio tra la Certosa, la Pieve e il centro del paese.",
     instructionsTitle: "Istruzioni",
     instructionsText:
       "La mappa mostra l’intero percorso, con le tappe da 1 a 7. Puoi selezionare una tappa dalla lista oppure cliccare direttamente sulla mappa: il sito evidenzierà il punto scelto, centrerà la visuale e aprirà i contenuti dedicati.",
@@ -770,7 +770,7 @@ const uiStrings = {
     openFirstStop: "Torna alla prima tappa",
     brandName: "Travel podcasting",
     brandTag: "Comune di Calci",
-    mainTitle: "Buondì, sono Padre Gherardo.",
+    mainTitle: "Buondì!",
     mapStageNote: "Tocca i marker o usa le tappe sotto per aprire il player audio del percorso.",
     highlightTitle: "Lorem ipsum",
     highlightText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
