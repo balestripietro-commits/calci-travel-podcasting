@@ -2,6 +2,7 @@
 :root[data-tp-theme="calci"],
 .tp-theme-calci {
   --tp-player-surface: #0d4f7b;
+  --tp-caption-surface: rgba(6, 43, 69, 0.82);
   --tp-player-surface-deep: #0a3d61;
   --tp-player-surface-sheet-deep: #082f4d;
   --tp-player-surface-sheet-darkest: #062440;

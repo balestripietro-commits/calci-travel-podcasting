@@ -4,6 +4,7 @@
   --tp-font-editorial: "Georgia", "Times New Roman", serif;
 
   --tp-player-surface: #174e47;
+  --tp-caption-surface: rgba(5, 43, 39, 0.82);
   --tp-player-surface-deep: #0b3531;
   --tp-player-surface-sheet-deep: #092f2c;
   --tp-player-surface-sheet-darkest: #06221f;

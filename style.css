@@ -865,7 +865,7 @@ button:active,
   padding: 12px 18px;
   border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: 12px;
-  background: rgba(5, 43, 39, 0.82);
+  background: var(--tp-caption-surface);
   box-shadow: 0 10px 26px rgba(3, 25, 23, 0.22);
   color: #ffffff;
   font-family: var(--tp-font-ui);
