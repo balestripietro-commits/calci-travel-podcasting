@@ -944,7 +944,7 @@ button:active,
   padding: 4px;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 20px;
-  background: rgba(7, 54, 48, 0.86);
+  background: var(--tp-map-panel-surface);
   box-shadow: 0 8px 20px rgba(4, 35, 31, 0.22);
   backdrop-filter: blur(10px);
   pointer-events: none;
@@ -2016,7 +2016,7 @@ body.is-map-fullscreen .map-explore-stop {
   position: absolute;
   inset: 0;
   border: 0;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   opacity: 1;
@@ -3673,7 +3673,7 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
 .TPPlayerSheet {
   display: flex;
   align-items: flex-end;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -4401,7 +4401,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
   min-width: 52px;
   min-height: 52px;
   border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(18, 76, 67, 0.96);
+  background: var(--tp-map-control-surface);
   color: var(--tp-color-on-primary);
   box-shadow: var(--tp-elevation-3);
   transition: transform var(--tp-motion-fast) var(--tp-ease-emphasized), box-shadow var(--tp-motion-fast) var(--tp-ease-standard), background var(--tp-motion-fast) var(--tp-ease-standard);
@@ -4691,7 +4691,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
   padding: 8px 8px 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: var(--tp-radius-lg);
-  background: rgba(13, 58, 51, 0.94);
+  background: var(--tp-map-panel-surface);
   color: #fff;
   box-shadow: var(--tp-elevation-3);
   backdrop-filter: blur(16px);
@@ -6301,11 +6301,11 @@ body.language-unavailable-open {
 
 .TPPlayerSheet {
   align-items: stretch;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
 }
 
 .TPPlayerSheet .player-backdrop {
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
 }
 
 .TPPlayerSheet .player-sheet {
@@ -6313,7 +6313,7 @@ body.language-unavailable-open {
   min-height: 100dvh;
   max-height: 100dvh;
   border-radius: 0;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
   box-shadow: none;
 }
 
@@ -6474,7 +6474,7 @@ body.language-unavailable-open {
   height: 100dvh;
   padding: 0;
   overflow: hidden;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
   border-radius: 0;
   overscroll-behavior: none;
 }
@@ -6494,7 +6494,7 @@ body.language-unavailable-open {
   margin: 0;
   overflow: hidden;
   border-radius: 0;
-  background: #092f2c;
+  background: var(--tp-player-surface-sheet-deep);
   box-shadow: none;
 }
 
@@ -6593,7 +6593,7 @@ body.language-unavailable-open {
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-bottom: 0;
     border-radius: 24px 24px 0 0;
-    background: #092f2c;
+    background: var(--tp-player-surface-sheet-deep);
     box-shadow: 0 -14px 36px rgba(5, 29, 27, 0.32);
     pointer-events: auto;
     white-space: normal;
@@ -8504,7 +8504,7 @@ body.player-open {
     z-index: 5000;
     width: var(--tp-explore-panel-width);
     height: 100dvh;
-    background: #092f2c;
+    background: var(--tp-player-surface-sheet-deep);
     box-shadow: -18px 0 44px rgba(5, 29, 27, 0.28);
   }
 

@@ -7757,7 +7757,7 @@ function renderMap() {
 
   const routeLayer = L.polyline(displayRouteCoordinates.map(([longitude, latitude]) => [latitude, longitude]), {
     className: "map-route-base",
-    color: "#216f62",
+    color: getComputedStyle(document.documentElement).getPropertyValue("--tp-map-route").trim() || "#216f62",
     weight: 5,
     opacity: 0.8,
     lineCap: "round",

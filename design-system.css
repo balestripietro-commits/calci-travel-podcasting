@@ -5,6 +5,10 @@
 
   --tp-player-surface: #174e47;
   --tp-caption-surface: rgba(5, 43, 39, 0.82);
+  --tp-map-control-surface: rgba(18, 76, 67, 0.96);
+  --tp-map-panel-surface: rgba(13, 58, 51, 0.94);
+  --tp-map-route: #216f62;
+  --tp-color-primary-dark: #0d554b;
   --tp-player-surface-deep: #0b3531;
   --tp-player-surface-sheet-deep: #092f2c;
   --tp-player-surface-sheet-darkest: #06221f;
