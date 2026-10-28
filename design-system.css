@@ -3,6 +3,11 @@
   --tp-font-ui: "Roboto Flex", "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --tp-font-editorial: "Georgia", "Times New Roman", serif;
 
+  --tp-player-surface: #174e47;
+  --tp-player-surface-deep: #0b3531;
+  --tp-player-surface-sheet-deep: #092f2c;
+  --tp-player-surface-sheet-darkest: #06221f;
+
   --tp-color-primary: #245c52;
   --tp-color-on-primary: #ffffff;
   --tp-color-primary-container: #d8eee6;

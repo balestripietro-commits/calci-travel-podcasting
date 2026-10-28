@@ -1,6 +1,11 @@
 :root,
 :root[data-tp-theme="calci"],
 .tp-theme-calci {
+  --tp-player-surface: #0d4f7b;
+  --tp-player-surface-deep: #0a3d61;
+  --tp-player-surface-sheet-deep: #082f4d;
+  --tp-player-surface-sheet-darkest: #062440;
+
   --tp-color-primary: #0d4f7b;
   --tp-color-on-primary: #ffffff;
   --tp-color-primary-container: #dcecf5;

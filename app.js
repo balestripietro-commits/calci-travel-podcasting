@@ -634,7 +634,7 @@ let mapSelectionTooltip = null;
 let mapSelectionTooltipFadeTimer = null;
 let mapSelectionTooltipCloseTimer = null;
 
-const MASCOT_ASSET_VERSION = "20261018-calci";
+const MASCOT_ASSET_VERSION = "20261028-monaco-calci";
 const MASCOT_FRAME_BASE_PATH = "assets/mascotte-mouth";
 const MASCOT_REST_FRAME = `${MASCOT_FRAME_BASE_PATH}/mascotte_B.webp?v=${MASCOT_ASSET_VERSION}`;
 const MASCOT_FRAME_PATHS = {
@@ -672,12 +672,9 @@ const WHITE_ARTWORK =
   encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><rect width="1200" height="1200" fill="#f7f5ef"/><rect x="24" y="24" width="1152" height="1152" rx="48" fill="none" stroke="#dce4e7" stroke-width="18"/></svg>'
   );
-const STOP_ARTWORKS = {
-  1: "assets/stops/tappa-01-certosa.jpg",
-  4: "assets/stops/tappa-04-pieve.png",
-  5: "assets/stops/tappa-05-palazzo-comunale.png",
-  6: "assets/stops/tappa-06-gioco-del-mulino.png",
-};
+// Foto delle tappe sospese: tutte le tappe usano il riquadro neutro.
+// Per riattivarle, rimettere i percorsi in questa mappa.
+const STOP_ARTWORKS = {};
 
 const stopTitles = {
   "1": {
@@ -708,7 +705,7 @@ const uiStrings = {
     prototype: "",
     introLead: "Lorem ipsum",
     intro:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Buondì, sono Padre Gherardo. Dalla Certosa alle vie di Calci, ti accompagnerò tra pievi, stemmi e racconti, tappa dopo tappa.",
     instructionsTitle: "Istruzioni",
     instructionsText:
       "La mappa mostra l’intero percorso, con le tappe da 1 a 7. Puoi selezionare una tappa dalla lista oppure cliccare direttamente sulla mappa: il sito evidenzierà il punto scelto, centrerà la visuale e aprirà i contenuti dedicati.",
