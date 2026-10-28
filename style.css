@@ -314,7 +314,7 @@ button:active,
   transform: translateY(-1px);
   box-shadow:
     0 0 0 7px color-mix(in srgb, var(--tp-color-tertiary) 36%, transparent),
-    0 10px 22px rgba(27, 79, 71, 0.12);
+    0 10px 22px var(--tp-shadow-tint-soft);
 }
 
 .language-chip:active {
@@ -326,7 +326,7 @@ button:active,
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
-  box-shadow: 0 12px 24px rgba(24, 97, 84, 0.18);
+  box-shadow: 0 12px 24px var(--tp-shadow-tint);
 }
 
 .language-chip.tp-chip {
@@ -341,7 +341,7 @@ button:active,
   color: var(--tp-color-on-primary);
   box-shadow:
     0 0 0 4px color-mix(in srgb, var(--tp-color-tertiary) 42%, transparent),
-    0 12px 24px rgba(24, 97, 84, 0.18);
+    0 12px 24px var(--tp-shadow-tint);
 }
 
 .language-chip.is-pulsing {
@@ -1155,7 +1155,7 @@ body.is-map-fullscreen .map-explore-stop {
   width: min(320px, calc(100% - 68px));
   padding: 20px 22px;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(33, 95, 82, 0.92), rgba(18, 61, 52, 0.96));
+  background: linear-gradient(180deg, var(--tp-map-card-top), var(--tp-map-panel-surface));
   color: #ffffff;
   box-shadow: 0 18px 36px rgba(14, 34, 30, 0.18);
 }
@@ -1567,7 +1567,7 @@ body.is-map-fullscreen .map-explore-stop {
 }
 
 .logo-spotify {
-  border-color: rgba(24, 164, 90, 0.22);
+  border-color: var(--tp-accent-glow);
 }
 
 .logo-spotify .platform-logo-mark {
@@ -2895,7 +2895,7 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
   padding: 16px 18px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--tp-radius-md);
-  background: rgba(6, 42, 37, 0.84);
+  background: var(--tp-deep-tint-soft);
   box-shadow: var(--tp-elevation-3);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -3082,7 +3082,7 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
 
 @media (max-width: 1023px) {
   .map-stage-frame.is-expanded .leaflet-control-attribution a {
-    color: rgba(16, 58, 51, 0.82);
+    color: var(--tp-text-tint);
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
   }
 }
@@ -3923,7 +3923,7 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--tp-radius-md);
-  background: rgba(10, 47, 43, 0.98);
+  background: var(--tp-deep-tint);
   box-shadow: var(--tp-elevation-4);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -4171,8 +4171,8 @@ body.guide-open::before {
     radial-gradient(circle at var(--guide-spotlight-x, 50%) var(--guide-spotlight-y, 45%),
       rgba(255, 248, 232, 0.08) 0,
       rgba(255, 248, 232, 0.08) 16%,
-      rgba(20, 49, 44, 0.18) 46%,
-      rgba(20, 49, 44, 0.26) 100%);
+      var(--tp-scrim-tint-soft) 46%,
+      var(--tp-scrim-tint) 100%);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   pointer-events: none;
@@ -4518,7 +4518,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
 
 .leaflet-overlay-pane .map-route-active {
   pointer-events: none;
-  filter: drop-shadow(0 2px 2px rgba(25, 77, 68, 0.42));
+  filter: drop-shadow(0 2px 2px var(--tp-map-route-shadow));
 }
 
 .leaflet-overlay-pane .map-route-active.is-revealing {
@@ -5532,7 +5532,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(20, 49, 44, 0.32);
+  background: var(--tp-scrim-tint-soft);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   opacity: 1;
@@ -5553,7 +5553,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
   border-radius: 24px;
   background: #ffffff;
   color: var(--text);
-  box-shadow: 0 24px 70px rgba(20, 49, 44, 0.26);
+  box-shadow: 0 24px 70px var(--tp-scrim-tint);
   text-align: center;
 }
 
@@ -7555,7 +7555,7 @@ body.language-unavailable-open {
   overflow: visible;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--tp-radius-full);
-  background: rgba(6, 42, 37, 0.88);
+  background: var(--tp-deep-tint);
   box-shadow: var(--tp-elevation-2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -7581,7 +7581,7 @@ body.language-unavailable-open {
 
 .TPPlayerSheet .player-artwork > .detail-copy-trigger[open] {
   border-color: color-mix(in srgb, var(--tp-color-tertiary) 82%, #fff);
-  background: color-mix(in srgb, var(--tp-color-tertiary) 20%, rgba(6, 42, 37, 0.9));
+  background: color-mix(in srgb, var(--tp-color-tertiary) 20%, var(--tp-deep-tint));
 }
 
 .TPPlayerSheet .player-artwork > .detail-copy-trigger:focus-within {

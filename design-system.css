@@ -9,6 +9,16 @@
   --tp-map-panel-surface: rgba(13, 58, 51, 0.94);
   --tp-map-route: #216f62;
   --tp-color-primary-dark: #0d554b;
+  --tp-map-route-shadow: rgba(25, 77, 68, 0.42);
+  --tp-map-card-top: rgba(33, 95, 82, 0.92);
+  --tp-scrim-tint-soft: rgba(20, 49, 44, 0.18);
+  --tp-scrim-tint: rgba(20, 49, 44, 0.26);
+  --tp-deep-tint-soft: rgba(6, 42, 37, 0.84);
+  --tp-deep-tint: rgba(10, 47, 43, 0.98);
+  --tp-text-tint: rgba(16, 58, 51, 0.82);
+  --tp-accent-glow: rgba(24, 164, 90, 0.22);
+  --tp-shadow-tint: rgba(24, 97, 84, 0.18);
+  --tp-shadow-tint-soft: rgba(27, 79, 71, 0.12);
   --tp-player-surface-deep: #0b3531;
   --tp-player-surface-sheet-deep: #092f2c;
   --tp-player-surface-sheet-darkest: #06221f;
