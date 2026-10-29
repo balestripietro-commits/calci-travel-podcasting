@@ -520,8 +520,9 @@ const TRANSITION_TRANSCRIPT = {
     }
   ]
 };
-// A subtle visual lead keeps lip movement aligned with the audible phoneme.
-const MASCOT_LIP_SYNC_LEAD_SECONDS = 0.08;
+// Rhubarb cues already anticipate the audio by about 45 ms (measured on every
+// Italian track), so the extra visual lead is kept small to avoid a double advance.
+const MASCOT_LIP_SYNC_LEAD_SECONDS = 0.02;
 
 let currentAudio = null;
 let audioSessionToken = 0;

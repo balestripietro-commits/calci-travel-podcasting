@@ -10,6 +10,7 @@ Anteprima locale in italiano del sito di Calci, basata sulla struttura e sulle i
 - Palette Calci blu, crema e oro; numerazione viola Travel Podcasting.
 - Mascotte e maschere di Brunelleschi temporanee; modalità di sostituzione in `SOSTITUZIONE_ASSET.md`.
 - Trascrizioni, sottotitoli e cue labiali automatici da revisionare prima della pubblicazione.
+- Controllo del 29 ottobre 2026 sugli MP3 italiani: i tempi dei sottotitoli coincidono con le parole pronunciate (scarto mediano 0,02 s su tutte le tracce). I cue Rhubarb anticipano l'audio di circa 45 ms, quindi l'anticipo aggiuntivo del sito (`MASCOT_LIP_SYNC_LEAD_SECONDS`) è stato ridotto da 80 a 20 ms.
 - Le foto e i crediti da verificare sono indicati in `data/tappe.json`; le tappe senza foto approvata mostrano un riquadro neutro.
 - Percorso e coordinate 1 e 7 indicativi/proposti, da confermare con il Comune.
 
