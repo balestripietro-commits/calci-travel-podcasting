@@ -499,7 +499,7 @@ const playerSheet = document.querySelector(".player-sheet");
 
 const PLAYBACK_RATES = [1, 1.25, 1.5];
 const TRANSITION_AUDIO_PATH = "audio/it/transition_between_stops.mp3";
-const TRANSITION_ARTWORK_PATH = "logo_calci.png";
+const TRANSITION_ARTWORK_PATH = "logo_calci.png?v=20261029-logo";
 const TRANSITION_MOUTH_CUES_PATH = "audio/cues/transition_between_stops.json";
 const TRANSITION_TRANSCRIPT = {
   "segments": [
