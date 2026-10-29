@@ -520,9 +520,10 @@ const TRANSITION_TRANSCRIPT = {
     }
   ]
 };
-// Rhubarb cues already anticipate the audio by about 45 ms (measured on every
-// Italian track), so the extra visual lead is kept small to avoid a double advance.
-const MASCOT_LIP_SYNC_LEAD_SECONDS = 0.02;
+// Rhubarb cues are already centred on the speech: on every Italian track the mouth
+// opens about 55 ms before the voice and closes about 65 ms after it (measured on
+// 559 phrase onsets), so no extra visual lead is added.
+const MASCOT_LIP_SYNC_LEAD_SECONDS = 0;
 
 let currentAudio = null;
 let audioSessionToken = 0;
