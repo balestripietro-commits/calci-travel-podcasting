@@ -797,7 +797,7 @@ button:active,
   max-width: min(260px, 52vw);
   padding: 7px 10px;
   border-radius: 8px;
-  background: #173f39;
+  background: var(--tp-selection-label-surface);
   color: #ffffff;
   box-shadow: 0 6px 16px rgba(4, 35, 31, 0.2);
   font-size: 0.78rem;
@@ -4584,7 +4584,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
   padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 10px;
-  background: #173f39;
+  background: var(--tp-selection-label-surface);
   color: #ffffff;
   box-shadow: 0 8px 18px rgba(4, 35, 31, 0.28);
   font-size: 0.82rem;
@@ -4623,7 +4623,7 @@ body.guide-open.guide-map-intro-focus .map-stage-frame.is-guide-highlighted .lea
 }
 
 .leaflet-tooltip.map-selection-label::before {
-  border-top-color: #173f39;
+  border-top-color: var(--tp-selection-label-surface);
 }
 
 @media (min-width: 1024px) {
