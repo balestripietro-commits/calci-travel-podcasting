@@ -47,7 +47,7 @@
 | 6 | Piazza Garibaldi | 43.725658, 10.515502 | Definitive nel documento; Comune da validare |
 | 7 | Monte Serra | 43.725700, 10.515900 | Parco Sandro Pertini proposto; punto e coordinate da confermare |
 
-Il tracciato in mappa resta informativo e indicativo. Non presentare i punti 1 e 7 come confermati. Mancano foto approvate alle tappe 2, 3 e 7; diritti/crediti delle foto 4, 5 e 6 vanno verificati.
+Il tracciato in mappa resta informativo e indicativo. Dal 31/10/2026 il tracciato segue le strade pedonali OpenStreetMap (OSRM foot) invece delle linee rette fra le tappe: Certosa → Via Roma → Piazza Cavallotti → Via Poggio della Propositura (Ponte) → Via Venti Settembre → Piazza della Propositura (Pieve) → Via Roma → Piazza Garibaldi → Via Brogiotti, circa 1,5 km; ogni marker coincide con un vertice del tracciato. Non presentare i punti 1 e 7 come confermati. Mancano foto approvate alle tappe 2, 3 e 7; diritti/crediti delle foto 4, 5 e 6 vanno verificati.
 
 ## Audio, trascrizioni e QA
 
