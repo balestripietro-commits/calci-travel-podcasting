@@ -235,80 +235,141 @@ const stopDescriptions = {
   }
 };
 
+// Tracciato pedonale sulle strade reali (dati © OpenStreetMap contributors, ODbL).
+// 1→2 lungo via Roma; 2→3 via Roma, Le Gemelle, Piazza Cavallotti, via Poggio della
+// Propositura e ponticello sulla Zambra; 3→4 verso la Pieve; 4→5 via Roma, ponte e
+// passaggio nel parco lungo la Zambra fino a Piazza Garibaldi.
 const routeGeoJson = {
   "type": "FeatureCollection",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "name": "Tracciato indicativo Calci — da verificare"
+        "name": "Tracciato pedonale Calci — strade reali, aggiornato dopo il sopralluogo del 31/10/2026"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [
-            10.522778,
-            43.721944
-          ],
-          [
-            10.515545,
-            43.725401
-          ],
-          [
-            10.513961,
-            43.725596
-          ],
-          [
-            10.512938,
-            43.726188
-          ],
-          [
-            10.515601,
-            43.72575
-          ],
-          [
-            10.515502,
-            43.725658
-          ],
-          [
-            10.5159,
-            43.7257
-          ]
+          [10.522778, 43.721944],
+          [10.522656, 43.721961],
+          [10.522673, 43.721865],
+          [10.522328, 43.721828],
+          [10.521838, 43.721788],
+          [10.520636, 43.722456],
+          [10.520597, 43.722475],
+          [10.520225, 43.722677],
+          [10.519085, 43.723307],
+          [10.518791, 43.723467],
+          [10.518106, 43.723849],
+          [10.517824, 43.724004],
+          [10.517721, 43.72406],
+          [10.51741, 43.724225],
+          [10.516653, 43.724649],
+          [10.515742, 43.725163],
+          [10.515611, 43.725233],
+          [10.515487, 43.725297],
+          [10.51547, 43.725306],
+          [10.515517, 43.725364],
+          [10.515545, 43.725401],
+          [10.515517, 43.725364],
+          [10.51549, 43.72538],
+          [10.515462, 43.725385],
+          [10.515405, 43.725404],
+          [10.51531, 43.725458],
+          [10.515268, 43.725416],
+          [10.514792, 43.725679],
+          [10.514777, 43.725651],
+          [10.514736, 43.725576],
+          [10.514683, 43.725481],
+          [10.514548, 43.725266],
+          [10.514523, 43.725288],
+          [10.514502, 43.725306],
+          [10.514461, 43.725335],
+          [10.514423, 43.725358],
+          [10.514263, 43.725436],
+          [10.514026, 43.725556],
+          [10.513848, 43.725636],
+          [10.513961, 43.725596],
+          [10.513848, 43.725636],
+          [10.513342, 43.725827],
+          [10.513365, 43.725869],
+          [10.513403, 43.72592],
+          [10.513445, 43.72597],
+          [10.513502, 43.726027],
+          [10.513448, 43.726046],
+          [10.513247, 43.726121],
+          [10.513238, 43.726123],
+          [10.513229, 43.726127],
+          [10.513218, 43.726114],
+          [10.513206, 43.726105],
+          [10.513187, 43.726096],
+          [10.513157, 43.726096],
+          [10.513117, 43.726041],
+          [10.513044, 43.726063],
+          [10.512938, 43.726188],
+          [10.513044, 43.726063],
+          [10.513117, 43.726041],
+          [10.513157, 43.726096],
+          [10.513187, 43.726096],
+          [10.513206, 43.726105],
+          [10.513218, 43.726114],
+          [10.513229, 43.726127],
+          [10.513238, 43.726123],
+          [10.513247, 43.726121],
+          [10.513448, 43.726046],
+          [10.513502, 43.726027],
+          [10.513581, 43.726108],
+          [10.513684, 43.726229],
+          [10.513744, 43.726228],
+          [10.51379, 43.726207],
+          [10.514095, 43.726067],
+          [10.514215, 43.726004],
+          [10.514235, 43.725993],
+          [10.514376, 43.725919],
+          [10.514435, 43.725887],
+          [10.514451, 43.725903],
+          [10.514497, 43.725952],
+          [10.514644, 43.726107],
+          [10.514662, 43.726122],
+          [10.514715, 43.726178],
+          [10.514752, 43.726213],
+          [10.515087, 43.726082],
+          [10.515115, 43.726016],
+          [10.515204, 43.725948],
+          [10.515446, 43.725819],
+          [10.515595, 43.725739],
+          [10.515601, 43.72575],
+          [10.515595, 43.725739],
+          [10.515482, 43.725626],
+          [10.515502, 43.725658],
+          [10.515482, 43.725626],
+          [10.515595, 43.725739],
+          [10.515767, 43.725665],
+          [10.515778, 43.725662],
+          [10.515837, 43.725638],
+          [10.5159, 43.7257]
         ]
       }
     }
   ]
 };
 
+// Punti di passaggio per Google Maps, così le indicazioni seguono lo stesso tracciato
+// della mappa del sito: verso la tappa 3 da Piazza Cavallotti (Le Gemelle) e via Poggio
+// della Propositura; verso la tappa 5 dal parco lungo la Zambra dopo il ponte di via Roma.
+const MAPS_WAYPOINTS_BY_STOP = new Map([
+  [3, ["43.725480,10.514680"]],
+  [5, ["43.726110,10.514660"]],
+]);
+
 const ROUTE_STOP_ANCHORS = new Map([
-  [
-    1,
-    0
-  ],
-  [
-    2,
-    1
-  ],
-  [
-    3,
-    2
-  ],
-  [
-    4,
-    3
-  ],
-  [
-    5,
-    4
-  ],
-  [
-    6,
-    5
-  ],
-  [
-    7,
-    6
-  ]
+  [1, 0],
+  [2, 20],
+  [3, 39],
+  [4, 56],
+  [5, 88],
+  [6, 91],
+  [7, 97]
 ]);
 
 
@@ -3155,7 +3216,9 @@ function updateMapDirectionsButton(tappa = activeStopNumber ? tappe.find((item) 
   const label = getDirectionsLabel();
   const title = getStopTitle(tappa);
   const destination = encodeURIComponent(`${tappa.latitudine},${tappa.longitudine}`);
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=walking`;
+  const waypoints = MAPS_WAYPOINTS_BY_STOP.get(tappa.numero);
+  const waypointsParam = waypoints ? `&waypoints=${encodeURIComponent(waypoints.join("|"))}` : "";
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}${waypointsParam}&travelmode=walking`;
   mapDirectionsButton.href = directionsUrl;
   const tooltip = `${label}: ${title}`;
   mapDirectionsButton.setAttribute("aria-label", tooltip);

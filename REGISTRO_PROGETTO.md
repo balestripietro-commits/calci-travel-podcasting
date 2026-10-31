@@ -41,13 +41,23 @@
 |---|---|---|---|
 | 1 | Certosa Monumentale di Calci | 43.721944, 10.522778 | Indicative nel documento; da validare |
 | 2 | Via Roma | 43.725401, 10.515545 | Definitive nel documento; Comune da validare |
-| 3 | Ponte sulla Zambra | 43.725596, 10.513961 | Definitive nel documento; percorso verso la Pieve da controllare |
+| 3 | Ponte sulla Zambra | 43.725596, 10.513961 | Definitive nel documento; il punto coincide con il ponticello pedonale di via Poggio della Propositura |
 | 4 | Pieve dei Santi Giovanni ed Ermolao | 43.726188, 10.512938 | Definitive nel documento; Comune da validare |
 | 5 | Palazzo Comunale | 43.725750, 10.515601 | Definitive nel documento; Comune da validare |
 | 6 | Piazza Garibaldi | 43.725658, 10.515502 | Definitive nel documento; Comune da validare |
 | 7 | Monte Serra | 43.725700, 10.515900 | Parco Sandro Pertini proposto; punto e coordinate da confermare |
 
-Il tracciato in mappa resta informativo e indicativo. Non presentare i punti 1 e 7 come confermati. Mancano foto approvate alle tappe 2, 3 e 7; diritti/crediti delle foto 4, 5 e 6 vanno verificati.
+Il tracciato in mappa resta informativo.
+
+### Tracciato pedonale — aggiornamento 31/10/2026
+
+Sopralluogo di Iacopo a Calci con il sito sul telefono: Google Maps guidava bene, ma la mappa del sito univa le tappe con linee dritte (tra Certosa e tappa 2 sembrava una strada inesistente).
+
+- `routeGeoJson` in `app.js` ora segue la rete pedonale OpenStreetMap (© OpenStreetMap contributors, ODbL), con i passaggi indicati da Iacopo come punti obbligati; `ROUTE_STOP_ANCHORS` indica il vertice di ogni tappa, così il tratto evidenziato in giallo è quello reale tra la tappa precedente e quella attiva.
+- 1→2: via Roma dalla Certosa, circa 730 m. 2→3: via Roma, Le Gemelle, Piazza Cavallotti, via Poggio della Propositura, ponticello sulla Zambra (circa 190 m). 3→4: via Poggio della Propositura e Piazza Cairoli fino alla Pieve (circa 120 m). 4→5: via Roma, ponte sulla Zambra, sentiero nel parco fino a Piazza Garibaldi (circa 280 m), invece di ripercorrere la strada dell'andata. 5→6→7: pochi metri in piazza.
+- `MAPS_WAYPOINTS_BY_STOP`: il link Google Maps verso la tappa 3 passa da Piazza Cavallotti, quello verso la tappa 5 dal parco.
+- Tappa 2 lasciata alle coordinate del documento. Iacopo ha proposto di spostarla a metà di via Roma, senza esserne sicuro: punto esatto da concordare con lui (il copione funziona in entrambi i casi: «alle nostre spalle la Certosa… tra poco la Pieve»).
+- Da verificare sul posto: che il passaggio nel parco sia quello proposto da Maps e percorribile negli orari di apertura. Non presentare i punti 1 e 7 come confermati. Mancano foto approvate alle tappe 2, 3 e 7; diritti/crediti delle foto 4, 5 e 6 vanno verificati.
 
 ## Audio, trascrizioni e QA
 
