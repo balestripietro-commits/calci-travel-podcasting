@@ -8,7 +8,7 @@ Percorso `assets/mascotte-mouth/`: `mascotte_A.webp`, `mascotte_B.webp`, `mascot
 
 ## Fotografie
 
-File correnti: `assets/stops/tappa-01-certosa.jpg`, `tappa-04-pieve.png`, `tappa-05-palazzo-comunale.png`, `tappa-06-gioco-del-mulino.png`. Le tappe 2, 3 e 7 hanno un riquadro neutro in attesa di foto approvate. Stato dei diritti e crediti in `data/tappe.json`.
+File correnti: `tappa_1_certosa.webp` … `tappa_7_monte_serra.webp` nella radice, da `GTM/Trattative/Calci/Produzione/Foto tappe` (Drive). Per sostituirne una: webp lato lungo 1000 px qualità 82 (`cwebp -q 82 -resize 1000 0`), stesso nome, nuovo `?v=` in `STOP_ARTWORKS` di `app.js`. Nessun credito in pagina: le foto sono di progetto, tranne la tappa 6 (vedi `REGISTRO_PROGETTO.md`).
 
 ## Audio e allineamenti
 

@@ -32,7 +32,7 @@
 | Sottotitoli/trascrizioni | Whisper large-v3-turbo con timestamp parola; JSON sincronizzati e SRT. Bozze da revisionare. | Generati |
 | Cue labiali | Rhubarb 1.14 fonetico, GHX, per sette tappe, intermezzo e finale. | Generati |
 | Mascotte | Riutilizzare temporaneamente Brunelleschi. Sostituzione drop-in con Padre Gherardo mantenendo i percorsi. | Provvisoria |
-| Immagini | Usare solo le foto locali idonee; riquadro neutro per le altre. | Implementato; diritti foto 4–6 da verificare |
+| Immagini | Usare solo le foto locali idonee; riquadro neutro per le altre. | 03/11/2026: foto 1–7 di progetto inserite; foto 6 dal web, diritti da verificare |
 | Pubblicazione | Anteprima solo locale; nessun sito esterno pubblicato. | Rispettato |
 
 ## Tappe, coordinate e questioni aperte
@@ -47,7 +47,9 @@
 | 6 | Piazza Garibaldi | 43.725658, 10.515502 | Definitive nel documento; Comune da validare |
 | 7 | Monte Serra | 43.725700, 10.515900 | Parco Sandro Pertini proposto; punto e coordinate da confermare |
 
-Il tracciato in mappa resta informativo e indicativo. Non presentare i punti 1 e 7 come confermati. Mancano foto approvate alle tappe 2, 3 e 7; diritti/crediti delle foto 4, 5 e 6 vanno verificati.
+Tracciato rigenerato il 03/11/2026 con `npm run tracciato` (OSRM foot su OSM): 1.480 m, segue Via Roma tra Certosa e centro; nessun avviso (marker entro 15 m dalla strada). Controllo visivo desktop a zoom 16 e 18 eseguito; prova sul posto e conferma del Comune ancora da fare. Report in `data/tracciato-report.md`. Non presentare i punti 1 e 7 come confermati.
+
+Foto: 1–5 e 7 di progetto, senza credito in pagina. La 6 (Gioco del Mulino) viene dal web: fonte e diritti da verificare; da sostituire con una foto nostra o del Comune prima della pubblicazione.
 
 ## Audio, trascrizioni e QA
 

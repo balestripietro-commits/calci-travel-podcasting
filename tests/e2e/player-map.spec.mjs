@@ -241,7 +241,7 @@ test("map selection bubble shows only the stop photo on mobile", async ({ page }
   };
 
   const homeBubble = await selectAndReadBubble(1);
-  expect(homeBubble.imageSrc).toMatch(/tappa-01-certosa\.jpg/);
+  expect(homeBubble.imageSrc).toMatch(/tappa_1_certosa\.webp/);
   if (testInfo.project.name === "desktop-chrome") {
     expect(homeBubble.text).toContain("Tappa 1");
     expect(homeBubble.titleCount).toBe(1);
@@ -252,7 +252,7 @@ test("map selection bubble shows only the stop photo on mobile", async ({ page }
 
     await openFullPlayer(page);
     const fullMapBubble = await selectAndReadBubble(4);
-    expect(fullMapBubble.imageSrc).toMatch(/tappa-04-pieve\.png/);
+    expect(fullMapBubble.imageSrc).toMatch(/tappa_4_pieve\.webp/);
     expect(fullMapBubble.text).toBe("");
     expect(fullMapBubble.titleCount).toBe(0);
     expect(fullMapBubble.imageAlt).toBe("Pieve dei Santi Giovanni ed Ermolao");
