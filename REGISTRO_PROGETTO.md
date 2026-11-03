@@ -4,7 +4,7 @@
 
 - Stato: prototipo in italiano disponibile in locale e su repo GitHub privata; pronto per revisione con il Comune. Iacopo è stato invitato come collaboratore; l’accettazione è in attesa.
 - Obiettivo: ripartire dal sito completo di Vicopisano, mantenendone impianto e interazioni; sostituire identità, tappe, copy, audio e colori di Calci.
-- Pubblico previsto: confronto con Pietro e amministrazione comunale; nessuna pubblicazione o deploy Netlify eseguito.
+- Pubblico previsto: confronto con Pietro e amministrazione comunale. Online su [GitHub Pages](https://balestripietro-commits.github.io/calci-travel-podcasting/) (deploy automatico a ogni push su `main`); il 03/11/2026 pubblicato il commit `773fce6` con tracciato pedonale e foto, verificato nel browser. Netlify non configurato.
 - Lingua: italiano attivo; le altre lingue restano visibili ma non selezionabili.
 - Testi: reali sulle sette tappe; lorem ipsum in presentazione e sezioni editoriali generiche.
 - Voce narrativa: Padre Gherardo, dai materiali di progetto. Mascotte Brunelleschi temporanea per ora, in attesa dei nuovi frame.
