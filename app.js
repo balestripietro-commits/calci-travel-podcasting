@@ -645,7 +645,7 @@ const uiStrings = {
     prototype: "",
     introLead: "Sono Padre Gherardo.",
     intro:
-      "Dalla Certosa alle vie di Calci, ti accompagnerò tra pievi, stemmi e racconti, tappa dopo tappa. Un percorso audio tra la Certosa, la Pieve e il centro del paese.",
+      "Dalla Certosa alle vie di Calci, ti accompagnerò tra pievi, stemmi e racconti, tappa dopo tappa.",
     instructionsTitle: "Istruzioni",
     instructionsText:
       "La mappa mostra l’intero percorso, con le tappe da 1 a 7. Puoi selezionare una tappa dalla lista oppure cliccare direttamente sulla mappa: il sito evidenzierà il punto scelto, centrerà la visuale e aprirà i contenuti dedicati.",
