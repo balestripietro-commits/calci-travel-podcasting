@@ -6,7 +6,6 @@ const baseURL = remoteBaseURL || `http://127.0.0.1:${port}`;
 const staticRoot = process.env.E2E_STATIC_ROOT || ".";
 const lowMobileSpec = /low-mobile\.spec\.mjs/;
 const productionSmokeSpec = /production-smoke\.spec\.mjs/;
-const externalLinksSpec = /external-links\.spec\.mjs/;
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -47,14 +46,14 @@ export default defineConfig({
   projects: [
     {
       name: "desktop-chrome",
-      testIgnore: [lowMobileSpec, externalLinksSpec],
+      testIgnore: [lowMobileSpec],
       use: {
         viewport: { width: 1440, height: 900 },
       },
     },
     {
       name: "mobile-chrome",
-      testIgnore: [lowMobileSpec, externalLinksSpec],
+      testIgnore: [lowMobileSpec],
       use: {
         ...devices["Pixel 7"],
         channel: process.env.PLAYWRIGHT_BROWSER_CHANNEL || "chrome",

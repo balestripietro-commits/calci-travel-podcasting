@@ -296,9 +296,6 @@ const stopsTitle = document.getElementById("stops-title");
 const stopsPanel = document.querySelector(".stops-panel");
 const stopsSubtitle = document.getElementById("stops-subtitle");
 const stopSelectionStatus = document.getElementById("stop-selection-status");
-const platformsEyebrow = document.getElementById("platforms-eyebrow");
-const platformsPanel = document.querySelector(".platforms-panel");
-const platformLinkStatus = document.getElementById("platform-link-status");
 const shareTitle = document.getElementById("share-title");
 const shareFacebook = document.getElementById("share-facebook");
 const shareX = document.getElementById("share-x");
@@ -652,10 +649,6 @@ const uiStrings = {
     routeTitle: "Tappe del percorso",
     stopLabel: "Tappa",
     routeSubtitle: "7 punti di ascolto lungo il borgo.",
-    platformsEyebrow: "Presto anche su:",
-    platformLinkPending: (name) => `Il collegamento a ${name} non è ancora disponibile. Riprova più avanti.`,
-    platformLinkError: (name) => `Impossibile aprire ${name}: il collegamento non è valido. Riprova più avanti.`,
-    platformLinkOffline: (name) => `Impossibile aprire ${name}: non sei connesso a Internet.`,
     shareTitle: "Condividi con i tuoi amici",
     locateMe: "Trova la mia posizione",
     locatingMe: "Sto cercando la tua posizione...",
@@ -735,10 +728,6 @@ const uiStrings = {
     routeTitle: "Route Stops",
     stopLabel: "Stop",
     routeSubtitle: "7 listening points in the village.",
-    platformsEyebrow: "Coming soon on:",
-    platformLinkPending: (name) => `The link to ${name} is not available yet. Please try again later.`,
-    platformLinkError: (name) => `Unable to open ${name}: the link is invalid. Please try again later.`,
-    platformLinkOffline: (name) => `Unable to open ${name}: you are offline.`,
     shareTitle: "Share with your friends",
     locateMe: "Find my location",
     locatingMe: "Looking for your location...",
@@ -818,10 +807,6 @@ const uiStrings = {
     routeTitle: "Stationen der Route",
     stopLabel: "Station",
     routeSubtitle: "7 Hörstationen im Ort.",
-    platformsEyebrow: "Bald auch auf:",
-    platformLinkPending: (name) => `Der Link zu ${name} ist noch nicht verfügbar. Bitte versuche es später erneut.`,
-    platformLinkError: (name) => `${name} kann nicht geöffnet werden: Der Link ist ungültig. Bitte versuche es später erneut.`,
-    platformLinkOffline: (name) => `${name} kann nicht geöffnet werden: Du bist offline.`,
     shareTitle: "Teile es mit deinen Freunden",
     locateMe: "Meinen Standort finden",
     locatingMe: "Standort wird gesucht...",
@@ -901,10 +886,6 @@ const uiStrings = {
     routeTitle: "Étapes du parcours",
     stopLabel: "Étape",
     routeSubtitle: "7 points d’écoute dans le bourg.",
-    platformsEyebrow: "Bientôt aussi sur :",
-    platformLinkPending: (name) => `Le lien vers ${name} n’est pas encore disponible. Réessayez plus tard.`,
-    platformLinkError: (name) => `Impossible d’ouvrir ${name} : le lien est invalide. Réessayez plus tard.`,
-    platformLinkOffline: (name) => `Impossible d’ouvrir ${name} : vous êtes hors ligne.`,
     shareTitle: "Partagez avec vos amis",
     locateMe: "Trouver ma position",
     locatingMe: "Recherche de votre position...",
@@ -984,10 +965,6 @@ const uiStrings = {
     routeTitle: "Etapas del recorrido",
     stopLabel: "Etapa",
     routeSubtitle: "7 puntos de escucha en el pueblo.",
-    platformsEyebrow: "Próximamente también en:",
-    platformLinkPending: (name) => `El enlace a ${name} aún no está disponible. Inténtalo más tarde.`,
-    platformLinkError: (name) => `No se puede abrir ${name}: el enlace no es válido. Inténtalo más tarde.`,
-    platformLinkOffline: (name) => `No se puede abrir ${name}: no tienes conexión a Internet.`,
     shareTitle: "Compártelo con tus amigos",
     locateMe: "Encontrar mi posición",
     locatingMe: "Buscando tu posición...",
@@ -1067,10 +1044,6 @@ const uiStrings = {
     routeTitle: "Etapas do percurso",
     stopLabel: "Etapa",
     routeSubtitle: "7 pontos de escuta na vila.",
-    platformsEyebrow: "Em breve também em:",
-    platformLinkPending: (name) => `O link para ${name} ainda não está disponível. Tenta novamente mais tarde.`,
-    platformLinkError: (name) => `Não é possível abrir ${name}: o link é inválido. Tenta novamente mais tarde.`,
-    platformLinkOffline: (name) => `Não é possível abrir ${name}: estás offline.`,
     shareTitle: "Partilha com os teus amigos",
     locateMe: "Encontrar minha localização",
     locatingMe: "Buscando sua localização...",
@@ -1150,10 +1123,6 @@ const uiStrings = {
     routeTitle: "Остановки маршрута",
     stopLabel: "Остановка",
     routeSubtitle: "7 точек прослушивания в поселке.",
-    platformsEyebrow: "Скоро также на:",
-    platformLinkPending: (name) => `Ссылка на ${name} пока недоступна. Повторите попытку позже.`,
-    platformLinkError: (name) => `Не удалось открыть ${name}: ссылка недействительна. Повторите попытку позже.`,
-    platformLinkOffline: (name) => `Не удалось открыть ${name}: нет подключения к Интернету.`,
     shareTitle: "Поделиться с друзьями",
     locateMe: "Найти мое местоположение",
     locatingMe: "Поиск вашего местоположения...",
@@ -1771,7 +1740,6 @@ function animateTranslatedContent() {
     introText,
     stopsTitle,
     stopsSubtitle,
-    platformsEyebrow,
     shareTitle,
     detailTitle,
     detailDescription,
@@ -5794,7 +5762,7 @@ function scrollGuideTargetIntoView(target) {
   const targetTop = rect.top + window.scrollY;
   const isStopsPanelGuide = target === stopsPanel;
   const isSectionGuideOnMobile =
-    target.matches?.(".stops-panel, .platforms-panel, .share-panel") &&
+    target.matches?.(".stops-panel, .share-panel") &&
     window.matchMedia("(max-width: 760px)").matches;
 
   if (isStopsPanelGuide) {
@@ -5955,7 +5923,7 @@ function positionGuideCard(target, step = null) {
   }
 
   const shouldPlaceAboveTarget =
-    target.matches?.(".platforms-panel, .share-panel") &&
+    target.matches?.(".share-panel") &&
     isMobile;
 
   guideCard.classList.toggle("is-above-guide-target", shouldPlaceAboveTarget);
@@ -7361,50 +7329,6 @@ function updateShareLinks() {
   if (shareWhatsapp) shareWhatsapp.href = `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
 }
 
-function bindPlatformLinks() {
-  platformsPanel?.addEventListener("click", (event) => {
-    const control = event.target.closest(".platform-logo");
-    if (!control || !platformsPanel.contains(control)) return;
-
-    const name = control.dataset.platformName || control.textContent.trim();
-    const strings = getUiStrings(currentLanguage);
-    const rawUrl = control.getAttribute("href") || control.dataset.platformUrl;
-    const showError = (message) => {
-      event.preventDefault();
-      platformLinkStatus.textContent = message;
-    };
-
-    if (!rawUrl) {
-      showError(strings.platformLinkPending(name));
-      return;
-    }
-
-    let destination;
-    try {
-      destination = new URL(rawUrl);
-      if (destination.protocol !== "https:") throw new TypeError("Expected an HTTPS URL");
-    } catch {
-      showError(strings.platformLinkError(name));
-      return;
-    }
-
-    if (!navigator.onLine) {
-      showError(strings.platformLinkOffline(name));
-      return;
-    }
-
-    platformLinkStatus.textContent = "";
-    if (control instanceof HTMLButtonElement) {
-      // A destination can be configured later without changing the button's layout.
-      const link = document.createElement("a");
-      link.href = destination.href;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.click();
-    }
-  });
-}
-
 function renderStaticTexts() {
   const strings = getUiStrings(currentLanguage);
   document.documentElement.lang = currentLanguage.toLowerCase();
@@ -7414,7 +7338,6 @@ function renderStaticTexts() {
   stopsTitle.textContent = strings.routeTitle;
   stopsSubtitle.textContent = "";
   stopsSubtitle.hidden = true;
-  platformsEyebrow.textContent = strings.platformsEyebrow;
   if (shareTitle) shareTitle.textContent = strings.shareTitle;
   updateMapRecenterButtonPresentation();
   detailCopyTitle.setAttribute("aria-label", strings.transcriptTitle);
@@ -7773,7 +7696,6 @@ renderMap();
 renderStaticTexts();
 renderGlobalLanguageSelector();
 bindGlobalLanguageSelector();
-bindPlatformLinks();
 renderOnboardingTexts();
 renderOnboardingLanguageSelector();
 bindOnboardingAccessibility();
