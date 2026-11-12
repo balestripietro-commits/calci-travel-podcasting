@@ -226,7 +226,7 @@ test.describe("accessibility", () => {
     // while Leaflet is repainting. Scan the authored surfaces separately and
     // keep the rendered map (which has its own UI tests) out of this pass.
     const surfaces = test.info().project.name === "mobile-chrome"
-      ? [".site-header", ".intro-panel", "#stop-preview", ".stops-panel", ".platforms-panel", "#mini-player", ".map-floating-controls"]
+      ? [".site-header", ".intro-panel", "#stop-preview", ".stops-panel", "#mini-player", ".map-floating-controls"]
       : ["#main-content", "#mini-player"];
     for (const surface of surfaces) {
       await expectNoAxeViolations(page, surface, ["color-contrast"]);

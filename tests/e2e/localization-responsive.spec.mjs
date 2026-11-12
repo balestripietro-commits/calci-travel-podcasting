@@ -94,35 +94,11 @@ test("reduced motion keeps route feedback functional without animation", async (
   await expectNoRuntimeErrors(errors);
 });
 
-test("unavailable platform badges explain missing and invalid destinations", async ({ page }) => {
-  const errors = collectRuntimeErrors(page);
-  await enterSite(page);
-
-  const badges = page.locator(".platform-logo");
-  await expect(badges).toHaveCount(3);
-  const originalUrl = page.url();
-  for (const [index, name] of ["izi.TRAVEL", "Loquis", "Spotify"].entries()) {
-    const badge = badges.nth(index);
-    await expect(badge).toHaveJSProperty("tagName", "BUTTON");
-    await expect(badge).not.toHaveAttribute("href");
-    await badge.click();
-    await expect(page.locator("#platform-link-status")).toContainText(`${name} non è ancora disponibile`);
-  }
-  expect(page.url()).toBe(originalUrl);
-
-  const izi = page.locator(".logo-izi");
-  await izi.evaluate((element) => { element.dataset.platformUrl = "javascript:alert(1)"; });
-  await izi.click();
-  await expect(page.locator("#platform-link-status")).toContainText("il collegamento non è valido");
-
-  await expectNoRuntimeErrors(errors);
-});
-
 test("social sharing section stays removed from the route surface", async ({ page }) => {
   const errors = collectRuntimeErrors(page);
   await enterSite(page);
 
   await expect(page.locator(".share-panel")).toBeHidden();
-  await expect(page.locator(".platforms-panel")).toBeVisible();
+  await expect(page.locator(".platforms-panel")).toHaveCount(0);
   await expectNoRuntimeErrors(errors);
 });
