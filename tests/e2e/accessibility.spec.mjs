@@ -99,7 +99,7 @@ async function expectUnclippedKeyboardFocus(page, selector) {
 test.describe("accessibility", () => {
   test("theme text and stop-number colors meet normal-text contrast", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop-chrome", "Color tokens are viewport-independent.");
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     const colors = await page.evaluate(() => {
       const styles = getComputedStyle(document.documentElement);
       return Object.fromEntries([
@@ -119,7 +119,7 @@ test.describe("accessibility", () => {
     if (testInfo.project.name === "mobile-chrome") {
       await page.setViewportSize({ width: 375, height: 667 });
     }
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     const italian = page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ });
     await italian.focus();
@@ -135,14 +135,14 @@ test.describe("accessibility", () => {
 
   test("onboarding surface has no axe violations", async ({ page }) => {
     test.setTimeout(90_000);
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     await expectNoAxeViolations(page, "#onboarding-overlay .onboarding-card");
   });
 
   test("unavailable language feedback is a readable modal", async ({ page }) => {
     test.setTimeout(150_000);
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     const unavailableLanguages = [
       ["EN", "Language unavailable", "Close"],
@@ -170,7 +170,7 @@ test.describe("accessibility", () => {
 
   test("player surface has no axe violations", async ({ page }) => {
     test.setTimeout(90_000);
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
     await page.locator("#guide-skip-button").click();
@@ -210,7 +210,7 @@ test.describe("accessibility", () => {
 
   test("home route controls keep sufficient contrast", async ({ page }) => {
     test.setTimeout(150_000);
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
     await page.locator("#guide-skip-button").click();
@@ -236,7 +236,7 @@ test.describe("accessibility", () => {
   test("mobile full player exposes a map return button", async ({ page }, testInfo) => {
     test.setTimeout(90_000);
     test.skip(testInfo.project.name !== "mobile-chrome", "The map return button is mobile-only.");
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
     await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
     await page.locator("#guide-skip-button").click();
@@ -251,7 +251,7 @@ test.describe("accessibility", () => {
   test("keyboard flow keeps focus and controls usable", async ({ page }, testInfo) => {
     test.setTimeout(120_000);
     test.skip(testInfo.project.name !== "desktop-chrome", "Keyboard audit runs once on desktop Chrome.");
-    await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+    await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
     await ensureOnboardingVisible(page);
 
     const italian = page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ });
@@ -303,7 +303,7 @@ test.describe("accessibility", () => {
 
     for (const width of [720, 360]) {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+      await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
       await ensureOnboardingVisible(page);
       await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
       await page.locator("#guide-skip-button").click();
@@ -333,7 +333,7 @@ test.describe("accessibility", () => {
     test.skip(testInfo.project.name !== "desktop-chrome", "Viewport audit runs once in Chrome.");
     for (const width of [320, 375, 440]) {
       await page.setViewportSize({ width, height: 667 });
-      await page.goto("/?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
+      await page.goto("./?tappa=1&lang=it", { waitUntil: "domcontentloaded" });
       await ensureOnboardingVisible(page);
       await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
       await page.locator("#guide-skip-button").click();
@@ -390,7 +390,7 @@ test.describe("accessibility", () => {
     for (const width of [320, 375]) {
       await page.setViewportSize({ width, height: 667 });
       await page.emulateMedia({ reducedMotion: "reduce" });
-      await page.goto("/?tappa=4&lang=it", { waitUntil: "domcontentloaded" });
+      await page.goto("./?tappa=4&lang=it", { waitUntil: "domcontentloaded" });
       await ensureOnboardingVisible(page);
       await page.locator("#onboarding-language-chips .onboarding-language-option").filter({ hasText: /^IT\s/ }).click();
       await page.locator("#guide-skip-button").click();

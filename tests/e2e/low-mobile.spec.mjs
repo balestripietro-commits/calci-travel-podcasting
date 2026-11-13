@@ -14,18 +14,23 @@ test("low mobile viewport keeps the full player controls and stop navigation on 
   await enterSite(page);
   await stopButton(page, 6).click();
 
-  const [miniTitle, miniTimeline, miniControls, miniArtwork, stopPreviewImage] = await Promise.all([
+  const [miniTitle, miniTimeline, miniControls, miniArtwork, stopPreviewImage, stopPreviewFrame] = await Promise.all([
     page.locator("#mini-player-title").boundingBox(),
     page.locator(".TPMiniPlayer .mini-player-timeline").boundingBox(),
     page.locator(".TPMiniPlayer .mini-player-controls").boundingBox(),
     page.locator("#mini-player-artwork").boundingBox(),
     page.locator("#stop-preview-image").boundingBox(),
+    page.locator("#stop-preview").boundingBox(),
   ]);
-  [miniTitle, miniTimeline, miniControls, miniArtwork, stopPreviewImage].forEach((box) => expect(box).not.toBeNull());
+  [miniTitle, miniTimeline, miniControls, miniArtwork, stopPreviewImage, stopPreviewFrame].forEach((box) => expect(box).not.toBeNull());
   expect(miniTimeline.y).toBeGreaterThan(miniTitle.y + miniTitle.height - 1);
   expect(miniTimeline.y + miniTimeline.height).toBeLessThanOrEqual(miniControls.y + 1);
   expect(Math.abs(miniArtwork.width - miniArtwork.height)).toBeLessThanOrEqual(1);
-  expect(Math.abs(stopPreviewImage.width / stopPreviewImage.height - 1)).toBeLessThanOrEqual(0.08);
+  expect(stopPreviewImage.x).toBeGreaterThanOrEqual(stopPreviewFrame.x);
+  expect(stopPreviewImage.y).toBeGreaterThanOrEqual(stopPreviewFrame.y);
+  expect(stopPreviewImage.x + stopPreviewImage.width).toBeLessThanOrEqual(stopPreviewFrame.x + stopPreviewFrame.width + 1);
+  expect(stopPreviewImage.y + stopPreviewImage.height).toBeLessThanOrEqual(stopPreviewFrame.y + stopPreviewFrame.height + 1);
+  await expect(page.locator("#stop-preview-image")).toHaveCSS("object-fit", "cover");
 
   await openFullPlayer(page);
   await page.locator("#player-map-button").click();

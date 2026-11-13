@@ -31,7 +31,7 @@ export function collectRuntimeErrors(page, { responseOrigin } = {}) {
 }
 
 export async function enterSite(page, { language = "it", guide = false, stop = 1 } = {}) {
-  await page.goto(`/?tappa=${stop}&lang=${language}`, { waitUntil: "domcontentloaded" });
+  await page.goto(`./?tappa=${stop}&lang=${language}`, { waitUntil: "domcontentloaded" });
   const onboarding = page.locator("#onboarding-overlay");
   // Reopen the first-visit chooser when a test reuses a page that already
   // completed onboarding during an earlier navigation.
