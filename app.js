@@ -321,6 +321,25 @@ const stopPreview = document.getElementById("stop-preview");
 const stopPreviewNumber = document.getElementById("stop-preview-number");
 const stopPreviewTitle = document.getElementById("stop-preview-title");
 const stopPreviewImage = document.getElementById("stop-preview-image");
+const STOP_SHAPE_RULES = [
+  ["torre", /\b(torre|torri)\b/i],
+  ["arco", /\b(pieve|chiesa|parrocchia|porta|porte|ingresso)\b/i],
+  ["blocco", /\b(palazzo|museo|villa|teatro)\b/i],
+  ["foglia", /\b(parco|giardino|piazza|bosco|boschetto)\b/i]
+];
+
+// Forma della foto: segue quella del numero sulla mappa, ma le torri (la foto non ci entra) usano il tassello
+function getPhotoShape(title) {
+  const shape = getStopShape(title);
+  return shape === "torre" ? "tassello" : shape;
+}
+
+function getStopShape(title) {
+  const text = String(title || "");
+  const rule = STOP_SHAPE_RULES.find(([, pattern]) => pattern.test(text));
+  return rule ? rule[0] : "lente";
+}
+
 const globalLanguageChips = document.getElementById("global-language-chips");
 const globalLanguageSelector = document.querySelector(".global-language-selector");
 const globalLanguageCurrent = document.getElementById("global-language-current");
@@ -424,7 +443,8 @@ const heroMascot = document.getElementById("hero-mascot");
 const appShell = document.querySelector(".app-shell");
 const playerSheet = document.querySelector(".player-sheet");
 
-const PLAYBACK_RATES = [1, 1.25, 1.5];
+const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+const DEFAULT_PLAYBACK_RATE = 1;
 const TRANSITION_AUDIO_PATH = "audio/it/transition_between_stops.mp3";
 const TRANSITION_ARTWORK_PATH = "logo_calci.png?v=20261029-etichette";
 const TRANSITION_MOUTH_CUES_PATH = "audio/cues/transition_between_stops.json";
@@ -462,7 +482,7 @@ let activeStopNumber = null;
 let currentLanguage = "IT";
 let overlayOpen = false;
 let currentSelectedOption = null;
-let currentPlaybackRate = PLAYBACK_RATES[0];
+let currentPlaybackRate = DEFAULT_PLAYBACK_RATE;
 let audioHasEnded = false;
 let isSeekingFromOverlay = false;
 let isSeekingFromMiniPlayer = false;
@@ -3113,6 +3133,8 @@ function updateStopPreview(tappa, { animate = false } = {}) {
   stopPreviewTitle.textContent = title;
   stopPreviewImage.src = STOP_ARTWORKS[tappa.numero] || WHITE_ARTWORK;
   stopPreviewImage.alt = `Immagine ${title}`;
+  stopPreviewImage.dataset.shape = getPhotoShape(tappa.titolo);
+  stopPreview.dataset.shape = getPhotoShape(tappa.titolo);
 
   if (animate && !reducedMotionQuery.matches) {
     replayAnimationClass(stopPreview, "is-entering", getRouteSelectionDuration());
@@ -3379,7 +3401,19 @@ function buildLanguageChips(
       languageTitle || strings.languageSelectorTitle || "Lingua disponibile";
   }
 
-  siteLanguages.forEach((languageCode) => {
+  // Primo accesso: la lingua del browser passa in testa e resta evidenziata, ma si sceglie comunque
+  const browserLanguage = (() => {
+    const codes = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""])
+      .map((value) => String(value || "").toLowerCase().split("-")[0]);
+    // Si suggerisce solo una lingua già pronta: oggi per Calci è l'italiano
+    return codes.find((code) => code === "it" && siteLanguages.some((item) => String(item).toLowerCase() === code)) || "";
+  })();
+  const orderedLanguages = container === onboardingLanguageChips && browserLanguage
+    ? [...siteLanguages].sort((left, right) =>
+        Number(String(right).toLowerCase() === browserLanguage) - Number(String(left).toLowerCase() === browserLanguage))
+    : siteLanguages;
+
+  orderedLanguages.forEach((languageCode) => {
     const chip = document.createElement("button");
     const languageName = getLanguageDisplayName(languageCode, languageCode);
     const isRuntimeGlobal = container === globalLanguageChips;
@@ -3389,7 +3423,9 @@ function buildLanguageChips(
     chip.classList.toggle("runtime-language-option", isRuntimeGlobal);
     chip.classList.toggle("onboarding-language-option", isOnboarding);
     chip.textContent = isRuntimeGlobal || isOnboarding ? `${languageCode} · ${languageName}` : languageCode;
-    chip.classList.toggle("is-active", languageCode === currentLanguage);
+    const isSuggested = isOnboarding && String(languageCode).toLowerCase() === browserLanguage;
+    chip.classList.toggle("is-suggested", isSuggested);
+    chip.classList.toggle("is-active", isOnboarding && browserLanguage ? isSuggested : languageCode === currentLanguage);
     if (container === playerLanguageChips || container === globalLanguageChips) {
       chip.setAttribute("role", "option");
       chip.setAttribute("aria-selected", languageCode === currentLanguage ? "true" : "false");
@@ -4111,9 +4147,9 @@ function updateMediaSession(tappa, selectedOption) {
     album: "Percorso di Calci",
     artwork: [
       {
-        src: isTransitionAudioActive ? TRANSITION_ARTWORK_PATH : (STOP_ARTWORKS[tappa.numero] || WHITE_ARTWORK),
+        src: isTransitionAudioActive ? TRANSITION_ARTWORK_PATH : `assets/lock/tappa-${tappa.numero}.png`,
         sizes: "512x512",
-        type: "image/jpeg",
+        type: isTransitionAudioActive ? "image/jpeg" : "image/png",
       },
     ],
   });
@@ -4123,6 +4159,8 @@ function updateMediaSession(tappa, selectedOption) {
     pause: () => { getActiveAudio()?.pause(); },
     seekbackward: () => { if (!isTransitionAudioActive) seekCurrentAudio(-10); },
     seekforward: () => { if (!isTransitionAudioActive) seekCurrentAudio(10); },
+    previoustrack: () => { document.getElementById("player-previous-stop-button")?.click(); },
+    nexttrack: () => { document.getElementById("player-next-stop-button")?.click(); },
   };
 
   Object.entries(actions).forEach(([action, handler]) => {
@@ -4287,6 +4325,7 @@ function updateNextStopPreview(tappa) {
     playerNextPreviewTitle.textContent = `${nextStop.numero}. ${getStopTitle(nextStop)}`;
     playerNextPreviewImage.src = STOP_ARTWORKS[nextStop.numero] || WHITE_ARTWORK;
     playerNextPreviewImage.alt = `Immagine ${getStopTitle(nextStop)}`;
+    playerNextPreviewImage.dataset.shape = getPhotoShape(nextStop.titolo);
     const nextActionLabel = strings.openNextStop || "Apri prossima tappa";
     const nextActionIcon = playerNextStopButton?.querySelector(".material-symbols-rounded");
     if (nextActionIcon) {
@@ -4312,6 +4351,7 @@ function updatePreviousStopPreview(tappa) {
     playerPreviousPreviewTitle.textContent = `${previousStop.numero}. ${getStopTitle(previousStop)}`;
     playerPreviousPreviewImage.src = STOP_ARTWORKS[previousStop.numero] || WHITE_ARTWORK;
     playerPreviousPreviewImage.alt = `Immagine ${getStopTitle(previousStop)}`;
+    playerPreviousPreviewImage.dataset.shape = getPhotoShape(previousStop.titolo);
     playerPreviousStopButton?.setAttribute("aria-label", strings.playerPrevious);
     playerPreviousStopButton.title = strings.playerPrevious;
   }
@@ -4416,6 +4456,7 @@ function updateMiniPlayerPlayback() {
       ? (audio.currentTime / seekDuration) * 100
       : 0;
   miniPlayerProgressBar.style.width = `${Math.max(0, Math.min(progress, 100))}%`;
+  if (!isTransitionAudioActive) window.TPExtras?.progress(activeStopNumber, Math.max(0, Math.min(progress, 100)) / 100);
   miniPlayerCurrentTime.textContent = formatPlayerTime(audio.currentTime);
   miniPlayerDurationTotal.textContent = seekDuration !== null
     ? formatPlayerTime(seekDuration)
@@ -4508,7 +4549,8 @@ function getTimedMapCaptionText(segment, time) {
     parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight) -
     parseFloat(styles.borderLeftWidth) - parseFloat(styles.borderRightWidth);
   const font = `${styles.fontStyle} ${styles.fontWeight} ${styles.fontSize} ${styles.fontFamily}`;
-  const key = `${Math.floor(contentWidth)}:${font}`;
+  const linesPerPage = document.body.classList.contains("is-mobile-map-player-mode") ? 3 : 2;
+  const key = `${Math.floor(contentWidth)}:${font}:${linesPerPage}`;
   let cached = mapCaptionPageCache.get(segment);
 
   if (!cached || cached.key !== key) {
@@ -4529,7 +4571,7 @@ function getTimedMapCaptionText(segment, time) {
           continue;
         }
         lines.push(line);
-        if (lines.length === 2) {
+        if (lines.length === linesPerPage) {
           pages.push(lines.join("\n"));
           lines = [];
         }
@@ -5006,6 +5048,7 @@ function handleAudioEnded(audio) {
     return;
   }
 
+  window.TPExtras?.ended(activeStopNumber);
   stopMascotLipSync();
   mascotMotionController?.end();
 
@@ -5098,19 +5141,30 @@ function startTransitionAudio(nextStop) {
       if (!isLiveAudio(transitionAudio) || requestToken !== audioPlayRequestToken || error?.name === "AbortError") {
         return;
       }
+      // Con lo schermo bloccato alcuni telefoni non lasciano partire un secondo audio da soli:
+      // meglio saltare il messaggio di passaggio che restare in silenzio.
+      if (error?.name === "NotAllowedError" && nextStop) {
+        setTransitionAudioMode(false);
+        focusStop(nextStop, { autoplay: false, animateRoute: true, openOverlay: overlayOpen, skipFly: overlayOpen });
+        return;
+      }
       setAudioFeedbackByKey(navigator.onLine ? "audioLoadError" : "offlineStatus");
       updateMiniPlayerPlayback();
     });
   }
 }
 
-function createMarkerIcon(stopNumber) {
+const STOP_SHAPE_PATHS = {"torre": "M50 390V80Q50 30 100 30Q150 30 150 80V105Q150 130 175 130H225Q250 130 250 105V80Q250 30 300 30Q350 30 350 80V390Q350 400 340 400H60Q50 400 50 390Z", "arco": "M80 400Q40 400 40 360V200A160 160 0 0 1 360 200V360Q360 400 320 400Z", "tassello": "M200 20A180 180 0 0 0 20 200A180 180 0 0 0 200 380H345Q380 380 380 345V200A180 180 0 0 0 200 20Z", "foglia": "M200 20H380V200A180 180 0 0 1 200 380H20V200A180 180 0 0 1 200 20Z", "blocco": "M110 30H290Q370 30 370 110V290Q370 370 290 370H110Q30 370 30 290V110Q30 30 110 30Z", "lente": "M110 20H290Q315 20 330 45L385 170Q395 200 385 230L330 355Q315 380 290 380H110Q85 380 70 355L15 230Q5 200 15 170L70 45Q85 20 110 20Z"};
+
+function createMarkerIcon(stopNumber, stopTitle) {
+  const shape = getStopShape(stopTitle);
+  const path = STOP_SHAPE_PATHS[shape] || STOP_SHAPE_PATHS.lente;
   return L.divIcon({
     className: "",
-    html: `<div class="map-marker tp-map-marker" aria-hidden="true"><span class="map-marker-number">${stopNumber}</span></div>`,
+    html: `<div class="map-marker tp-map-marker" data-stop="${stopNumber}" data-shape="${shape}" aria-hidden="true"><svg viewBox="-20 -20 440 440" focusable="false"><path d="${path}"/></svg><span class="map-marker-number">${stopNumber}</span></div>`,
     iconSize: [40, 40],
     iconAnchor: [20, 20],
-    popupAnchor: [0, -18],
+    popupAnchor: [0, -20],
   });
 }
 
@@ -6075,15 +6129,15 @@ function renderGuideStep() {
   const isLastGuideStep = activeGuideStepIndex === steps.length - 1;
   const prevGuideLabel = strings.guideBack || "Indietro";
   const nextGuideLabel = isLastGuideStep ? strings.guideDone : strings.guideNext;
-  guideSkipButton.textContent = "×";
+  guideSkipButton.innerHTML = '<span translate="no" class="material-symbols-rounded brand-icon" data-icon="close" aria-hidden="true">close</span>';
   guideSkipButton.setAttribute("aria-label", strings.guideSkip);
   guideSkipButton.title = strings.guideSkip;
-  guidePrevButton.textContent = "←";
+  guidePrevButton.innerHTML = '<span translate="no" class="material-symbols-rounded brand-icon" data-icon="arrow_back" aria-hidden="true">arrow_back</span>';
   guidePrevButton.disabled = isFirstGuideStep;
   guidePrevButton.classList.toggle("is-disabled", isFirstGuideStep);
   guidePrevButton.setAttribute("aria-label", prevGuideLabel);
   guidePrevButton.title = prevGuideLabel;
-  guideNextButton.textContent = isLastGuideStep ? "✓" : "→";
+  guideNextButton.innerHTML = isLastGuideStep ? '<svg class="guide-check" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M44 104 L86 146 L158 60" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '<span translate="no" class="material-symbols-rounded brand-icon" data-icon="arrow_forward" aria-hidden="true">arrow_forward</span>';
   guideNextButton.setAttribute("aria-label", nextGuideLabel);
   guideNextButton.title = nextGuideLabel;
   guideLayer.classList.remove("is-hidden");
@@ -6172,9 +6226,11 @@ function closeGuide({ scrollAfterExploreClose = false } = {}) {
 
 function startGuide() {
   const firstStop = tappe[0];
-
-  if (firstStop && activeStopNumber !== firstStop.numero) {
-    focusStop(firstStop, {
+  // A visitor scanning a stop-specific QR must keep that stop when the
+  // first-visit guide opens, rather than silently being sent back to stop 1.
+  const guideStop = initialUrlState.stop || firstStop;
+  if (guideStop && activeStopNumber !== guideStop.numero) {
+    focusStop(guideStop, {
       skipFly: true,
       autoplay: false,
       openOverlay: false,
@@ -6542,7 +6598,7 @@ function updatePlaybackRateControl() {
   if (playerSpeedButton && playerSpeedLabel) {
     playerSpeedLabel.textContent = label;
     playerSpeedButton.dataset.rate = String(currentPlaybackRate);
-    playerSpeedButton.classList.toggle("is-active", currentPlaybackRate !== PLAYBACK_RATES[0]);
+    playerSpeedButton.classList.toggle("is-active", currentPlaybackRate !== DEFAULT_PLAYBACK_RATE);
     playerSpeedButton.setAttribute("aria-label", accessibleLabel);
     playerSpeedButton.title = accessibleLabel;
   }
@@ -6550,7 +6606,7 @@ function updatePlaybackRateControl() {
   if (miniPlayerSpeedButton && miniPlayerSpeedLabel) {
     miniPlayerSpeedLabel.textContent = label;
     miniPlayerSpeedButton.dataset.rate = String(currentPlaybackRate);
-    miniPlayerSpeedButton.classList.toggle("is-active", currentPlaybackRate !== PLAYBACK_RATES[0]);
+    miniPlayerSpeedButton.classList.toggle("is-active", currentPlaybackRate !== DEFAULT_PLAYBACK_RATE);
     miniPlayerSpeedButton.setAttribute("aria-label", accessibleLabel);
     miniPlayerSpeedButton.title = accessibleLabel;
   }
@@ -6937,8 +6993,10 @@ function updateMiniPlayer(tappa, selectedOption) {
   const artworkSrc = STOP_ARTWORKS[tappa.numero] || WHITE_ARTWORK;
   miniPlayerArtwork.src = artworkSrc;
   miniPlayerArtwork.alt = `Artwork tappa ${tappa.numero}`;
+  miniPlayerArtwork.dataset.shape = getPhotoShape(tappa.titolo);
   detailArtworkImage.src = artworkSrc;
   detailArtworkImage.alt = `Immagine tappa ${tappa.numero}`;
+  detailArtworkImage.dataset.shape = getPhotoShape(tappa.titolo);
 
   if (detailMascotImage) {
     detailMascotImage.src = MASCOT_FRAME_PATHS[currentMascotFrame] || MASCOT_REST_FRAME;
@@ -7580,6 +7638,7 @@ function renderStopsList() {
     button.setAttribute("aria-current", "false");
 
     button.innerHTML = `
+      <img class="stop-thumb" data-shape="${getPhotoShape(tappa.titolo)}" src="${STOP_ARTWORKS[tappa.numero] || WHITE_ARTWORK}" alt="" decoding="async" />
       <span class="stop-index">${tappa.numero}</span>
       <span>
         <strong class="stop-title">${getStopTitle(tappa)}</strong>
@@ -7645,7 +7704,7 @@ function renderMap() {
 
   tappe.forEach((tappa) => {
     const marker = L.marker([tappa.latitudine, tappa.longitudine], {
-      icon: createMarkerIcon(tappa.numero),
+      icon: createMarkerIcon(tappa.numero, tappa.titolo),
       title: `${tappa.numero}. ${getStopTitle(tappa)}`,
     })
       .addTo(map);

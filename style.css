@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Petrona";
+  src: url("assets/fonts/Petrona.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Petrona";
+  src: url("assets/fonts/Petrona-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --bg: var(--tp-color-surface-container, #f8efe9);
   --bg-soft: var(--tp-color-surface-container-low, #fbf4ef);
@@ -62,7 +77,7 @@ body {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Petrona, Georgia, "Times New Roman", serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(232, 195, 109, 0.22), transparent 24%),
@@ -220,8 +235,9 @@ button:active,
 }
 
 .brand-name {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  line-height: 1.15;
 }
 
 .brand-tag {
@@ -234,6 +250,27 @@ button:active,
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(36, 92, 82, 0.12));
+}
+
+.brand-anim {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.brand-anim svg {
+  display: block;
+  height: 42.5px;
+  width: auto;
+  max-width: 100%;
+}
+
+.brand-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .header-actions {
@@ -1519,7 +1556,7 @@ body.is-map-fullscreen .map-explore-stop {
 }
 
 .platform-logo-text {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Petrona, Georgia, "Times New Roman", serif;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--accent);
@@ -2204,6 +2241,11 @@ body.is-map-fullscreen .map-explore-stop {
 
 .detail-artwork-image {
   object-fit: cover;
+}
+
+/* Keep the Clock Tower tip visible in landscape artwork crops. */
+img[src*="tappa_5_torre_orologio.webp"] {
+  object-position: center top;
 }
 
 .detail-mascot-image {
@@ -2979,7 +3021,7 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
 }
 
 .leaflet-popup-content {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Petrona, Georgia, "Times New Roman", serif;
   color: var(--text);
 }
 
@@ -9453,3 +9495,882 @@ body.guide-open.guide-map-intro-focus .route-experience > .map-stage:has(> .map-
 #onboarding-language-chips[hidden] {
   display: none;
 }
+
+/* Ritocchi 17/11/2026: identità grafica */
+body {
+  background: #fff8ef;
+}
+
+.stop-preview > .stop-preview-image,
+.route-experience > .stop-preview .stop-preview-image {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+/* Forma della foto secondo il nome della tappa (regola nel Playbook di produzione dei siti) */
+.stop-preview-image[data-shape="torre"],
+.mini-player-artwork[data-shape="torre"],
+.player-next-preview-image[data-shape="torre"],
+.stop-thumb[data-shape="torre"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M50 390V80Q50 30 100 30Q150 30 150 80V105Q150 130 175 130H225Q250 130 250 105V80Q250 30 300 30Q350 30 350 80V390Q350 400 340 400H60Q50 400 50 390Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M50 390V80Q50 30 100 30Q150 30 150 80V105Q150 130 175 130H225Q250 130 250 105V80Q250 30 300 30Q350 30 350 80V390Q350 400 340 400H60Q50 400 50 390Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview-image[data-shape="arco"],
+.mini-player-artwork[data-shape="arco"],
+.player-next-preview-image[data-shape="arco"],
+.stop-thumb[data-shape="arco"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M80 400Q40 400 40 360V200A160 160 0 0 1 360 200V360Q360 400 320 400Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M80 400Q40 400 40 360V200A160 160 0 0 1 360 200V360Q360 400 320 400Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview-image[data-shape="tassello"],
+.mini-player-artwork[data-shape="tassello"],
+.player-next-preview-image[data-shape="tassello"],
+.stop-thumb[data-shape="tassello"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M200 20A180 180 0 0 0 20 200A180 180 0 0 0 200 380H345Q380 380 380 345V200A180 180 0 0 0 200 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M200 20A180 180 0 0 0 20 200A180 180 0 0 0 200 380H345Q380 380 380 345V200A180 180 0 0 0 200 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview-image[data-shape="foglia"],
+.mini-player-artwork[data-shape="foglia"],
+.player-next-preview-image[data-shape="foglia"],
+.stop-thumb[data-shape="foglia"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M200 20H380V200A180 180 0 0 1 200 380H20V200A180 180 0 0 1 200 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M200 20H380V200A180 180 0 0 1 200 380H20V200A180 180 0 0 1 200 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview-image[data-shape="lente"],
+.mini-player-artwork[data-shape="lente"],
+.player-next-preview-image[data-shape="lente"],
+.stop-thumb[data-shape="lente"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M110 20H290Q315 20 330 45L385 170Q395 200 385 230L330 355Q315 380 290 380H110Q85 380 70 355L15 230Q5 200 15 170L70 45Q85 20 110 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M110 20H290Q315 20 330 45L385 170Q395 200 385 230L330 355Q315 380 290 380H110Q85 380 70 355L15 230Q5 200 15 170L70 45Q85 20 110 20Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+@media (max-width: 640px) {
+  .brand-anim svg { height: 35px; }
+}
+
+/* Foto a schermo intero del player: stessa forma della tappa, senza deformarsi */
+.detail-artwork-image[data-shape="torre"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.detail-artwork-image[data-shape="arco"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.detail-artwork-image[data-shape="tassello"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.detail-artwork-image[data-shape="foglia"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.detail-artwork-image[data-shape="lente"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Player a schermo intero: niente riquadro quadrato, la foto è direttamente nella forma */
+.player-artwork,
+.TPPlayerSheet .player-artwork {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  width: min(100%, 620px);
+}
+
+.player-artwork-stack,
+.TPPlayerSheet .player-artwork-stack {
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  max-height: 72vh;
+}
+
+.player-artwork-layer,
+.TPPlayerSheet .player-artwork-layer {
+  border-radius: 0;
+}
+
+@media (min-width: 900px) and (orientation: landscape) {
+  .TPPlayerSheet .player-artwork {
+    width: min(100%, 620px);
+  }
+}
+
+/* Segnaposto della mappa nella forma della tappa */
+.map-marker.tp-map-marker {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  filter: drop-shadow(0 4px 6px rgba(70, 40, 150, 0.38));
+}
+
+.map-marker.tp-map-marker .map-marker-number {
+  z-index: 2;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(40, 20, 100, 0.6);
+}
+
+.map-marker.tp-map-marker svg {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.map-marker.tp-map-marker path {
+  fill: var(--tp-legacy-stop-purple);
+  stroke: #ffffff;
+  stroke-width: 18;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.map-marker.tp-map-marker[data-shape="torre"] .map-marker-number { padding-top: 7px; }
+
+.map-marker.tp-map-marker.is-selected {
+  background: none;
+  box-shadow: none;
+  transform: scale(1.2);
+  filter: drop-shadow(0 6px 10px rgba(50, 35, 110, 0.5));
+}
+
+.map-marker.tp-map-marker.is-selected path {
+  stroke: var(--tp-color-tertiary);
+  stroke-width: 30;
+}
+
+.map-marker.tp-map-marker.is-highlighted {
+  box-shadow: none;
+}
+
+/* Elenco tappe: miniatura nella forma */
+.stop-button {
+  grid-template-columns: auto auto 1fr auto;
+}
+
+.stop-thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  background: var(--tp-color-surface-container);
+}
+
+/* ===== Extra di identità: forme, anello, tappe ascoltate, caricamento ===== */
+.col-thumb[data-shape="torre"],
+.tp-complete-thumb[data-shape="torre"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview[data-shape="torre"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M50%20390V80Q50%2030%20100%2030Q150%2030%20150%2080V105Q150%20130%20175%20130H225Q250%20130%20250%20105V80Q250%2030%20300%2030Q350%2030%20350%2080V390Q350%20400%20340%20400H60Q50%20400%2050%20390Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.col-thumb[data-shape="arco"],
+.tp-complete-thumb[data-shape="arco"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview[data-shape="arco"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M80%20400Q40%20400%2040%20360V200A160%20160%200%200%201%20360%20200V360Q360%20400%20320%20400Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.col-thumb[data-shape="tassello"],
+.tp-complete-thumb[data-shape="tassello"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview[data-shape="tassello"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020A180%20180%200%200%200%2020%20200A180%20180%200%200%200%20200%20380H345Q380%20380%20380%20345V200A180%20180%200%200%200%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.col-thumb[data-shape="foglia"],
+.tp-complete-thumb[data-shape="foglia"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview[data-shape="foglia"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M200%2020H380V200A180%20180%200%200%201%20200%20380H20V200A180%20180%200%200%201%20200%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.col-thumb[data-shape="lente"],
+.tp-complete-thumb[data-shape="lente"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.stop-preview[data-shape="lente"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2020H290Q315%2020%20330%2045L385%20170Q395%20200%20385%20230L330%20355Q315%20380%20290%20380H110Q85%20380%2070%20355L15%20230Q5%20200%2015%20170L70%2045Q85%2020%20110%2020Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* E · forma gigante e tenue dietro il titolo della tappa */
+.stop-preview { position: relative; isolation: isolate; }
+.stop-preview[data-shape]::before {
+  content: "";
+  position: absolute;
+  right: -34px;
+  top: -30px;
+  width: 190px;
+  height: 190px;
+  background: var(--tp-color-primary);
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* H · anello d'oro attorno al play */
+#player-play-button,
+#mini-player-toggle { position: relative; --ring: 0deg; }
+#player-play-button::after,
+#mini-player-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  background: conic-gradient(var(--tp-color-tertiary) var(--ring), rgba(255, 255, 255, 0.2) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+  pointer-events: none;
+}
+#mini-player-toggle::after { inset: -5px; }
+
+/* A · frecce di tappa con il segno e cursore a puntino oro */
+.player-next-stop-button svg { width: 28px; height: 28px; display: block; }
+.TPPlayerSheet .player-progress-input::-webkit-slider-thumb,
+.mini-player-progress-input::-webkit-slider-thumb {
+  background: var(--tp-color-tertiary);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+.TPPlayerSheet .player-progress-input::-moz-range-thumb,
+.mini-player-progress-input::-moz-range-thumb {
+  background: var(--tp-color-tertiary);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* I · tappa ascoltata: spunta oro e alone sulla mappa */
+.stop-button.is-heard .stop-index {
+  background: var(--tp-color-tertiary);
+  color: var(--tp-color-primary);
+  font-size: 0;
+  box-shadow: 0 0 0 5px rgba(232, 195, 109, 0.28);
+}
+.stop-button.is-heard .stop-index::before {
+  content: "\2713";
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.map-marker.tp-map-marker.is-heard path { stroke: var(--tp-color-tertiary); stroke-width: 28; }
+
+/* B · collezione delle tappe ascoltate */
+.stop-collection {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: var(--tp-color-surface-container);
+}
+.stop-collection-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; color: var(--tp-color-primary); }
+.stop-collection-head span { font-size: 0.9rem; opacity: 0.8; }
+.stop-collection-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.col-thumb { width: 52px; height: 52px; object-fit: cover; filter: grayscale(1) opacity(0.32); transition: filter 400ms ease; }
+.col-thumb.is-heard { filter: none; }
+
+/* C · percorso completato */
+.tp-complete[hidden] { display: none; }
+.tp-complete {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: var(--tp-caption-surface, rgba(14, 51, 45, 0.78));
+}
+.tp-complete-card {
+  width: min(560px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  padding: 28px 22px;
+  border-radius: 28px;
+  background: var(--tp-color-primary);
+  color: #fff8ef;
+  text-align: center;
+}
+.tp-complete-card h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin: 0 0 18px; }
+.tp-complete-mosaic { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+.tp-complete-thumb { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.tp-complete-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.tp-complete-actions button {
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 248, 239, 0.5);
+  background: transparent;
+  color: inherit;
+  font: 700 1rem var(--tp-font-ui);
+  cursor: pointer;
+}
+.tp-complete-actions .tp-complete-share { background: var(--tp-color-tertiary); color: var(--tp-color-primary); border-color: transparent; }
+.tp-complete-promo { margin-top: 16px; font-size: 0.95rem; opacity: 0.9; }
+.tp-complete-promo a { color: var(--tp-color-tertiary); font-weight: 700; }
+
+/* G · cambio tappa: la forma si "ricompone" */
+@keyframes tp-shape-swap {
+  0% { opacity: 0; filter: blur(6px); scale: 0.88; }
+  100% { opacity: 1; filter: blur(0); scale: 1; }
+}
+.shape-swap { animation: tp-shape-swap 460ms cubic-bezier(0.65, 0, 0.35, 1) both; }
+
+/* L · la tua posizione è il puntino oro del brand */
+.map-user-location-marker { fill: var(--tp-color-tertiary, #e8c36d) !important; fill-opacity: 1 !important; stroke: #ffffff !important; stroke-width: 4px !important; }
+.map-user-location-accuracy { fill: var(--tp-color-tertiary, #e8c36d) !important; stroke: var(--tp-color-tertiary, #e8c36d) !important; fill-opacity: 0.18 !important; }
+
+/* F · tracciato: percorso futuro tenue, tappa attiva con anello d'oro pulsante */
+.leaflet-overlay-pane .map-route-base { opacity: 0.42; }
+.map-marker.tp-map-marker.is-selected::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 3px solid var(--tp-color-tertiary);
+  border-radius: 50%;
+  animation: tp-marker-pulse 2.2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes tp-marker-pulse { 0% { transform: scale(0.8); opacity: 0.9; } 100% { transform: scale(1.35); opacity: 0; } }
+
+/* M · schermata di caricamento */
+.tp-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+  background: #fff8ef;
+  transition: opacity 500ms ease;
+}
+.tp-splash.is-hiding { opacity: 0; pointer-events: none; }
+.tp-splash svg { width: min(86vw, 460px); height: auto; }
+@media (prefers-reduced-motion: reduce) { .tp-splash { display: none; } .shape-swap { animation: none; } }
+
+/* Il segno animato in alto porta alla landing di Travel Podcasting */
+.brand-link { display: block; border-radius: 12px; }
+.brand-link:focus-visible { outline: 3px solid var(--tp-color-tertiary); outline-offset: 4px; }
+
+/* Elenco tappe: miniatura con il numero (o la spunta) come piccola etichetta sull'angolo */
+.stop-button {
+  grid-template-columns: 68px 1fr;
+  gap: 16px;
+  padding: 14px 18px;
+}
+.stop-thumb,
+.stop-button .stop-index {
+  grid-column: 1;
+  grid-row: 1;
+}
+.stop-thumb { width: 68px; height: 68px; }
+.stop-button .stop-index {
+  justify-self: end;
+  align-self: end;
+  width: 28px;
+  height: 28px;
+  margin: 0 -8px -4px 0;
+  font-size: 0.85rem;
+  z-index: 1;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(40, 20, 90, 0.28);
+}
+.stop-button.is-heard .stop-index {
+  font-size: 0;
+  box-shadow: 0 2px 6px rgba(40, 20, 90, 0.28);
+}
+.stop-button.is-heard .stop-index::before { font-size: 0.95rem; }
+.stop-button > span:last-child { grid-column: 2; grid-row: 1; }
+
+/* Anello del play: segue la forma del tasto (tondo o arrotondato) */
+#player-play-button::after,
+#mini-player-toggle::after {
+  inset: -7px;
+  border-radius: inherit;
+  padding: 4px;
+  background: conic-gradient(var(--tp-color-tertiary) var(--ring), rgba(255, 255, 255, 0.2) 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+#mini-player-toggle::after { inset: -5px; padding: 3px; }
+
+/* Durata e avanzamento, passaporto dei borghi */
+.stop-collection-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.stop-collection .chip {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--tp-color-primary-container);
+  color: var(--tp-color-on-primary-container);
+  font: 700 0.85rem var(--tp-font-ui);
+}
+.stop-collection-segs { display: flex; gap: 5px; margin-bottom: 8px; }
+.stop-collection-segs .seg { flex: 1; height: 8px; border-radius: 6px; background: var(--tp-color-primary-container); }
+.stop-collection-segs .seg.is-heard { background: var(--tp-color-primary); }
+.stop-collection-status { font-weight: 700; margin-bottom: 12px; color: var(--tp-color-primary); }
+.stop-collection-passport {
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--tp-color-primary);
+  background: transparent;
+  color: var(--tp-color-primary);
+  font: 700 0.95rem var(--tp-font-ui);
+  cursor: pointer;
+}
+.tp-passport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.tp-stamp { text-align: center; }
+.tp-stamp svg { width: 100%; max-width: 130px; height: auto; display: block; margin: 0 auto 6px; }
+.tp-stamp b { display: block; font-size: 1.05rem; }
+.tp-stamp span { font: 600 0.8rem var(--tp-font-ui); opacity: 0.75; }
+.tp-stamp:not(.is-done) { opacity: 0.6; }
+
+/* Anello del play: vero cerchio con tratto arrotondato che segue l'avanzamento */
+#player-play-button::after,
+#mini-player-toggle::after { content: none; }
+#player-play-button,
+.TPPlayerSheet #player-play-button { border-radius: 50%; }
+.play-ring {
+  position: absolute;
+  inset: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  transform: rotate(-90deg);
+  pointer-events: none;
+  overflow: visible;
+}
+#mini-player-toggle .play-ring { inset: -7px; width: calc(100% + 14px); height: calc(100% + 14px); }
+.play-ring circle { fill: none; stroke-width: 4.5; stroke-linecap: round; }
+.play-ring-bg { stroke: rgba(255, 255, 255, 0.22); }
+.play-ring-fg { stroke: var(--tp-color-tertiary); transition: stroke-dashoffset 400ms linear; }
+
+/* Tasti di tappa con le virgolette del segno e la stanghetta */
+.brand-skip { width: 30px; height: 30px; display: block; }
+
+/* Salti di 10 secondi e tasti di tappa disegnati con il segno */
+.material-symbols-rounded[data-icon="replay_10"],
+.material-symbols-rounded[data-icon="forward_10"],
+.material-symbols-rounded[data-icon="skip_previous"],
+.material-symbols-rounded[data-icon="skip_next"] {
+  font-size: 0 !important;
+  width: 34px;
+  height: 34px;
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: var(--tp-icon-mask) center / contain no-repeat;
+  mask: var(--tp-icon-mask) center / contain no-repeat;
+}
+.material-symbols-rounded[data-icon="replay_10"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cg%20transform='translate%286%2024%29%20scale%28.82%29'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/g%3E%3Cpath%20d='M120%2080%20L138%2066%20V136'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='152'%20y='64'%20width='34'%20height='72'%20rx='17'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.material-symbols-rounded[data-icon="forward_10"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M20%2080%20L38%2066%20V136'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='52'%20y='64'%20width='34'%20height='72'%20rx='17'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cg%20transform='translate%28194%2024%29%20scale%28-.82%20.82%29'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E"); }
+.material-symbols-rounded[data-icon="skip_previous"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M32%2060V140'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cg%20transform='translate%2846%200%29'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E"); }
+.material-symbols-rounded[data-icon="skip_next"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M168%2060V140'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cg%20transform='matrix%28-1%200%200%201%20154%200%29'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='17'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E"); }
+
+/* Velocità: pillola a linea sottile */
+#player-speed-button,
+#mini-player-speed-button {
+  min-width: 46px;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+}
+
+/* Lettura facile */
+.easy-read-button { width: 44px; height: 44px; padding: 0; font: 800 0.95rem var(--tp-font-ui); color: var(--tp-color-primary); }
+.easy-read-button[aria-pressed="true"] { background: var(--tp-color-primary); color: #fff; }
+html.text-1 { font-size: 118%; }
+html.text-2 { font-size: 136%; }
+html.easy-read .player-mobile-live-transcript, html.easy-read .detail-copy, html.easy-read .stop-title { font-size: 1.15em; line-height: 1.55; }
+html.easy-read button, html.easy-read .stop-button { min-height: 48px; }
+html.easy-read :focus-visible { outline: 4px solid var(--tp-color-tertiary); outline-offset: 3px; }
+
+@media (max-width: 340px) {
+  .mini-player-controls .mini-player-control,
+  .mini-player-controls .mini-player-toggle { width: 36px; min-width: 36px; height: 36px; }
+  .mini-player-transport-group { gap: 2px; }
+  .material-symbols-rounded[data-icon="replay_10"],
+  .material-symbols-rounded[data-icon="forward_10"],
+  .material-symbols-rounded[data-icon="skip_previous"],
+  .material-symbols-rounded[data-icon="skip_next"],
+  .mini-player-controls .brand-skip { width: 26px; height: 26px; }
+}
+
+/* Cinese e arabo: caratteri adatti e scrittura da destra a sinistra */
+html:lang(zh) *:not(.material-symbols-rounded):not(svg *) { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+html:lang(ar) *:not(.material-symbols-rounded):not(svg *) { font-family: "Geeza Pro", "Noto Naskh Arabic", "Segoe UI", system-ui, sans-serif; }
+html[dir="rtl"] #map,
+html[dir="rtl"] .leaflet-container,
+html[dir="rtl"] input[type="range"],
+html[dir="rtl"] .player-timeline,
+html[dir="rtl"] .player-controls,
+html[dir="rtl"] .player-transport-group,
+html[dir="rtl"] .mini-player-controls,
+html[dir="rtl"] .brand-anim,
+html[dir="rtl"] .stop-collection-segs,
+html[dir="rtl"] .mini-player-timeline,
+html[dir="rtl"] .mini-player-center,
+html[dir="rtl"] .play-ring { direction: ltr; }
+html[dir="rtl"] .stop-collection-row { direction: rtl; }
+
+/* Titolo del player compatto nel carattere del brand */
+.mini-player-text strong#mini-player-title { font-family: Petrona, Georgia, serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0; }
+.mini-player-time, .player-time, .mini-player-speed-label, .player-speed-label { font-family: var(--tp-font-ui); font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* Solo su computer: niente chilometri nella scheda delle tappe */
+@media (min-width: 900px) { .stop-collection .chip-km { display: none; } }
+
+/* Il tasto play è sempre un cerchio, uguale nel player della home e in quello a schermo intero */
+#player-play-button,
+.TPPlayerSheet #player-play-button,
+.player-overlay #player-play-button {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  min-height: 72px;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border-radius: 50%;
+  flex: 0 0 72px;
+}
+#mini-player-toggle { width: 56px; height: 56px; min-width: 56px; aspect-ratio: 1 / 1; border-radius: 50%; padding: 0; }
+.player-transport-group, .mini-player-transport-group { align-items: center; gap: 12px; }
+
+/* Icone nel brand: tratto del segno e puntino oro (le sostituzioni le fa brand-guide.js con la classe .brand-icon) */
+.material-symbols-rounded.brand-icon {
+  font-size: 0 !important;
+  width: var(--ic-size, 24px);
+  height: var(--ic-size, 24px);
+  display: inline-block;
+  position: relative;
+  flex: 0 0 auto;
+  overflow: visible;
+  color: inherit;
+}
+.brand-icon::before,
+.brand-icon::after { content: ""; position: absolute; inset: 0; }
+.brand-icon::before { background: currentColor; -webkit-mask: var(--ic-m) center / contain no-repeat; mask: var(--ic-m) center / contain no-repeat; }
+.brand-icon::after { background: var(--tp-color-tertiary, #e8c36d); -webkit-mask: var(--ic-d) center / contain no-repeat; mask: var(--ic-d) center / contain no-repeat; }
+.brand-icon[data-icon="help"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M70%2078%20Q70%2052%20100%2052%20Q130%2052%20130%2078%20Q130%2096%20108%20106%20Q100%20111%20100%20124'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='154'%20r='12'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="language"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='62'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M38%20100H162M100%2038C70%2070%2070%20130%20100%20162M100%2038C130%2070%20130%20130%20100%20162'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='142'%20cy='62'%20r='13'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="expand_more"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M56%2078%20L100%20122%20L144%2078'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='156'%20r='11'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="my_location"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='56'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M100%2022V40M100%20160V178M22%20100H40M160%20100H178'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='17'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="location_on"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M48%20160%20V110%20Q48%2090%2068%2090%20H140'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M120%2066%20L146%2090%20L120%20114'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='48'%20cy='166'%20r='13'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="fullscreen"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M30%2074V40H64M136%2040H170V74M170%20126V160H136M64%20160H30V126'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='14'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="fullscreen_exit"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M30%2064H64V30M136%2030V64H170M170%20136H136V170M64%20170V136H30'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='14'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="open_in_full"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M120%2040H160V80M80%20160H40V120M160%2040L108%2092M40%20160L92%20108'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='100'%20r='12'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="map"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M36%2052%20L84%2040%20L116%2056%20L164%2044%20V148%20L116%20160%20L84%20144%20L36%20156%20Z'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='116'%20cy='100'%20r='13'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="headphones"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M40%20112%20V100%20Q40%2040%20100%2040%20Q160%2040%20160%20100%20V112'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='34'%20y='104'%20width='26'%20height='52'%20rx='13'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='140'%20y='104'%20width='26'%20height='52'%20rx='13'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='100'%20cy='152'%20r='12'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="article"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M44%2062%20H156%20M44%20100%20H156%20M44%20138%20H100'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='142'%20cy='138'%20r='13'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="swap_horiz"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='72'%20cy='92'%20r='34'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='96'%20y='100'%20width='70'%20height='62'%20rx='16'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='150'%20cy='50'%20r='12'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="photo"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='72'%20cy='92'%20r='34'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Crect%20x='96'%20y='100'%20width='70'%20height='62'%20rx='16'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Ccircle%20cx='150'%20cy='50'%20r='12'%20fill='%23000'/%3E%3C/svg%3E"); }
+.brand-icon[data-icon="close"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M54%2054%20L146%20146%20M146%2054%20L54%20146'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E"); }
+.brand-icon[data-icon="arrow_back"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E"); }
+.brand-icon[data-icon="arrow_forward"] { --ic-m: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cg%20transform='matrix%28-1%200%200%201%20200%200%29'%3E%3Cpath%20d='M52%2062%20L30%2088%20Q22%20100%2030%20112%20L52%20138%20M82%2062%20L60%2088%20Q52%20100%2060%20112%20L82%20138'%20fill='none'%20stroke='%23000'%20stroke-width='15'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E"); --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E"); }
+
+/* Solo audio */
+.solo-moon svg { width: 26px; height: 26px; display: block; }
+.has-solo-audio { overflow: hidden; }
+.solo-audio[hidden] { display: none; }
+.solo-audio {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px 20px;
+  background: #000;
+  color: #fff8ef;
+  text-align: center;
+}
+.solo-close {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 248, 239, 0.4);
+  background: transparent;
+  color: inherit;
+}
+.solo-close svg, .solo-btn svg { width: 100%; height: 100%; display: block; }
+.solo-close { padding: 12px; }
+.solo-stop { font: 700 1rem var(--tp-font-ui); color: var(--tp-color-tertiary); margin: 0; }
+.solo-title { font: 700 clamp(1.5rem, 6vw, 2.2rem) / 1.1 Petrona, Georgia, serif; margin: 0 0 8px; max-width: 18ch; }
+.solo-time { display: flex; align-items: center; gap: 12px; width: min(520px, 100%); direction: ltr; font: 600 0.95rem var(--tp-font-ui); font-variant-numeric: tabular-nums; }
+.solo-seek { flex: 1; accent-color: var(--tp-color-tertiary); height: 32px; }
+.solo-controls { display: flex; align-items: center; justify-content: center; gap: 10px; direction: ltr; margin: 8px 0; }
+.solo-btn { width: 64px; height: 64px; padding: 14px; border: 0; background: transparent; color: #fff8ef; border-radius: 50%; }
+.solo-btn.solo-play { width: 104px; height: 104px; padding: 26px; background: var(--tp-color-tertiary); color: var(--tp-color-primary-dark, #1b3f39); }
+.solo-btn:focus-visible, .solo-speed:focus-visible, .solo-close:focus-visible { outline: 4px solid var(--tp-color-tertiary); outline-offset: 3px; }
+.solo-speed { min-width: 64px; height: 48px; padding: 0 16px; border: 0; background: transparent; color: #fff8ef; font: 700 1.2rem var(--tp-font-ui); }
+.solo-hint { max-width: 32ch; margin: 12px 0 0; font-size: 0.95rem; opacity: 0.75; }
+
+/* Impostazioni del telefono: alto contrasto e riduzione del movimento */
+@media (prefers-contrast: more) {
+  :root { --tp-color-on-surface: #0b2a25; --tp-color-outline: #3d5a53; --tp-color-outline-variant: #4f6d66; }
+  body { color: #0b2a25; }
+  .stop-button, .stop-collection, .walk-card, .tp-complete-actions button { border-color: #0b2a25; }
+  .stop-collection .chip, .col-thumb:not(.is-heard) { filter: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-marker.tp-map-marker.is-selected::after { animation: none; }
+  .play-ring-fg { transition: none; }
+  .shape-swap { animation: none; }
+  .solo-audio * { transition: none; }
+}
+.easy-read-button { width: auto; min-width: 44px; padding: 0 10px; }
+
+/* tutorial: pulsanti con icone del brand */
+.guide-button .material-symbols-rounded{font-size:1.6rem}
+.guide-button .guide-check{width:1.5rem;height:1.5rem;display:block}
+
+/* Comandi del player: tasto centrale davvero al centro (la velocità sta a destra, a sinistra uno spazio uguale) */
+.player-controls { display: grid !important; grid-template-columns: 40px repeat(2, minmax(0, 1fr)) 76px repeat(2, minmax(0, 1fr)) 40px !important; align-items: center; justify-items: center; column-gap: 0; }
+.player-controls > .player-transport-group { display: contents !important; }
+#player-previous-track { grid-column: 2 !important; grid-row: 1 !important; }
+#player-prev-button { grid-column: 3 !important; grid-row: 1 !important; }
+#player-play-button { grid-column: 4 !important; grid-row: 1 !important; }
+#player-next-button { grid-column: 5 !important; grid-row: 1 !important; }
+#player-next-track { grid-column: 6 !important; grid-row: 1 !important; }
+.player-controls > #player-speed-button { grid-column: 7 !important; grid-row: 1 !important; width: 40px; min-width: 0; padding: 0; }
+.TPMiniPlayer .mini-player-controls { display: grid !important; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; column-gap: 4px; width: 100%; }
+.TPMiniPlayer .mini-player-controls > .mini-player-transport-group { grid-column: 2; display: flex; justify-content: space-between; gap: 0; width: 100%; min-width: 0; }
+.TPMiniPlayer .mini-player-controls > #mini-player-speed-button { grid-column: 3; width: 40px; min-width: 0; padding: 0; justify-self: center; }
+
+/* ===== Player: stesse proporzioni ovunque (mini e schermo intero) ===== */
+.player-controls { --pc-btn: 44px; --pc-ic: 28px; --pc-play: 60px; }
+.TPMiniPlayer .mini-player-controls { --pc-btn: 38px; --pc-ic: 24px; --pc-play: 46px; }
+.player-controls .player-control-button:not(.is-primary):not(.player-speed-button),
+.TPMiniPlayer .mini-player-control {
+  width: var(--pc-btn) !important; height: var(--pc-btn) !important; min-width: 0 !important; min-height: 0 !important;
+  padding: 0 !important; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+}
+.player-controls .player-control-button .material-symbols-rounded,
+.player-controls .player-control-button .brand-skip,
+.TPMiniPlayer .mini-player-control .material-symbols-rounded,
+.TPMiniPlayer .mini-player-control .brand-skip { width: var(--pc-ic) !important; height: var(--pc-ic) !important; }
+#player-play-button, #mini-player-toggle {
+  width: var(--pc-play) !important; height: var(--pc-play) !important; min-width: 0 !important; min-height: 0 !important;
+  aspect-ratio: 1 / 1; border-radius: 50% !important; padding: 0 !important;
+}
+#player-play-button .playback-icon, #mini-player-toggle .playback-icon { font-size: calc(var(--pc-play) * 0.5) !important; }
+.play-ring, #mini-player-toggle .play-ring { inset: -6px; width: calc(100% + 12px); height: calc(100% + 12px); }
+.play-ring circle { stroke-width: 4; }
+#player-speed-button, #mini-player-speed-button {
+  width: auto !important; min-width: 40px !important; height: 32px !important; padding: 0 6px !important;
+  font: 700 0.85rem var(--tp-font-ui); letter-spacing: 0;
+}
+
+/* Titolo del player: a capo su due righe, mai tagliato né scorrevole */
+.player-overlay .player-title-row h2,
+.player-overlay .player-title-row .player-title-text {
+  white-space: normal !important; overflow: visible !important; text-overflow: clip !important;
+  animation: none !important; transform: none !important; font-size: clamp(1.35rem, 6.2vw, 1.9rem) !important; line-height: 1.12;
+  max-width: 100%; text-wrap: balance;
+}
+
+/* Tasti dei 10 secondi: freccia circolare con il 10 dentro */
+.material-symbols-rounded[data-icon="replay_10"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%20fill='none'%20stroke='%23000'%20stroke-width='14'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d=%22M56.3%2053.9%20A68%2068%200%201%200%20139.0%2050.3%22/%3E%3Cpath%20d=%22M145.8%2079.5%20L139.0%2050.3%20L168.8%2046.6%22/%3E%3Cg%20transform=%22translate%28100%20106%29%22%3E%3Cpath%20d=%22M-30%20-20%20L-16%20-30%20V30%22/%3E%3Crect%20x=%222%22%20y=%22-30%22%20width=%2230%22%20height=%2260%22%20rx=%2215%22/%3E%3C/g%3E%3C/svg%3E"); }
+.material-symbols-rounded[data-icon="forward_10"] { --tp-icon-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%20fill='none'%20stroke='%23000'%20stroke-width='14'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cg%20transform=%22matrix%28-1%200%200%201%20200%200%29%22%3E%3Cpath%20d=%22M56.3%2053.9%20A68%2068%200%201%200%20139.0%2050.3%22/%3E%3Cpath%20d=%22M145.8%2079.5%20L139.0%2050.3%20L168.8%2046.6%22/%3E%3C/g%3E%3Cg%20transform=%22translate%28100%20106%29%22%3E%3Cpath%20d=%22M-30%20-20%20L-16%20-30%20V30%22/%3E%3Crect%20x=%222%22%20y=%22-30%22%20width=%2230%22%20height=%2260%22%20rx=%2215%22/%3E%3C/g%3E%3C/svg%3E"); }
+.player-overlay .player-title-row h2 { min-width: 0; flex: 1 1 0; }
+.player-overlay .player-title-row .player-title-text { display: block !important; width: auto !important; min-width: 0 !important; max-width: 100% !important; }
+
+/* Palazzi: forma «blocco» (quadrato morbido) */
+
+.stop-preview-image[data-shape="blocco"],
+.mini-player-artwork[data-shape="blocco"],
+.player-next-preview-image[data-shape="blocco"],
+.stop-thumb[data-shape="blocco"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M110 30H290Q370 30 370 110V290Q370 370 290 370H110Q30 370 30 290V110Q30 30 110 30Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cpath d='M110 30H290Q370 30 370 110V290Q370 370 290 370H110Q30 370 30 290V110Q30 30 110 30Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.detail-artwork-image[data-shape="blocco"] {
+  border-radius: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.col-thumb[data-shape="blocco"],
+.tp-complete-thumb[data-shape="blocco"] {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.stop-preview[data-shape="blocco"]::before {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3Cpath%20d='M110%2030H290Q370%2030%20370%20110V290Q370%20370%20290%20370H110Q30%20370%2030%20290V110Q30%2030%20110%2030Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Controlli almeno 44 px (test di accessibilità) e testi piccoli con contrasto sufficiente */
+.TPMiniPlayer .mini-player-controls { --pc-btn: 44px; --pc-ic: 26px; --pc-play: 50px; }
+.stop-collection-head > span { color: var(--tp-color-primary, #3f6a60); }
+.stop-collection-head > span { opacity: 1; }
+#player-speed-button, #mini-player-speed-button { min-width: 44px !important; height: 44px !important; }
+.player-controls, .TPMiniPlayer .mini-player-controls { grid-template-columns: 44px repeat(2, minmax(0, 1fr)) 76px repeat(2, minmax(0, 1fr)) 44px !important; }
+.TPMiniPlayer .mini-player-controls { grid-template-columns: 44px minmax(0, 1fr) 44px !important; }
+@media (max-width: 380px) {
+  .TPMiniPlayer .mini-player-controls { grid-template-columns: minmax(0, 1fr) 44px !important; }
+  .TPMiniPlayer .mini-player-controls > .mini-player-transport-group { grid-column: 1; }
+  .TPMiniPlayer .mini-player-controls > #mini-player-speed-button { grid-column: 2; }
+}
+
+.stop-collection-passport, .tp-passport-grid { display: none !important; }
+
+/* Arabo (da destra a sinistra): virgoletta iniziale a destra, finale a sinistra dell'ultima riga */
+html[dir="rtl"] .intro-copy { padding-left: 0; padding-right: 2.4em; }
+html[dir="rtl"] .intro-copy::before { left: auto; right: 0; font-style: normal; font-family: Georgia, "Times New Roman", serif; }
+html[dir="rtl"] .intro-quote::after { margin-left: 0; margin-right: 0.08em; font-style: normal; font-family: Georgia, "Times New Roman", serif; }
+.col-thumb-btn { border: 0; background: none; padding: 0; margin: 0; cursor: pointer; border-radius: 12px; line-height: 0; -webkit-tap-highlight-color: transparent; }
+.col-thumb-btn:focus-visible { outline: 3px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 3px; }
+.col-thumb-btn:active .col-thumb { transform: scale(0.94); }
+
+/* Mappa + player su telefono: la trascrizione sta in alto, lontana da mascotte, pollice e comandi */
+@media (max-width: 1023px) {
+  body.is-mobile-map-player-mode .map-live-caption:not([hidden]) {
+    top: calc(max(12px, env(safe-area-inset-top)) + 22px);
+    bottom: auto;
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+  }
+}
+
+/* Trascrizione (proposta E del 18/11/2026): senza riquadro pieno, filetto oro, testo chiaro sul fondo del player,
+   riga attiva in oro. Token del tema: ogni Comune li ridefinisce (contrasto minimo 4,5:1 sul fondo del player). */
+:root {
+  --tp-transcript-surface: var(--tp-player-surface-sheet-deep, rgb(9, 47, 44));
+  --tp-transcript-text: #e6efea;
+  --tp-transcript-active: var(--tp-color-tertiary, #e8c36d);
+  --tp-transcript-bar: var(--tp-color-tertiary, #e8c36d);
+  --tp-caption-map-surface: var(--tp-caption-surface, rgba(18, 59, 53, 0.9));
+}
+.player-mobile-live-transcript { background: var(--tp-transcript-surface) !important; border: 1.5px solid var(--tp-transcript-bar) !important; box-shadow: none !important; }
+.player-mobile-transcript-segment { color: var(--tp-transcript-text) !important; opacity: 0.78; border-left: 3px solid transparent; padding-left: 8px; }
+.player-mobile-transcript-segment.is-active { color: var(--tp-transcript-active) !important; opacity: 1; border-left-color: var(--tp-transcript-bar); }
+.map-live-caption { background: var(--tp-caption-map-surface) !important; color: var(--tp-transcript-text) !important; border: 1.5px solid var(--tp-transcript-bar) !important; }
+.map-live-caption * { color: inherit !important; }
+
+/* Mappa + player su telefono: posizione e indicazioni stanno nel riquadro in alto a destra della mappa (come nella home);
+   la barra del player tiene solo ascolto, aiuto e chiudi. */
+@media (max-width: 1023px) {
+  body.is-mobile-map-player-mode .map-floating-controls { display: flex !important; top: 12px; right: 12px; z-index: 1996; }
+  .player-overlay.TPPlayerSheet.is-mobile-map-player #player-recenter-button,
+  .player-overlay.TPPlayerSheet.is-mobile-map-player #player-map-directions-button { display: none !important; }
+  body.is-mobile-map-player-mode .map-live-caption:not([hidden]) {
+    top: calc(max(12px, env(safe-area-inset-top)) + 22px);
+    right: calc(max(12px, env(safe-area-inset-right)) + 72px);
+  }
+}
+
+/* Play tondo sempre: la larghezza di flex (56 px) lo allargava rispetto all'altezza e l'anello diventava un ovale */
+#mini-player-toggle, #player-play-button { flex: 0 0 var(--pc-play) !important; align-self: center; width: var(--pc-play) !important; height: var(--pc-play) !important; aspect-ratio: 1 / 1; }
+.TPMiniPlayer .mini-player-transport-group .mini-player-toggle { flex: 0 0 var(--pc-play) !important; width: var(--pc-play) !important; min-width: 0 !important; }
+
+/* Trascrizione: barra oro staccata dal testo, didascalia sulla mappa del telefono più grande e su tre righe */
+.player-mobile-transcript-segment { padding-left: 16px; }
+@media (max-width: 1023px) {
+  body.is-mobile-map-player-mode .map-live-caption:not([hidden]) { font-size: clamp(1rem, 4.4vw, 1.1rem); line-height: 1.32; padding: 9px 12px; }
+}
+
+/* Durante l'animazione iniziale la pagina non scorre */
+html.tp-splash-lock, html.tp-splash-lock body { overflow: hidden !important; overscroll-behavior: none; height: 100%; }
+.tp-splash { touch-action: none; overscroll-behavior: none; }
+
+/* Anello del play nel mini player: stessa distanza dal tasto che nel player a schermo intero (prima toccava il bordo) */
+.TPMiniPlayer #mini-player-toggle .play-ring { inset: -8px !important; width: calc(100% + 16px) !important; height: calc(100% + 16px) !important; }
+.TPMiniPlayer #mini-player-toggle .play-ring circle { stroke-width: 3.6; }
+html.tp-splash-lock { scrollbar-width: none; -ms-overflow-style: none; }
+html.tp-splash-lock::-webkit-scrollbar, html.tp-splash-lock body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.player-mobile-live-transcript .player-mobile-live-transcript-scroll .player-mobile-transcript-segment { padding-left: 16px !important; }
+
+/* Salto della mascotte al tocco (usa le proprietà translate e scale, così non disturba le altre animazioni) */
+@keyframes tp-mascot-hop {
+  0%   { translate: 0 0; scale: 1 1; }
+  15%  { translate: 0 0; scale: 1.07 0.92; }
+  45%  { translate: 0 -26px; scale: 0.97 1.05; }
+  75%  { translate: 0 0; scale: 1.06 0.93; }
+  100% { translate: 0 0; scale: 1 1; }
+}
+.mascot-motion-shell.is-hopping { animation: tp-mascot-hop 560ms cubic-bezier(0.3, 0.7, 0.4, 1) both; transform-origin: center bottom; }
+.mascot-motion-shell, .map-explore-mascot-image, .mascot-motion-shell img { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+body.is-mobile-map-player-mode .map-explore-mascot, body.is-mobile-map-player-mode .map-explore-mascot-motion { pointer-events: auto !important; }
+@media (prefers-reduced-motion: reduce) { .mascot-motion-shell.is-hopping { animation: none; } }
+
+/* Saluto della mascotte (cambio tappa, apertura del player) */
+@keyframes tp-mascot-greet {
+  0%   { rotate: 0deg; translate: 0 0; }
+  22%  { rotate: -6deg; translate: -3px -8px; }
+  50%  { rotate: 5deg; translate: 3px -4px; }
+  75%  { rotate: -2.5deg; translate: 0 -2px; }
+  100% { rotate: 0deg; translate: 0 0; }
+}
+.mascot-motion-shell.is-greeting { animation: tp-mascot-greet 1100ms cubic-bezier(0.3, 0.7, 0.4, 1) both; transform-origin: center bottom; }
+@media (prefers-reduced-motion: reduce) { .mascot-motion-shell.is-greeting { animation: none; } }
+
+
+
+/* Tasti del mini player equidistanti (sei colonne uguali), uguale su telefono e computer */
+.TPMiniPlayer .mini-player-controls { display: grid !important; grid-template-columns: repeat(6, minmax(0, 1fr)) !important; justify-items: center; align-items: center; column-gap: 0 !important; }
+.TPMiniPlayer .mini-player-controls > .mini-player-transport-group { display: contents !important; }
+.TPMiniPlayer .mini-player-controls > *, .TPMiniPlayer .mini-player-transport-group > * { grid-column: auto !important; grid-row: auto !important; margin: 0 !important; }
+@media (min-width: 1024px) { .TPMiniPlayer .mini-player-controls { grid-template-columns: repeat(6, 56px) !important; justify-content: center; } }
+
+/* Tasti del player a schermo intero equidistanti: sei colonne uguali (come nel mini player) */
+.player-controls { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; column-gap: 0 !important; justify-items: center; }
+.player-controls > .player-transport-group { display: contents !important; }
+.player-controls > *, .player-controls .player-transport-group > * { grid-column: auto !important; grid-row: auto !important; margin: 0 !important; }
+#player-previous-track, #player-prev-button, #player-play-button, #player-next-button, #player-next-track, .player-controls > #player-speed-button { grid-column: auto !important; grid-row: auto !important; }
+
+/* Tablet: i sei tasti restano vicini invece di allargarsi su tutta la larghezza */
+@media (min-width: 520px) and (max-width: 1023px) {
+  .TPMiniPlayer .mini-player-controls, .player-controls { grid-template-columns: repeat(6, minmax(0, 64px)) !important; justify-content: center; }
+}
+/* Telefono stretto (320 px): il play del mini player non tocca i vicini */
+@media (max-width: 340px) { .TPMiniPlayer .mini-player-controls { --pc-play: 44px; } }
+/* Computer stretto (1024-1199 px): la barra in basso non esce dallo schermo */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .TPMiniPlayer { grid-template-columns: minmax(130px, 1fr) auto minmax(200px, 1.3fr) auto; column-gap: 12px; }
+  .TPMiniPlayer .mini-player-controls { grid-template-columns: repeat(6, 48px) !important; }
+}
+.player-controls > *, .player-controls .player-transport-group > *, .TPMiniPlayer .mini-player-controls > *, .TPMiniPlayer .mini-player-transport-group > * { justify-self: center !important; align-self: center !important; }
+
+/* Selettore lingua: niente puntino oro sul mondo né sotto la freccia */
+.brand-icon[data-icon="language"], .brand-icon[data-icon="expand_more"] { --ic-d: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E"); }
+
+/* Audio di passaggio: resta solo il play, largo quanto la riga (come prima dei comandi a colonne uguali) */
+body.is-transition-audio .player-controls, body.is-transition-audio .TPMiniPlayer .mini-player-controls { display: flex !important; justify-content: center; }
+body.is-transition-audio #player-play-button, body.is-transition-audio #mini-player-toggle {
+  flex: 1 1 100% !important; width: 100% !important; max-width: none !important; aspect-ratio: auto !important;
+  border-radius: var(--tp-radius-lg) !important; height: auto !important; min-height: var(--pc-play) !important;
+}
+body.is-transition-audio .play-ring { display: none !important; }

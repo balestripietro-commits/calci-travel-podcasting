@@ -193,7 +193,7 @@ test("tutorial keeps desktop in the map experience and mobile in the full player
     expect(exploreGuideGeometry.pointsAtExpand).toBe(true);
     await expect(page.locator("#player-overlay")).toBeHidden();
     await expect(text).toContainText("mappa estesa");
-    await expect(next).toHaveText("→");
+    await expect(next.locator("[data-icon=\"arrow_forward\"]")).toHaveCount(1);
 
     await next.click();
     await expect(page.locator("#guide-action-demo")).toHaveCount(0);
@@ -236,7 +236,7 @@ test("tutorial keeps desktop in the map experience and mobile in the full player
     });
     expect(guideIsFrontmost).toBe(true);
     await expect(text).toContainText("vista estesa");
-    await expect(next).toHaveText("✓");
+    await expect(next.locator(".guide-check")).toHaveCount(1);
     await page.waitForTimeout(450);
     await expect(page.locator("#guide-layer")).toBeVisible();
     await expect(text).toContainText("vista estesa");
@@ -244,11 +244,11 @@ test("tutorial keeps desktop in the map experience and mobile in the full player
     await expect(page.locator("#player-overlay")).toBeVisible();
     await expect(text).toContainText("Mappa + player");
     await expect(page.locator("#player-overlay")).toHaveClass(/is-mobile-map-player/);
-    await expect(next).toHaveText("→");
+    await expect(next.locator("[data-icon=\"arrow_forward\"]")).toHaveCount(1);
     await next.click();
     await expect(text).toContainText("Full player audio");
     await expect(page.locator("#player-map-button")).toHaveClass(/is-guide-highlighted/);
-    await expect(next).toHaveText("→");
+    await expect(next.locator("[data-icon=\"arrow_forward\"]")).toHaveCount(1);
 
     await next.click();
     await expect(text).toContainText("vista Full player audio");
@@ -293,7 +293,7 @@ test("tutorial keeps desktop in the map experience and mobile in the full player
     await expect(text).toContainText("Con la X");
     await expect(page.locator("#player-overlay")).toHaveClass(/is-mobile-map-player/);
     await expect(page.locator("#player-close-button")).toHaveClass(/is-guide-highlighted/);
-    await expect(next).toHaveText("✓");
+    await expect(next.locator(".guide-check")).toHaveCount(1);
   }
 
   if (testInfo.project.name === "desktop-chrome") {
@@ -395,7 +395,8 @@ test("tutorial blocks pointer, keyboard and assistive access to background contr
   await expect(page.locator("#mini-player")).toHaveJSProperty("inert", true);
   await expect(page.locator("#guide-next-button")).toBeFocused();
 
-  const stop = page.locator(".stop-button").nth(1);
+  // Un controllo sempre visibile sotto la guida (lo zoom della mappa): la lista tappe ora è sotto la piega.
+  const stop = page.locator(".map-stage-frame .leaflet-control-zoom a").first();
   const stopBox = await stop.boundingBox();
   expect(stopBox).not.toBeNull();
   await page.mouse.click(stopBox.x + stopBox.width / 2, stopBox.y + stopBox.height / 2);

@@ -58,3 +58,7 @@ Foto: 1–5 e 7 di progetto, senza credito in pagina. La 6 (Gioco del Mulino) vi
 - Controlli eseguiti: `node --check app.js`; build `npm run build`; parsing HTML e JSON; tutti i 7 marker rilevati nel browser; audio tappa 1 riprodotto; sottotitoli sincronizzati visibili; lingue diverse da IT non attivabili; viewport 390×844 senza overflow orizzontale.
 - Limiti: trascrizioni e cue automatici non revisionati con ascolto completo; non eseguita suite E2E con Playwright; foto 4–6 e coordinate richiedono approvazione.
 - Prima del rilascio: revisione editoriale/audio, verifica crediti e diritti, conferma tappe/coordinate con il Comune, controllo con Padre Gherardo e maschere finali.
+
+## Allineamento all'identità Travel Podcasting (18/11/2026)
+
+Portate da Vicopisano, con la procedura del Playbook di sviluppo (Notion): intestazione e caricamento animati con stemma di Calci, carattere Petrona, forme per nome della tappa (numero sulla mappa e foto), icone del brand, tasti del player equidistanti, trascrizione con filetto oro, livelli di testo, modalità solo audio, comandi del blocco schermo, collezione «Le tue tappe», salto al tocco e saluto della mascotte, controllo link nel deploy. Palette: resta il blu di Calci (i colori dei blocchi nuovi sono token del tema). Non portato: pagine di condivisione per tappa, pacchetti lingua. Da fare: foto 4-6 e icone di blocco schermo definitive, rigenerare le animazioni se cambia il nome.

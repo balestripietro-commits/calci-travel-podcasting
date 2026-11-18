@@ -10,9 +10,11 @@ const rootFiles = [
   "theme-calci.css",
   "logo_calci.png",
   "mascotte_calci.webp",
+  "brand-extras.js",
+  "brand-guide.js",
 ];
 const runtimeDirectories = ["audio"];
-const runtimeAssetDirectories = ["assets/mascotte-mouth", "assets/stops"];
+const runtimeAssetDirectories = ["assets/mascotte-mouth", "assets/stops", "assets/fonts", "assets/lock"];
 const runtimeAssetFiles = ["assets/stemma-calci.png"];
 const stopArtworkPattern = /^tappa_\d+_.+\.webp$/i;
 

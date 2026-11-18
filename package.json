@@ -13,7 +13,8 @@
     "test:e2e:mobile-low": "playwright test --project=mobile-low-chrome",
     "test:e2e:a11y": "playwright test tests/e2e/accessibility.spec.mjs",
     "test:e2e:headed": "playwright test --headed",
-    "tracciato": "node scripts/genera-tracciato.mjs"
+    "tracciato": "node scripts/genera-tracciato.mjs",
+    "check": "npm run build && node scripts/check-links.mjs dist"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

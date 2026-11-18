@@ -654,8 +654,11 @@ test("mini player cycles playback speed like the full player", async ({ page }) 
   await expect.poll(() => page.locator("audio").evaluate((audio) => audio.playbackRate)).toBe(1.25);
   await speedButton.click();
   await expect(speedButton).toHaveText("x1,5");
-  await speedButton.click();
-  await expect(speedButton).toHaveText("x1");
+  // Velocità da 0,5 a 2 con passi di 0,25 (dal 18/11/2026)
+  for (const label of ["x1,75", "x2", "x0,5", "x0,75", "x1"]) {
+    await speedButton.click();
+    await expect(speedButton).toHaveText(label);
+  }
   await expect.poll(() => page.locator("audio").evaluate((audio) => audio.playbackRate)).toBe(1);
   await expectNoRuntimeErrors(errors);
 });

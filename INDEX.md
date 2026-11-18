@@ -9,6 +9,9 @@
 - `index.html` — interfaccia italiana.
 - `app.js` — sette tappe, mappa, player, lingue e sincronizzazione.
 - `style.css`, `design-system.css`, `theme-calci.css` — layout, core condiviso e tema Calci.
+- `brand-extras.js`, `brand-guide.js` — identità Travel Podcasting nel sito (tappe ascoltate, anello del play, forme, icone, livelli di testo, solo audio, salto e saluto della mascotte). Configurazione del Comune in `window.TP_SITE` di `index.html` (nome, durata delle tracce).
+- `assets/fonts/` — Petrona (OFL); `assets/lock/` — icone per lo schermo bloccato (foto nella forma della tappa su fondo blu).
+- `scripts/check-links.mjs` — controllo dei file citati dal sito (`npm run check`, e passaggio «Check links» del deploy).
 - `build-static.mjs`, `dev-server.mjs` — build e anteprima locale.
 
 ## Contenuti e media

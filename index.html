@@ -16,9 +16,21 @@
     />
     <link rel="stylesheet" href="design-system.css?v=20261029-etichette" />
     <link rel="stylesheet" href="theme-calci.css?v=20261029-etichette" />
-    <link rel="stylesheet" href="style.css?v=20261029-etichette" />
+    <link rel="stylesheet" href="style.css?v=20261118-brand" />
   </head>
   <body class="tp-theme-calci">
+<div class="tp-splash" id="tp-splash" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-136.9 50 473.7 100" role="img" aria-label="Comune di Calci"><style>
+.tps{--verde:#0d4f7b;--oro:#dfb64d;--testo:#dfb64d}
+.tps .ch{fill:none;stroke:var(--verde);stroke-width:15;stroke-linecap:round;stroke-linejoin:round}
+.tps .a{animation-duration:8s;animation-timing-function:cubic-bezier(.65,0,.35,1);animation-iteration-count:1;animation-fill-mode:both}
+.tps-dx{animation-name:tps-dx}.tps-sx{animation-name:tps-sx}
+.tps-dot{fill:var(--oro);transform-box:fill-box;transform-origin:center;animation-name:tps-dot}
+.tps text{font:700 36px Petrona,Georgia,serif;fill:var(--testo)}
+.tps-t0{animation-name:tps-t0;clip-path:inset(-8px 50% -8px 50%)}
+@keyframes tps-dx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(137.4px)}75.0%{transform:translateX(137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-sx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(-137.4px)}75.0%{transform:translateX(-137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-dot{0%{transform:scale(1);opacity:1}3.75%{transform:scale(1);opacity:1}12.5%{transform:scale(0);opacity:0}87.5%{transform:scale(0);opacity:0}96.25%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}@keyframes tps-t0{0%{clip-path:inset(-8px 50% -8px 50%)}12.5%{clip-path:inset(-8px 50% -8px 50%)}30.0%{clip-path:inset(-8px -3% -8px -3%)}75.0%{clip-path:inset(-8px -3% -8px -3%)}87.5%{clip-path:inset(-8px 50% -8px 50%)}100%{clip-path:inset(-8px 50% -8px 50%)}}
+@media (prefers-reduced-motion:reduce){.tps .a{animation:none}.tps [class*="tps-t"]{display:none}}
+</style><g class="tps"><g class="a tps-sx"><path class="ch" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><g class="a tps-dx"><path class="ch" transform="matrix(-1 0 0 1 200 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><circle class="a tps-dot" cx="100" cy="100" r="15"/><g class="a tps-t0"><image href="logo_calci.png" x="-34.359999999999985" y="50.0" width="80" height="100" preserveAspectRatio="xMidYMid meet"/><text x="53.640000000000015" y="93.5">Comune di</text><text x="53.640000000000015" y="130.2">Calci</text></g></g></svg></svg></div>
+<script>(function(){var s=document.getElementById("tp-splash");if(!s)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){s.remove();return;}var root=document.documentElement;root.classList.add("tp-splash-lock");var t0=Date.now(),loaded=document.readyState==="complete";function hide(){if(!loaded||Date.now()-t0<3600){setTimeout(hide,120);return;}root.classList.remove("tp-splash-lock");s.classList.add("is-hiding");setTimeout(function(){s.remove();},600);}window.addEventListener("load",function(){loaded=true;});hide();})();</script>
     <div class="announcement-strip" aria-hidden="true">
       <div id="announcement-track" class="announcement-track"></div>
     </div>
@@ -64,7 +76,7 @@
           <div class="guide-actions">
             <button type="button" id="guide-skip-button" class="guide-button guide-button-secondary" aria-label="Chiudi"><span translate="no" class="material-symbols-rounded" aria-hidden="true">close</span></button>
             <button type="button" id="guide-prev-button" class="guide-button guide-button-secondary" aria-label="Indietro"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_back</span></button>
-            <button type="button" id="guide-next-button" class="guide-button guide-button-primary" aria-label="Avanti"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+            <button type="button" id="guide-next-button" class="guide-button guide-button-primary" aria-label="Avanti"><svg viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path transform="matrix(-1 0 0 1 200 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
       </div>
       <div id="guide-exit-confirm" class="guide-exit-confirm" role="alertdialog" aria-modal="true" aria-labelledby="guide-exit-confirm-title" hidden>
@@ -97,11 +109,19 @@
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
-          <img class="hero-logo" src="logo_calci.png?v=20261029-etichette" alt="Stemma di Calci" />
-          <div class="brand-copy">
-            <p class="brand-name" id="brand-name">Travel podcasting</p>
-            <p class="brand-tag" id="brand-tag">Comune di Calci</p>
-          </div>
+          <div class="brand-anim"><a class="brand-link" id="brand-link" href="https://balestripietro-commits.github.io/landing-page-travel-podcasting/" target="_blank" rel="noopener" aria-label="Travel Podcasting"><svg xmlns="http://www.w3.org/2000/svg" viewBox="10.0 50 470.2 100" role="img" aria-label="Travel Podcasting, Comune di Calci"><style>
+.tph{--verde:#0d4f7b;--oro:#dfb64d;--testo:#dfb64d}
+.tph .ch{fill:none;stroke:var(--verde);stroke-width:15;stroke-linecap:round;stroke-linejoin:round}
+.tph .a{animation-duration:48s;animation-timing-function:cubic-bezier(.65,0,.35,1);animation-iteration-count:infinite;animation-fill-mode:both}
+.tph-dx{animation-name:tph-dx}.tph-sx{animation-name:tph-sx}
+.tph-dot{fill:var(--oro);transform-box:fill-box;transform-origin:center;animation-name:tph-dot}
+.tph text{font:700 36px Petrona,Georgia,serif;fill:var(--testo)}
+.tph-t0{animation-name:tph-t0;clip-path:inset(-8px 100% -8px 0)}.tph-t1{animation-name:tph-t1;clip-path:inset(-8px 100% -8px 0)}
+@keyframes tph-dx{0%{transform:translateX(0.0px)}12.083%{transform:translateX(0.0px)}20.0%{transform:translateX(280.7px)}27.5%{transform:translateX(280.7px)}35.417%{transform:translateX(0.0px)}62.083%{transform:translateX(0.0px)}70.0%{transform:translateX(194.9px)}77.5%{transform:translateX(194.9px)}85.417%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tph-dot{0%{transform:scale(1);opacity:1}10.417%{transform:scale(1);opacity:1}12.083%{transform:scale(0);opacity:0}35.417%{transform:scale(0);opacity:0}37.083%{transform:scale(1);opacity:1}60.417%{transform:scale(1);opacity:1}62.083%{transform:scale(0);opacity:0}85.417%{transform:scale(0);opacity:0}87.083%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}@keyframes tph-t0{0%{clip-path:inset(-8px 100% -8px 0)}12.083%{clip-path:inset(-8px 100% -8px 0)}20.0%{clip-path:inset(-8px -3% -8px -3%)}27.5%{clip-path:inset(-8px -3% -8px -3%)}35.417%{clip-path:inset(-8px 100% -8px 0)}100%{clip-path:inset(-8px 100% -8px 0)}}@keyframes tph-t1{0%{clip-path:inset(-8px 100% -8px 0)}62.083%{clip-path:inset(-8px 100% -8px 0)}70.0%{clip-path:inset(-8px -3% -8px -3%)}77.5%{clip-path:inset(-8px -3% -8px -3%)}85.417%{clip-path:inset(-8px 100% -8px 0)}100%{clip-path:inset(-8px 100% -8px 0)}}
+@media (prefers-reduced-motion:reduce){.tph .a{animation:none}.tph [class*="tph-t"]{display:none}}
+</style><g class="tph"><g><path class="ch" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><g class="a tph-dx"><path class="ch" transform="matrix(-1 0 0 1 200 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><circle class="a tph-dot" cx="100" cy="100" r="15"/><g class="a tph-t0"><image href="logo_calci.png" x="102" y="50.0" width="80" height="100" preserveAspectRatio="xMidYMid meet"/><text x="190" y="93.5">Comune di</text><text x="190" y="130.2">Calci</text></g><g class="a tph-t1"><text x="102" y="93.5">Travel</text><text x="102" y="130.2">Podcasting</text></g></g></svg></a></div>
+          <span class="brand-sr" id="brand-name">Travel podcasting</span>
+          <span class="brand-sr" id="brand-tag">Comune di Calci</span>
         </div>
 
         <div class="header-actions">
@@ -135,7 +155,7 @@
             </div>
             <div class="intro-copy">
               <p class="eyebrow" id="eyebrow-text">Comune di Calci</p>
-              <h1 id="landing-title">Buondì!</h1>
+              <h1 id="landing-title" lang="it" translate="no">Buondì!</h1>
               <div class="intro-quote-block" id="intro-quote-block">
                 <p class="intro intro-lead intro-quote-title" id="intro-lead-text">Sono Padre Gherardo.</p>
                 <p class="intro intro-quote" id="intro-text">
@@ -263,7 +283,7 @@
               aria-label="Traccia precedente"
               title="Traccia precedente"
             >
-              <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_previous</span>
+              <svg class="brand-skip" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M32 60V140" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path transform="translate(46 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <button
               type="button"
@@ -291,7 +311,7 @@
               aria-label="Traccia successiva"
               title="Traccia successiva"
             >
-              <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_next</span>
+              <svg class="brand-skip" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M168 60V140" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path transform="matrix(-1 0 0 1 154 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
           <button type="button" id="mini-player-speed-button" class="mini-player-control mini-player-speed-button tp-audio-control tp-audio-control--secondary" aria-label="Velocità di riproduzione: x1" title="Velocità di riproduzione: x1">
@@ -444,7 +464,7 @@
             <div class="player-controls" aria-label="Controlli player">
               <div class="player-transport-group">
                 <button type="button" id="player-previous-track" class="player-control-button player-track-control tp-audio-control tp-audio-control--secondary" aria-label="Tappa precedente" title="Tappa precedente">
-                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_previous</span>
+                  <svg class="brand-skip" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M32 60V140" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path transform="translate(46 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <button type="button" id="player-prev-button" class="player-control-button tp-audio-control tp-audio-control--secondary" aria-label="Indietro di 10 secondi">
                   <span translate="no" class="material-symbols-rounded" aria-hidden="true">replay_10</span>
@@ -456,7 +476,7 @@
                   <span translate="no" class="material-symbols-rounded" aria-hidden="true">forward_10</span>
                 </button>
                 <button type="button" id="player-next-track" class="player-control-button player-track-control tp-audio-control tp-audio-control--secondary" aria-label="Tappa successiva" title="Tappa successiva">
-                  <span translate="no" class="material-symbols-rounded" aria-hidden="true">skip_next</span>
+                  <svg class="brand-skip" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M168 60V140" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path transform="matrix(-1 0 0 1 154 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
               </div>
               <a
@@ -533,7 +553,7 @@
         <p id="player-context-guide-text" class="player-context-guide-text"></p>
         <div class="player-context-guide-actions">
           <button id="player-context-guide-close" class="guide-button guide-button-secondary" type="button" aria-label="Chiudi guida">×</button>
-          <button id="player-context-guide-prev" class="guide-button guide-button-secondary" type="button" aria-label="Indietro">←</button>
+          <button id="player-context-guide-prev" class="guide-button guide-button-secondary" type="button" aria-label="Indietro"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_back</span></button>
           <button id="player-context-guide-next" class="guide-button guide-button-primary" type="button" aria-label="Avanti"><span translate="no" class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
         </div>
       </div>
@@ -551,6 +571,9 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="app.js?v=20261104-intro"></script>
+    <script src="app.js?v=20261118-brand"></script>
+    <script>window.TP_SITE = { name: "Calci", stopSeconds: { 1: 114, 2: 164, 3: 169, 4: 144, 5: 181, 6: 184, 7: 181 } };</script>
+    <script src="brand-extras.js?v=20261118-brand"></script>
+    <script src="brand-guide.js?v=20261118-brand"></script>
   </body>
 </html>
