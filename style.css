@@ -10374,3 +10374,17 @@ body.is-transition-audio #player-play-button, body.is-transition-audio #mini-pla
   border-radius: var(--tp-radius-lg) !important; height: auto !important; min-height: var(--pc-play) !important;
 }
 body.is-transition-audio .play-ring { display: none !important; }
+
+/* Pannello mappa su desktop: il titolo resta su due righe e non invade la barra audio.
+   (La regola generale del titolo del player ha !important e annullava il limite di righe del pannello.) */
+.player-overlay.TPPlayerSheet.is-map-panel .player-side > .player-meta #detail-title,
+.player-overlay.TPPlayerSheet.is-map-panel .player-side > .player-meta #detail-title .player-title-text {
+  font-size: clamp(1.18rem, 1.55vw, 1.65rem) !important;
+  line-height: 1.12 !important;
+}
+.player-overlay.TPPlayerSheet.is-map-panel .player-side > .player-meta #detail-title {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden !important;
+}
