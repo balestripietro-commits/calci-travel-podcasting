@@ -1855,6 +1855,7 @@ function showMapSelectionLabel(tappa, marker) {
   content.className = "map-selection-label-content";
   const image = document.createElement("img");
   image.className = "map-selection-label-image";
+  image.dataset.shape = getPhotoShape(tappa.titolo);
   image.src = STOP_ARTWORKS[tappa.numero] || WHITE_ARTWORK;
   if (isMobileMapViewport()) {
     image.alt = getStopTitle(tappa);
