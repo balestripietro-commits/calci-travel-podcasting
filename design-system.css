@@ -93,8 +93,8 @@
   --tp-touch-expressive: 64px;
 
   --tp-legacy-stop-purple: #7d4fe0;
-  --tp-legacy-stop-purple-strong: #7143d2;
-  --tp-legacy-stop-purple-glow: rgba(143, 99, 232, 0.28);
+  --tp-legacy-stop-purple-strong: #7d4fe0;
+  --tp-legacy-stop-purple-glow: rgba(125, 79, 224, 0.28);
   --tp-stop-identifier-calci: var(--tp-color-secondary);
   --tp-stop-identifier-calci-glow: rgba(44, 109, 163, 0.24);
   --tp-stop-identifier-travel-tertiary: var(--tp-legacy-stop-purple);

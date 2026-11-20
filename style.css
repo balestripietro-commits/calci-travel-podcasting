@@ -1293,7 +1293,7 @@ body.is-map-fullscreen .map-explore-stop {
   box-shadow:
     0 0 0 5px var(--tp-legacy-stop-purple-glow),
     0 0 0 9px color-mix(in srgb, var(--tp-color-tertiary) 34%, transparent),
-    0 12px 24px rgba(127, 98, 219, 0.32);
+    0 12px 24px rgba(125, 79, 224, 0.32);
 }
 
 .stop-button.is-active .stop-title {
@@ -1319,7 +1319,7 @@ body.is-map-fullscreen .map-explore-stop {
   font-size: 0.95rem;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 8px 18px rgba(127, 98, 219, 0.28);
+  box-shadow: 0 8px 18px rgba(125, 79, 224, 0.28);
 }
 
 .stop-title {
@@ -2985,14 +2985,14 @@ body.is-transition-audio .TPPlayerSheet .player-meta h2 .player-title-text {
   border-radius: 999px;
   background: linear-gradient(180deg, var(--tp-legacy-stop-purple) 0%, var(--tp-legacy-stop-purple-strong) 100%);
   border: 2px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 18px rgba(127, 98, 219, 0.28);
+  box-shadow: 0 8px 18px rgba(125, 79, 224, 0.28);
 }
 
 .map-marker.is-highlighted {
   box-shadow:
     0 0 0 10px rgba(154, 107, 236, 0.16),
     0 0 0 18px color-mix(in srgb, var(--tp-color-tertiary) 20%, transparent),
-    0 14px 30px rgba(127, 98, 219, 0.38);
+    0 14px 30px rgba(125, 79, 224, 0.38);
   animation: marker-highlight-pulse var(--tp-motion-route-selection) var(--tp-ease-emphasized);
 }
 
