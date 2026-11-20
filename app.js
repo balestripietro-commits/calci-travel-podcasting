@@ -2448,13 +2448,31 @@ function focusSelectedSegmentCentered(tappa) {
 
   const bounds = L.latLngBounds(segmentBounds.getSouthWest(), segmentBounds.getNorthEast());
   bounds.extend([tappa.latitudine, tappa.longitudine]);
-  const offset = getMapVisibleAreaOffset();
-  const margin = 44;
-  const padding = L.point(2 * Math.abs(offset.x) + 2 * margin, 2 * Math.abs(offset.y) + 2 * margin);
+
+  // Area libera = mappa meno il blocco in basso (player o mini player) e un margine.
+  const mapRect = map.getContainer().getBoundingClientRect();
+  const size = map.getSize();
+  const margin = 40;
+  let freeBottom = mapRect.bottom;
+  [isMobileMapPlayerMode() ? playerSheet : miniPlayer, mapExploreStop].forEach((blocker) => {
+    if (!blocker || blocker.hidden || blocker.classList.contains("is-hidden")) {
+      return;
+    }
+    const rect = blocker.getBoundingClientRect();
+    if (rect.width > 0 && rect.top < freeBottom && rect.top > mapRect.top + size.y * 0.3) {
+      freeBottom = rect.top;
+    }
+  });
+  const freeHeight = Math.max(160, freeBottom - mapRect.top);
+  const padding = L.point(2 * margin, size.y - freeHeight + 2 * margin);
   const zoomStep = map.options.zoomSnap > 0 ? map.options.zoomSnap : 0.25;
   let zoom = map.getBoundsZoom(bounds, false, padding);
   zoom = Math.min(Math.floor(zoom / zoomStep) * zoomStep, 17.5);
-  const center = shiftMapCameraCenterIntoVisibleArea([bounds.getCenter().lat, bounds.getCenter().lng], zoom);
+
+  // Il centro della mappa deve cadere in modo che il tratto stia al centro dell'area libera.
+  const shiftY = size.y / 2 - freeHeight / 2;
+  const projected = map.project(bounds.getCenter(), zoom).add([0, shiftY]);
+  const center = map.unproject(projected, zoom);
 
   map.stop();
   map.flyTo(clampMapCameraCenter([center.lat, center.lng], zoom), zoom, {
