@@ -2438,6 +2438,33 @@ function isMapAtCameraPreset(target) {
   return map.getCenter().distanceTo(target.center) <= 18 && Math.abs(map.getZoom() - target.zoom) <= 0.05;
 }
 
+// Al click su una tappa inquadra il tratto giallo (dalla tappa precedente a quella scelta)
+// al centro dell'area libera della mappa, tenendo conto del player che copre una parte dello schermo.
+function focusSelectedSegmentCentered(tappa) {
+  const segmentBounds = activeRouteLayer?.getBounds?.();
+  if (!map || !segmentBounds?.isValid?.()) {
+    return false;
+  }
+
+  const bounds = L.latLngBounds(segmentBounds.getSouthWest(), segmentBounds.getNorthEast());
+  bounds.extend([tappa.latitudine, tappa.longitudine]);
+  const offset = getMapVisibleAreaOffset();
+  const margin = 44;
+  const padding = L.point(2 * Math.abs(offset.x) + 2 * margin, 2 * Math.abs(offset.y) + 2 * margin);
+  const zoomStep = map.options.zoomSnap > 0 ? map.options.zoomSnap : 0.25;
+  let zoom = map.getBoundsZoom(bounds, false, padding);
+  zoom = Math.min(Math.floor(zoom / zoomStep) * zoomStep, 17.5);
+  const center = shiftMapCameraCenterIntoVisibleArea([bounds.getCenter().lat, bounds.getCenter().lng], zoom);
+
+  map.stop();
+  map.flyTo(clampMapCameraCenter([center.lat, center.lng], zoom), zoom, {
+    animate: !reducedMotionQuery.matches,
+    duration: reducedMotionQuery.matches ? 0 : 0.7,
+    easeLinearity: 0.14,
+  });
+  return true;
+}
+
 function flyToStopCameraPreset(tappa, presetName) {
   const target = getStopCameraTarget(tappa, presetName);
   if (!target || isMapAtCameraPreset(target)) {
@@ -7564,7 +7591,9 @@ function focusStop(tappa, options = {}) {
   const shouldCoordinateListSelection = options.fromList === true;
   const focusMap = () => {
     if (marker) {
-      if (options.cameraPreset) {
+      if (options.focusRoute && focusSelectedSegmentCentered(tappa)) {
+        // tratto giallo centrato nell'area libera
+      } else if (options.cameraPreset) {
         flyToStopCameraPreset(tappa, options.cameraPreset);
       } else if (options.focusRoute) {
         focusMapOnSelectedRouteSegment();
