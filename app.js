@@ -3488,7 +3488,8 @@ function buildLanguageChips(
       chip.removeAttribute("aria-selected");
     }
     chip.setAttribute("aria-pressed", languageCode === currentLanguage ? "true" : "false");
-    chip.setAttribute("aria-label", languageName);
+    // Il nome accessibile contiene sempre il testo visibile (WCAG 2.5.3): «IT · Italiano»
+    chip.setAttribute("aria-label", `${languageCode} · ${languageName}`);
     chip.title = languageName;
     chip.addEventListener("click", () => {
       if (onSelect) {
