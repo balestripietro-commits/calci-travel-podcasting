@@ -13,6 +13,8 @@ const rootFiles = [
   "brand-extras.js",
   "brand-guide.js",
   "tp-controlli.js",
+  "tp-avvio.js",
+  "tp-sito.js",
   "tp-controlli.css",
   "fonts-google.css",
 ];

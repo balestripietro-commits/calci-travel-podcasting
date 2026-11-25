@@ -2,6 +2,7 @@
 <html lang="it" data-tp-theme="calci">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tile.openstreetmap.org; font-src 'self'; media-src 'self' blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Podcasting Comune di Calci</title>
     <link rel="icon" type="image/png" href="logo_calci.png" />
@@ -31,7 +32,7 @@
 @keyframes tps-dx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(137.4px)}75.0%{transform:translateX(137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-sx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(-137.4px)}75.0%{transform:translateX(-137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-dot{0%{transform:scale(1);opacity:1}3.75%{transform:scale(1);opacity:1}12.5%{transform:scale(0);opacity:0}87.5%{transform:scale(0);opacity:0}96.25%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}@keyframes tps-t0{0%{clip-path:inset(-8px 50% -8px 50%)}12.5%{clip-path:inset(-8px 50% -8px 50%)}30.0%{clip-path:inset(-8px -3% -8px -3%)}75.0%{clip-path:inset(-8px -3% -8px -3%)}87.5%{clip-path:inset(-8px 50% -8px 50%)}100%{clip-path:inset(-8px 50% -8px 50%)}}
 @media (prefers-reduced-motion:reduce){.tps .a{animation:none}.tps [class*="tps-t"]{display:none}}
 </style><g class="tps"><g class="a tps-sx"><path class="ch" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><g class="a tps-dx"><path class="ch" transform="matrix(-1 0 0 1 200 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><circle class="a tps-dot" cx="100" cy="100" r="15"/><g class="a tps-t0"><image href="logo_calci.png" x="-34.359999999999985" y="50.0" width="80" height="100" preserveAspectRatio="xMidYMid meet"/><text x="53.640000000000015" y="93.5">Comune di</text><text x="53.640000000000015" y="130.2">Calci</text></g></g></svg></svg></div>
-<script>(function(){var s=document.getElementById("tp-splash");if(!s)return;var seen=false;try{var K="tp-splash-"+(document.documentElement.dataset.tpTheme||"sito");seen=!!localStorage.getItem(K);localStorage.setItem(K,"1");}catch(e){}if(seen||window.matchMedia("(prefers-reduced-motion: reduce)").matches){s.remove();return;}var root=document.documentElement;root.classList.add("tp-splash-lock");var t0=Date.now(),loaded=document.readyState==="complete";function hide(){if((!loaded&&Date.now()-t0<6000)||Date.now()-t0<3600){setTimeout(hide,120);return;}root.classList.remove("tp-splash-lock");s.classList.add("is-hiding");setTimeout(function(){s.remove();},600);}window.addEventListener("load",function(){loaded=true;});hide();})();</script>
+<script src="tp-avvio.js?v=20261125-csp"></script>
     <div class="announcement-strip" aria-hidden="true">
       <div id="announcement-track" class="announcement-track"></div>
     </div>
@@ -568,7 +569,7 @@
     </div>
 
     <script src="assets/leaflet/leaflet.js?v=1.9.4"></script>
-    <script>window.TP_SITE = { name: "Calci", narrator: "Padre Gherardo", shapes: { 1: "arco", 2: "foglia", 3: "foglia", 4: "arco", 5: "blocco", 6: "foglia", 7: "foglia" }, stopSeconds: { 1: 114, 2: 164, 3: 169, 4: 144, 5: 181, 6: 184, 7: 181 } };</script>
+    <script src="tp-sito.js?v=20261125-csp"></script>
     <script src="app.js?v=20261125-revisione"></script>
     <script src="brand-extras.js?v=20261118-brand"></script>
     <script src="brand-guide.js?v=20261125-revisione"></script>
