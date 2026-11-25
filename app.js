@@ -322,10 +322,13 @@ const stopPreviewNumber = document.getElementById("stop-preview-number");
 const stopPreviewTitle = document.getElementById("stop-preview-title");
 const stopPreviewImage = document.getElementById("stop-preview-image");
 const STOP_SHAPE_RULES = [
-  ["torre", /\b(torre|torri)\b/i],
-  ["arco", /\b(pieve|chiesa|parrocchia|porta|porte|ingresso)\b/i],
-  ["blocco", /\b(palazzo|museo|villa|teatro)\b/i],
-  ["foglia", /\b(parco|giardino|piazza|bosco|boschetto)\b/i]
+  // torri, rocche e fortificazioni
+  ["torre", /(torre|torri|rocca|castello|fortezza|mura)/i],
+  // luoghi religiosi e porte
+  ["arco", /(pieve|chiesa|parrocchia|certosa|convento|abbazia|monastero|porta|porte|ingresso)/i],
+  ["blocco", /(palazzo|museo|villa|teatro)/i],
+  // luoghi all'aperto: piazze, strade, ponti e natura
+  ["foglia", /(parco|giardino|piazza|bosco|boschetto|via|ponte|monte|fiume)/i]
 ];
 
 // Forma della foto: segue quella del numero sulla mappa, ma le torri (la foto non ci entra) usano il tassello
@@ -335,6 +338,12 @@ function getPhotoShape(title) {
 }
 
 function getStopShape(title) {
+  // Forma fissata per numero di tappa in index.html (window.TP_SITE.shapes): uguale in tutte le lingue
+  const fixedShapes = window.TP_SITE && window.TP_SITE.shapes;
+  if (fixedShapes && typeof tappe !== "undefined") {
+    const stop = tappe.find((t) => t.titolo === title);
+    if (stop && fixedShapes[stop.numero]) return fixedShapes[stop.numero];
+  }
   const text = String(title || "");
   const rule = STOP_SHAPE_RULES.find(([, pattern]) => pattern.test(text));
   return rule ? rule[0] : "lente";

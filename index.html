@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Podcasting Comune di Calci</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0&family=Roboto+Flex:opsz,wght@8..144,400..800&display=swap"
-    />
+    <meta name="description" content="Percorso audio a tappe nel Comune di Calci, raccontato da Padre Gherardo. Si apre dal telefono, senza app." />
+    <link rel="canonical" href="https://balestripietro-commits.github.io/calci-travel-podcasting/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Travel Podcasting · Comune di Calci" />
+    <meta property="og:description" content="Percorso audio a tappe nel Comune di Calci, raccontato da Padre Gherardo. Si apre dal telefono, senza app." />
+    <meta property="og:url" content="https://balestripietro-commits.github.io/calci-travel-podcasting/" />
+    <meta property="og:locale" content="it_IT" />
+    <link rel="stylesheet" href="assets/leaflet/leaflet.css?v=1.9.4" />
+    <link rel="stylesheet" href="fonts-google.css?v=20261125-revisione" />
     <link rel="stylesheet" href="design-system.css?v=20261029-etichette" />
     <link rel="stylesheet" href="theme-calci.css?v=20261029-etichette" />
     <link rel="stylesheet" href="style.css?v=20261120-tap" />
+    <link rel="stylesheet" href="tp-controlli.css?v=20261125-r5" />
   </head>
   <body class="tp-theme-calci">
 <div class="tp-splash" id="tp-splash" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-136.9 50 473.7 100" role="img" aria-label="Comune di Calci"><style>
@@ -30,7 +30,7 @@
 @keyframes tps-dx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(137.4px)}75.0%{transform:translateX(137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-sx{0%{transform:translateX(0.0px)}12.5%{transform:translateX(0.0px)}30.0%{transform:translateX(-137.4px)}75.0%{transform:translateX(-137.4px)}87.5%{transform:translateX(0.0px)}100%{transform:translateX(0.0px)}}@keyframes tps-dot{0%{transform:scale(1);opacity:1}3.75%{transform:scale(1);opacity:1}12.5%{transform:scale(0);opacity:0}87.5%{transform:scale(0);opacity:0}96.25%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}@keyframes tps-t0{0%{clip-path:inset(-8px 50% -8px 50%)}12.5%{clip-path:inset(-8px 50% -8px 50%)}30.0%{clip-path:inset(-8px -3% -8px -3%)}75.0%{clip-path:inset(-8px -3% -8px -3%)}87.5%{clip-path:inset(-8px 50% -8px 50%)}100%{clip-path:inset(-8px 50% -8px 50%)}}
 @media (prefers-reduced-motion:reduce){.tps .a{animation:none}.tps [class*="tps-t"]{display:none}}
 </style><g class="tps"><g class="a tps-sx"><path class="ch" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><g class="a tps-dx"><path class="ch" transform="matrix(-1 0 0 1 200 0)" d="M52 62 L30 88 Q22 100 30 112 L52 138 M82 62 L60 88 Q52 100 60 112 L82 138"/></g><circle class="a tps-dot" cx="100" cy="100" r="15"/><g class="a tps-t0"><image href="logo_calci.png" x="-34.359999999999985" y="50.0" width="80" height="100" preserveAspectRatio="xMidYMid meet"/><text x="53.640000000000015" y="93.5">Comune di</text><text x="53.640000000000015" y="130.2">Calci</text></g></g></svg></svg></div>
-<script>(function(){var s=document.getElementById("tp-splash");if(!s)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){s.remove();return;}var root=document.documentElement;root.classList.add("tp-splash-lock");var t0=Date.now(),loaded=document.readyState==="complete";function hide(){if(!loaded||Date.now()-t0<3600){setTimeout(hide,120);return;}root.classList.remove("tp-splash-lock");s.classList.add("is-hiding");setTimeout(function(){s.remove();},600);}window.addEventListener("load",function(){loaded=true;});hide();})();</script>
+<script>(function(){var s=document.getElementById("tp-splash");if(!s)return;var seen=false;try{var K="tp-splash-"+(document.documentElement.dataset.tpTheme||"sito");seen=!!localStorage.getItem(K);localStorage.setItem(K,"1");}catch(e){}if(seen||window.matchMedia("(prefers-reduced-motion: reduce)").matches){s.remove();return;}var root=document.documentElement;root.classList.add("tp-splash-lock");var t0=Date.now(),loaded=document.readyState==="complete";function hide(){if((!loaded&&Date.now()-t0<6000)||Date.now()-t0<3600){setTimeout(hide,120);return;}root.classList.remove("tp-splash-lock");s.classList.add("is-hiding");setTimeout(function(){s.remove();},600);}window.addEventListener("load",function(){loaded=true;});hide();})();</script>
     <div class="announcement-strip" aria-hidden="true">
       <div id="announcement-track" class="announcement-track"></div>
     </div>
@@ -566,14 +566,11 @@
       </div>
     </div>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <script src="app.js?v=20261120-centra2"></script>
-    <script>window.TP_SITE = { name: "Calci", stopSeconds: { 1: 114, 2: 164, 3: 169, 4: 144, 5: 181, 6: 184, 7: 181 } };</script>
+    <script src="assets/leaflet/leaflet.js?v=1.9.4"></script>
+    <script>window.TP_SITE = { name: "Calci", narrator: "Padre Gherardo", shapes: { 1: "arco", 2: "foglia", 3: "foglia", 4: "arco", 5: "blocco", 6: "foglia", 7: "foglia" }, stopSeconds: { 1: 114, 2: 164, 3: 169, 4: 144, 5: 181, 6: 184, 7: 181 } };</script>
+    <script src="app.js?v=20261125-revisione"></script>
     <script src="brand-extras.js?v=20261118-brand"></script>
-    <script src="brand-guide.js?v=20261118-brand"></script>
+    <script src="brand-guide.js?v=20261125-revisione"></script>
+    <script src="tp-controlli.js?v=20261125-r5"></script>
   </body>
 </html>

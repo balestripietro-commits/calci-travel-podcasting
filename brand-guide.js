@@ -56,21 +56,33 @@
     root.classList.toggle("easy-read", level > 0);
     root.classList.toggle("text-1", level === 1);
     root.classList.toggle("text-2", level === 2);
-    var b = document.getElementById("easy-read-button");
+    var b = document.getElementById("text-size-picker");
     if (b) {
-      var name = (NAMES[code()] || NAMES.it).replace("{l}", LEVELS[level]);
-      b.setAttribute("aria-label", name); b.title = name;
-      b.setAttribute("aria-pressed", level > 0 ? "true" : "false");
-      b.firstChild.textContent = LEVELS[level];
+      var sel = b.querySelector("select");
+      var opts = SIZES[code()] || SIZES.it;
+      Array.prototype.forEach.call(sel.options, function (o, i) { o.textContent = opts[i]; });
+      sel.value = String(level);
+      sel.setAttribute("aria-label", (NAMES[code()] || NAMES.it).replace("{l}", opts[level]));
+      b.querySelector(".tsp-label").textContent = LEVELS[level];
+      b.classList.toggle("is-on", level > 0);
     }
   }
+  /* Menu a tendina con i tre livelli (prima era un pulsante che li ciclava) */
+  var SIZES = {
+    it: ["Testo normale", "Testo grande", "Testo molto grande"], en: ["Normal text", "Large text", "Extra large text"],
+    de: ["Normaler Text", "Großer Text", "Sehr großer Text"], fr: ["Texte normal", "Grand texte", "Très grand texte"],
+    es: ["Texto normal", "Texto grande", "Texto muy grande"], pt: ["Texto normal", "Texto grande", "Texto muito grande"],
+    ru: ["Обычный текст", "Крупный текст", "Очень крупный текст"], zh: ["标准文字", "大号文字", "特大文字"],
+    ar: ["نص عادي", "نص كبير", "نص كبير جدًا"]
+  };
   function addEasyButton() {
     var box = document.querySelector(".header-actions");
-    if (!box || document.getElementById("easy-read-button")) return;
-    var b = document.createElement("button");
-    b.type = "button"; b.id = "easy-read-button"; b.className = "easy-read-button tp-icon-button";
-    b.innerHTML = '<span aria-hidden="true">A+</span>';
-    b.addEventListener("click", function () { level = (level + 1) % 3; store("tp-text", String(level)); applyEasy(); });
+    if (!box || document.getElementById("text-size-picker")) return;
+    var b = document.createElement("label");
+    b.id = "text-size-picker"; b.className = "text-size-picker";
+    b.innerHTML = '<span class="tsp-label" aria-hidden="true">A</span><i class="tsp-chevron" aria-hidden="true"></i>' +
+      '<select><option value="0"></option><option value="1"></option><option value="2"></option></select>';
+    b.querySelector("select").addEventListener("change", function (e) { level = Number(e.target.value) || 0; store("tp-text", String(level)); applyEasy(); });
     box.insertBefore(b, box.firstChild);
     applyEasy();
   }

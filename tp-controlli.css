@@ -1,0 +1,144 @@
+/* Travel Podcasting · stili dei controlli comuni (stesso file in ogni sito). Vedi tp-controlli.js. */
+
+/* ---------- comandi del player: i cinque comandi al centro, la velocità accanto alla durata ---------- */
+#mini-player-speed-button,
+#player-speed-button { display: none !important; }
+
+/* style.css riservava una sesta colonna alla velocità: ora i comandi sono cinque, centrati */
+.TPMiniPlayer .mini-player-controls,
+.player-controls { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; justify-content: center !important; }
+@media (min-width: 520px) and (max-width: 1023px) {
+  .TPMiniPlayer .mini-player-controls, .player-controls { grid-template-columns: repeat(5, minmax(0, 64px)) !important; }
+}
+@media (min-width: 1024px) { .TPMiniPlayer .mini-player-controls { grid-template-columns: repeat(5, 56px) !important; } }
+@media (min-width: 1024px) and (max-width: 1199px) { .TPMiniPlayer .mini-player-controls { grid-template-columns: repeat(5, 48px) !important; } }
+.mini-player-transport-group,
+.player-transport-group { margin-inline: auto; justify-content: center; }
+
+.tp-speed {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-inline-start: 6px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  color: inherit;
+  opacity: .92;
+}
+.tp-speed[hidden] { display: none; }
+.tp-speed-select {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 3.6em;
+  min-height: 32px;
+  padding: 2px 22px 2px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: 700 .82rem/1 var(--tp-font-ui, system-ui, sans-serif);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.tp-speed-select option { color: #1f2a27; background: #fff; }
+.tp-speed-chevron {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -5px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.tp-speed.is-active { color: var(--tp-color-tertiary, #e8c36d); opacity: 1; }
+.tp-speed:focus-within { outline: 3px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 2px; }
+.tp-speed--mini .tp-speed-select { min-height: 28px; font-size: .78rem; }
+/* La riga del tempo: la tendina non deve schiacciare la barra */
+.mini-player-timeline,
+.player-timeline { grid-template-columns: auto minmax(0, 1fr) auto auto !important; flex-wrap: nowrap; }
+
+/* ---------- dimensione del testo: menu a tendina in testata ---------- */
+.text-size-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+  padding: 0 26px 0 12px;
+  border-radius: 999px;
+  background: var(--tp-color-surface-container-low, #fff);
+  color: var(--tp-color-primary, #245c52);
+  border: 1.5px solid currentColor;
+  font: 800 .95rem/1 var(--tp-font-ui, system-ui, sans-serif);
+}
+.text-size-picker .tsp-chevron {
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.text-size-picker select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+.text-size-picker:focus-within { outline: 3px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 3px; }
+.text-size-picker.is-on { background: var(--tp-color-primary, #245c52); color: #fff; border-color: var(--tp-color-primary, #245c52); }
+
+/* ---------- legenda delle forme sotto la mappa ---------- */
+.tp-map-legend {
+  margin: 12px 4px 0;
+  font-family: var(--tp-font-ui, system-ui, sans-serif);
+  color: var(--tp-color-on-surface, #1f2a27);
+}
+.tp-map-legend-title { margin: 0 0 6px; font-size: .82rem; font-weight: 700; letter-spacing: .02em; }
+.tp-map-legend ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.tp-map-legend li { display: inline-flex; align-items: center; gap: 7px; font-size: .86rem; line-height: 1.25; }
+.tp-map-legend svg { width: 22px; height: 22px; flex: 0 0 auto; overflow: visible; }
+.tp-map-legend path { fill: var(--tp-legacy-stop-purple, #7d4fe0); stroke: #fff; stroke-width: 18; stroke-linejoin: round; paint-order: stroke; }
+
+/* ---------- narratore e voce AI ---------- */
+.player-meta { flex-wrap: wrap; }
+.tp-player-narrator {
+  flex: 1 0 100%;
+  margin: 6px 0 0;
+  font: 500 .84rem/1.35 var(--tp-font-ui, system-ui, sans-serif);
+  opacity: .92;
+}
+.tp-player-narrator .tp-narr-name { font-weight: 700; }
+.tp-player-narrator a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.tp-intro-ai {
+  margin: 10px 0 0;
+  font: 500 .82rem/1.35 var(--tp-font-ui, system-ui, sans-serif);
+  color: var(--tp-color-on-surface-variant, #3d4a46);
+}
+
+/* ---------- piè di pagina ---------- */
+.tp-site-footer {
+  margin-top: 32px;
+  padding: 24px 20px calc(var(--tp-mini-player-space, 180px) + 24px);
+  background: var(--tp-color-primary, #245c52);
+  color: #fff8ef;
+  font: 400 .85rem/1.55 var(--tp-font-ui, system-ui, sans-serif);
+}
+.tp-site-footer p { max-width: 760px; margin: 0 auto 8px; }
+.tp-site-footer a { color: #fff8ef; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.tp-site-footer a:focus-visible { outline: 3px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 3px; }
+body.player-open .tp-site-footer { display: none; }
+
+/* ---------- testo della presentazione mai troncato, anche con il testo grande ---------- */
+#intro-text { -webkit-line-clamp: unset !important; line-clamp: unset !important; overflow: visible !important; max-height: none !important; }

@@ -34,3 +34,12 @@
 - Coordinate non confermate restano indicate come proposte o indicative. Il tracciato si genera solo con lo script, mai a mano.
 
 - Sportello email opzionale (primo passo dell'onboarding, prima della scelta lingua): montato il 23/10/2026 ma spento (`EMAIL_GATE_ENABLED = false` in `app.js`). Riattivazione, destinazione (Foglio Google tramite `apps-script/raccolta-email.gs`) e prerequisiti (consenso e informativa del Comune) sono nel playbook dei siti comunali. Test: `tests/e2e/email-step.spec.mjs`.
+
+## Revisione prima della pubblicazione (25/11/2026)
+- `tp-controlli.js` / `tp-controlli.css` (identici in ogni sito): velocità con menu a tendina accanto alla durata, cinque comandi del player centrati, legenda delle forme sotto la mappa, riga «Racconta … · voce generata con l'intelligenza artificiale» nel player, nota AI sotto la presentazione, piè di pagina con titolare (Pietro Balestri, libero professionista, P.IVA 02589890504) e link a privacy e cookie. Narratore in `window.TP_SITE.narrator`.
+- Dimensione del testo: menu a tendina in testata (normale, grande, molto grande) in `brand-guide.js`, al posto del pulsante A+ che ciclava. La presentazione non viene più troncata con il testo grande.
+- Forme delle tappe fissate per numero in `window.TP_SITE.shapes` (index.html): restano uguali in tutte le lingue. Le regole sui titoli in `app.js` restano come ripiego.
+- Leaflet 1.9.4 (`assets/leaflet/`) e font Google (Material Symbols Rounded, Roboto Flex: `fonts-google.css`, `assets/fonts/`) serviti dal sito: nessuna richiesta a unpkg o Google. Restano esterne solo le tessere OpenStreetMap.
+- Audio ricodificato: 64 kbps mono la voce, 96 kbps mono intermezzo e finale.
+- Animazione di apertura solo alla prima visita (`localStorage`), al massimo 6 secondi.
+- Sito indicizzabile: meta description, canonical e Open Graph in `index.html`. Informativa unica: https://balestripietro-commits.github.io/landing-page-travel-podcasting/privacy.html
