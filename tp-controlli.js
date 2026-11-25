@@ -117,11 +117,11 @@
       main.parentNode.insertBefore(f, main.nextSibling);
     }
     var l = L();
-    // Una riga piccola e discreta: Comune, voce AI, titolare con P.IVA, privacy (i dati completi sono nella pagina privacy)
+    // Una riga piccola e discreta: Comune, voce AI, Travel Podcasting, privacy (i dati completi sono nella pagina privacy)
     var parts = [];
     if (COMUNE) parts.push(esc(fill(l.made, { c: COMUNE }).replace(/[.。]$/, "")));
     if (NARRATORE) parts.push(esc(fill(l.aiFull, { n: NARRATORE }).replace(/[.。]$/, "")));
-    parts.push('<a href="https://balestripietro-commits.github.io/landing-page-travel-podcasting/" target="_blank" rel="noopener">Travel Podcasting</a> · Pietro Balestri · P.IVA 02589890504');
+    parts.push('<a href="https://balestripietro-commits.github.io/landing-page-travel-podcasting/" target="_blank" rel="noopener">Travel Podcasting</a>');
     parts.push('<a href="' + PRIVACY + '" target="_blank" rel="noopener">' + esc(l.privacy) + "</a>");
     f.innerHTML = "<p>" + parts.join(" · ") + "</p>";
   }

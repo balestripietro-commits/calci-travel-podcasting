@@ -138,3 +138,10 @@ body.player-open .tp-site-footer { display: none; }
 
 /* ---------- testo della presentazione mai troncato, anche con il testo grande ---------- */
 #intro-text { -webkit-line-clamp: unset !important; line-clamp: unset !important; overflow: visible !important; max-height: none !important; }
+
+/* Full player da mobile (vista foto): la foto prende solo lo spazio che avanza, così i tasti
+   «Torna alla tappa precedente» / «Prossima tappa» e la trascrizione restano dentro lo schermo. */
+@media (max-width: 760px) {
+  .player-overlay.TPPlayerSheet:not(.is-mobile-map-player):not(.is-map-panel) .player-sheet { grid-template-rows: auto minmax(0, 1fr) auto 0px !important; padding-bottom: max(14px, env(safe-area-inset-bottom)) !important; }
+  .player-overlay.TPPlayerSheet:not(.is-mobile-map-player):not(.is-map-panel) .player-artwork { height: 100% !important; max-height: 100% !important; width: auto !important; max-width: 100% !important; min-height: 0 !important; aspect-ratio: 1 / 1 !important; justify-self: center !important; align-self: center !important; }
+}
