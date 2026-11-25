@@ -121,23 +121,19 @@
 }
 .tp-player-narrator .tp-narr-name { font-weight: 700; }
 .tp-player-narrator a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-.tp-intro-ai {
-  margin: 10px 0 0;
-  font: 500 .82rem/1.35 var(--tp-font-ui, system-ui, sans-serif);
-  color: var(--tp-color-on-surface-variant, #3d4a46);
-}
 
-/* ---------- piè di pagina ---------- */
+/* ---------- piè di pagina: una riga piccola e discreta ---------- */
 .tp-site-footer {
-  margin-top: 32px;
-  padding: 24px 20px calc(var(--tp-mini-player-space, 180px) + 24px);
-  background: var(--tp-color-primary, #245c52);
-  color: #fff8ef;
-  font: 400 .85rem/1.55 var(--tp-font-ui, system-ui, sans-serif);
+  margin: 28px 0 0;
+  padding: 12px 20px calc(var(--tp-mini-player-space, 150px) + 12px);
+  background: none;
+  color: var(--tp-color-on-surface-variant, #3d4a46);
+  font: 400 11px/1.5 var(--tp-font-ui, system-ui, sans-serif);
+  opacity: .85;
 }
-.tp-site-footer p { max-width: 760px; margin: 0 auto 8px; }
-.tp-site-footer a { color: #fff8ef; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.tp-site-footer a:focus-visible { outline: 3px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 3px; }
+.tp-site-footer p { max-width: 980px; margin: 0; }
+.tp-site-footer a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.tp-site-footer a:focus-visible { outline: 2px solid var(--tp-color-tertiary, #e8c36d); outline-offset: 2px; }
 body.player-open .tp-site-footer { display: none; }
 
 /* ---------- testo della presentazione mai troncato, anche con il testo grande ---------- */

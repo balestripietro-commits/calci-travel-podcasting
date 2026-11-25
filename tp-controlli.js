@@ -12,7 +12,6 @@
   var COMUNE = SITE.name || "";
   var NARRATORE = SITE.narrator || "";
   var PRIVACY = "https://balestripietro-commits.github.io/landing-page-travel-podcasting/privacy.html";
-  var TITOLARE = "Pietro Balestri · P.IVA 02589890504 · Via Alessandro Volta 20, 56017 Ghezzano, San Giuliano Terme (PI) · balestripietro@gmail.com";
 
   var T = {
     it: { speed: "Velocità di riproduzione", legend: "Le forme delle tappe", torre: "Torri e fortezze", arco: "Chiese e conventi", blocco: "Palazzi", foglia: "Piazze, strade e natura", lente: "Altri luoghi", narr: "Racconta {n}", ai: "voce generata con l'intelligenza artificiale", made: "Percorso realizzato con il Comune di {c}.", aiFull: "La voce di {n} è generata con l'intelligenza artificiale.", by: "Travel Podcasting è un progetto di", role: "libero professionista", privacy: "Privacy e cookie" },
@@ -102,13 +101,8 @@
         var row = title.closest(".player-title-row") || title;
         row.parentNode.insertBefore(n, row.nextSibling);
       }
-      n.innerHTML = '<span class="tp-narr-name">' + esc(fill(L().narr, { n: NARRATORE })) + '</span> · <a href="' + PRIVACY + '#voci-ai" target="_blank" rel="noopener">' + esc(L().ai) + "</a>";
-    }
-    var intro = document.getElementById("intro-lead-text");
-    if (intro && intro.parentNode) {
-      var h = document.getElementById("tp-intro-ai");
-      if (!h) { h = el("p", "tp-intro-ai"); h.id = "tp-intro-ai"; var block = intro.closest(".intro-quote-block") || intro.parentNode; block.parentNode.insertBefore(h, block.nextSibling); }
-      h.textContent = fill(L().aiFull, { n: NARRATORE });
+      // Solo il nome del narratore: l'avviso sulla voce AI sta nel piè di pagina
+      n.innerHTML = '<span class="tp-narr-name">' + esc(fill(L().narr, { n: NARRATORE })) + "</span>";
     }
   }
 
@@ -123,10 +117,13 @@
       main.parentNode.insertBefore(f, main.nextSibling);
     }
     var l = L();
-    f.innerHTML =
-      (COMUNE ? "<p>" + esc(fill(l.made, { c: COMUNE })) + (NARRATORE ? " " + esc(fill(l.aiFull, { n: NARRATORE })) : "") + "</p>" : "") +
-      '<p>' + esc(l.by) + " " + esc("Pietro Balestri") + ", " + esc(l.role) + "<br>" + esc(TITOLARE.replace("Pietro Balestri · ", "")) + "</p>" +
-      '<p><a href="' + PRIVACY + '" target="_blank" rel="noopener">' + esc(l.privacy) + "</a></p>";
+    // Una riga piccola e discreta: Comune, voce AI, titolare con P.IVA, privacy (i dati completi sono nella pagina privacy)
+    var parts = [];
+    if (COMUNE) parts.push(esc(fill(l.made, { c: COMUNE }).replace(/[.。]$/, "")));
+    if (NARRATORE) parts.push(esc(fill(l.aiFull, { n: NARRATORE }).replace(/[.。]$/, "")));
+    parts.push('<a href="https://balestripietro-commits.github.io/landing-page-travel-podcasting/" target="_blank" rel="noopener">Travel Podcasting</a> · Pietro Balestri · P.IVA 02589890504');
+    parts.push('<a href="' + PRIVACY + '" target="_blank" rel="noopener">' + esc(l.privacy) + "</a>");
+    f.innerHTML = "<p>" + parts.join(" · ") + "</p>";
   }
 
   function applyLang() { relabelSpeed(); renderLegend(); renderNarrator(); renderFooter(); }
