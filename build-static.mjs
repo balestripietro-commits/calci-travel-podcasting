@@ -20,7 +20,7 @@ const rootFiles = [
 ];
 const runtimeDirectories = ["audio"];
 const runtimeAssetDirectories = ["assets/leaflet", "assets/mascotte-mouth", "assets/stops", "assets/fonts", "assets/lock"];
-const runtimeAssetFiles = ["assets/stemma-calci.png"];
+const runtimeAssetFiles = ["assets/stemma-calci.png", "assets/og-calci.jpg"];
 const stopArtworkPattern = /^tappa_\d+_.+\.webp$/i;
 
 const rootEntries = await readdir(".", { withFileTypes: true });
